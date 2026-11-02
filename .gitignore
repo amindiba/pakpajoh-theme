@@ -1,0 +1,18 @@
+# VS Code settings
+.vscode/
+
+# SFTP / FTP configs (شامل رمز عبور)
+sftp.json
+ftporter.json
+ftporter.config.json
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node modules (if any)
+node_modules/
+
+# Logs
+*.log

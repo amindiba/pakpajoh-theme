@@ -1,0 +1,128 @@
+/* ============================================
+   PakPajoh Main Styles (Brickox Minimal Premium)
+   ============================================ */
+
+/* --- متغیرها --- */
+:root {
+  --pp-color-primary: #2D2D2D; /* گرافیتی */
+  --pp-color-accent: #C9A227; /* طلایی */
+  --pp-color-bronze: #3D3A36; /* خاکستری برنزی برای هیرو */
+  --pp-color-dark: #1A1A1A;
+  --pp-color-light-bg: #FAFAF7;
+  --pp-color-muted: #8A8A8A;
+  --pp-color-white: #FFFFFF;
+  --pp-font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+  --pp-container-width: 1400px;
+}
+
+/* --- ریست --- */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: var(--pp-font-family); color: var(--pp-color-dark); background: var(--pp-color-light-bg); direction: rtl; }
+a { text-decoration: none; transition: all 0.3s ease; }
+ul { list-style: none; padding: 0; margin: 0; }
+.container { max-width: var(--pp-container-width); margin: 0 auto; padding: 0 40px; }
+
+/* ===== هدر شفاف ===== */
+.site-header.transparent-header {
+    position: absolute;
+    top: 0; left: 0; width: 100%; z-index: 999;
+    padding: 1.5rem 0;
+    background: transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; }
+.site-logo-text { font-size: 2rem; font-weight: 900; color: #fff; letter-spacing: 2px; }
+.primary-menu { display: flex; gap: 2.5rem; }
+.primary-menu a { color: #fff; font-size: 1rem; font-weight: 600; position: relative; padding-bottom: 5px; }
+.primary-menu a::after { content: ''; position: absolute; bottom: 0; right: 0; width: 0; height: 2px; background: var(--pp-color-accent); transition: 0.3s; }
+.primary-menu a:hover::after { width: 100%; }
+.header-contact { display: flex; align-items: center; gap: 1.5rem; }
+.header-phone { color: #fff; font-weight: 700; font-size: 1.1rem; direction: ltr; }
+.btn-accent { background: var(--pp-color-accent); color: var(--pp-color-dark); padding: 0.8rem 1.5rem; border-radius: 4px; font-weight: 700; font-size: 0.9rem; }
+.btn-accent:hover { background: #b08d1a; transform: translateY(-2px); }
+
+/* ===== هیرو ===== */
+.hero-brickox {
+    background-color: var(--pp-color-bronze); /* زمینه خاکستری برنزی */
+    background-image: linear-gradient(135deg, #2D2D2D 0%, #3D3A36 100%); /* گرادیانت ظریف */
+    color: #fff;
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+.hero-bg-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1); /* کمرنگ‌تر شد تا با زمینه تداخل نداشته باشد */
+    white-space: nowrap;
+    letter-spacing: 10px;
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 5rem;
+}
+.hero-bottom-text { max-width: 400px; margin-right: auto; }
+.hero-title-sub { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; color: var(--pp-color-accent); }
+.hero-desc { font-size: 1.1rem; line-height: 1.6; color: #ccc; }
+
+/* ===== بخش‌های میانی ===== */
+.section { padding: 8rem 0; }
+.section-dark { background-color: var(--pp-color-primary); color: #fff; }
+.section-light { background-color: #f4f4f4; }
+.text-right { text-align: right; }
+.section-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; color: var(--pp-color-dark); }
+.section-subtitle { font-size: 1.2rem; color: var(--pp-color-muted); }
+
+/* تعهدات */
+.commitments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+.commit-card { background: #fff; padding: 3rem 2rem; border: 1px solid #eaeaea; position: relative; }
+.commit-number { font-size: 4rem; font-weight: 900; color: #f0f0f0; position: absolute; top: 1rem; left: 1rem; line-height: 1; }
+.commit-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--pp-color-primary); position: relative; }
+.commit-text { color: var(--pp-color-muted); line-height: 1.8; position: relative; }
+
+/* خدمات */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+.service-card { background: #383838; display: flex; flex-direction: column; }
+.service-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; }
+.service-title a { color: #fff; }
+.service-excerpt { color: #aaa; margin-bottom: 2rem; flex: 1; }
+.service-link { color: var(--pp-color-accent); font-weight: 700; }
+
+/* ماشین‌آلات */
+.equipment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 4rem; }
+.equipment-card { display: flex; flex-direction: column; }
+.equipment-title { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+.equipment-excerpt { color: var(--pp-color-muted); font-size: 1.1rem; }
+
+/* مراحل */
+.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; margin-top: 4rem; }
+.process-step { text-align: center; }
+.step-number { font-size: 3rem; font-weight: 900; color: var(--pp-color-primary); border-bottom: 3px solid var(--pp-color-accent); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+.step-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem; }
+.step-text { color: var(--pp-color-muted); font-size: 0.95rem; }
+
+/* CTA */
+.cta-section { background: var(--pp-color-accent); padding: 6rem 0; color: var(--pp-color-dark); }
+.cta-inner { display: flex; justify-content: space-between; align-items: center; }
+.cta-title { font-size: 3rem; font-weight: 900; margin-bottom: 1rem; }
+.cta-section .btn-accent { background: var(--pp-color-primary); color: #fff; padding: 1.2rem 3rem; }
+
+/* فوتر */
+.site-footer { background-color: #1A1A1A; color: #fff; padding-top: 6rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer-logo { font-size: 3rem; font-weight: 900; margin: 0 0 1.5rem; }
+.footer-bottom { padding: 2rem 0; text-align: center; color: #666; }

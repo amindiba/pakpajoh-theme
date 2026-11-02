@@ -1,0 +1,22 @@
+{
+  "root": ".",
+  "server": {
+    "protocol": "ftp",
+    "host": "ftp.pakpajoh.ir",
+    "port": 21,
+    "username": "A4site@pakpajoh.ir",
+    "remoteRoot": "/public_html/wp-content/themes/pakpajoh_a4site_theme",
+    "password": "AminMb1765!!!@@@",
+    "rejectUnauthorized": false
+  },
+  "strategy": "blacklist",
+  "exclude": [".env", "*.log", "node_modules", "vendor", ".git", ".vscode"],
+  "delete": false,
+  "deleteCap": 50,
+  "atomicUpload": true,
+  "watch": {
+    "debounce": 300,
+    "interval": "30s",
+    "ignored": ["node_modules", "vendor", ".git", ".vscode"]
+  }
+}

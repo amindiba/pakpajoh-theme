@@ -1,0 +1,74 @@
+/*
+Theme Name: PakPajoh A4Site
+Description: قالب اختصاصی پاک‌پژوه
+Version: 1.3.0
+*/
+
+/* ===== ریست و متغیرها ===== */
+:root {
+    --pp-dark: #2D2D2D;
+    --pp-accent: #C9A227;
+    --pp-white: #FFFFFF;
+    --pp-font: Tahoma, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--pp-font); direction: rtl; background: #FAFAF7; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+/* ===== هدر (Header) ===== */
+.site-header {
+    position: absolute; /* شناور روی هیرو */
+    top: 0; left: 0; width: 100%; z-index: 100;
+    padding: 2rem 0;
+    background: transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1400px; margin: 0 auto; padding: 0 40px;
+}
+.site-logo-text { font-size: 2rem; font-weight: 900; color: #fff; letter-spacing: 2px; text-decoration: none; }
+.primary-menu { display: flex; gap: 2.5rem; }
+.primary-menu a { color: #fff; font-weight: 600; text-decoration: none; font-size: 1rem; }
+.header-contact { display: flex; align-items: center; gap: 1.5rem; }
+.header-phone { color: #fff; font-weight: 700; text-decoration: none; direction: ltr; }
+.btn-accent { background: var(--pp-accent); color: var(--pp-dark); padding: 0.8rem 1.5rem; border-radius: 4px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
+
+/* ===== هیرو (Hero) ===== */
+.hero-brickox {
+    background: linear-gradient(135deg, var(--pp-dark) 0%, #3D3A36 100%);
+    color: #fff;
+    height: 80vh; /* دقیقا 80 درصد ارتفاع صفحه */
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+.hero-bg-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    letter-spacing: 10px;
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 6rem 40px;
+}
+.hero-bottom-text { max-width: 400px; text-align: right; }
+.hero-title-sub { font-size: 2.5rem; font-weight: 800; margin: 0 0 1rem 0; color: #fff; }
+.hero-desc { font-size: 1.2rem; color: #ccc; margin: 0; }
