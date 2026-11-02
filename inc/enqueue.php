@@ -5,39 +5,13 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 function pakpajoh_enqueue_assets() {
-    $version = time(); // دور زدن کش
+    $version = time();
 
-    // 1. فایل Design Tokens
-    wp_enqueue_style(
-        'pakpajoh-tokens',
-        get_template_directory_uri() . '/assets/css/tokens.css',
-        array(),
-        $version
-    );
+    // فونت وزیرمتن (اگر فایل آن را ندارید، از CDN استفاده کنید یا فایل را در پوشه fonts بگذارید)
+    wp_enqueue_style( 'pakpajoh-font', 'https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css', array(), '1.0' );
 
-    // 2. فایل style.css (هدر قالب)
-    wp_enqueue_style(
-        'pakpajoh-style',
-        get_stylesheet_uri(),
-        array( 'pakpajoh-tokens' ),
-        $version
-    );
-
-    // 3. فایل app.css (به جای main.css)
-    wp_enqueue_style(
-        'pakpajoh-app',
-        get_template_directory_uri() . '/assets/css/app.css',
-        array( 'pakpajoh-style' ),
-        $version
-    );
-
-    // 4. اسکریپت اصلی
-    wp_enqueue_script(
-        'pakpajoh-main-js',
-        get_template_directory_uri() . '/assets/js/main.js',
-        array(),
-        $version,
-        true
-    );
+    wp_enqueue_style( 'pakpajoh-app', get_template_directory_uri() . '/assets/css/app.css', array( 'pakpajoh-font' ), $version );
+    
+    wp_enqueue_script( 'pakpajoh-app-js', get_template_directory_uri() . '/assets/js/app.js', array(), $version, true );
 }
 add_action( 'wp_enqueue_scripts', 'pakpajoh_enqueue_assets' );

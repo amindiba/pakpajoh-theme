@@ -4,20 +4,19 @@
  */
 $equipment = new WP_Query( array(
     'post_type'      => 'pp_equipment',
-    'posts_per_page' => 6,
+    'posts_per_page' => 4,
     'orderby'        => 'menu_order',
     'order'          => 'ASC',
 ) );
 ?>
-<section id="equipment" class="equipment section">
+<section id="equipment" class="equipment-section section reveal">
     <div class="container">
-        <div class="section-header text-right">
+        <div class="section-header text-right reveal-up">
             <h2 class="section-title">ماشین‌آلات و تجهیزات</h2>
             <p class="section-subtitle">فناوری‌های مکانیزه برای نظافت حرفه‌ای</p>
         </div>
-
         <?php if ( $equipment->have_posts() ) : ?>
-            <div class="equipment-grid">
+            <div class="equipment-grid reveal-up">
                 <?php while ( $equipment->have_posts() ) : $equipment->the_post(); ?>
                     <article class="equipment-card">
                         <?php if ( has_post_thumbnail() ) : ?>
