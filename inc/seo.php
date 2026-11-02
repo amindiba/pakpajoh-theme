@@ -1,41 +1,44 @@
 <?php
 /**
- * بهینه‌سازی سئو و اسکیما
+ * PakPajoh — SEO (Rank Math friendly)
+ *
+ * @package PakPajoh
  */
-if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-// افزودن اسکیما برای شرکت (Organization)
-function pakpajoh_schema_organization() {
-    if ( is_front_page() ) {
-        $schema = array(
-            '@context' => 'https://schema.org',
-            '@type'    => 'Organization',
-            'name'     => 'شرکت پاک‌پژوه',
-            'url'      => home_url( '/' ),
-            'logo'     => get_template_directory_uri() . '/assets/images/logo.png',
-            'description' => 'ارائه دهنده خدمات تخصصی نظافت صنعتی',
-            'contactPoint' => array(
-                '@type' => 'ContactPoint',
-                'telephone' => '+982112345678',
-                'contactType' => 'customer service',
-                'areaServed' => 'IR',
-                'availableLanguage' => 'Persian',
-            ),
-        );
-        echo '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>';
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+/**
+ * Add Organization schema on front page (in case Rank Math is inactive).
+ */
+function pakpajoh_organization_schema() {
+    if ( is_admin() || ! is_front_page() ) {
+        return;
+    }
+
+    $schema = array(
+        '@context'    => 'https://schema.org',
+        '@type'       => 'Organization',
+        'name'        => __( 'شرکت پاک‌پژوه', 'pakpajoh' ),
+        'legalName'   => __( 'آتیه مهرگان انعکاس', 'pakpajoh' ),
+        'url'         => home_url( '/' ),
+        'description' => __( 'ارائه‌دهنده خدمات تخصصی نظافت صنعتی', 'pakpajoh' ),
+        'foundingDate' => '2025',
+    );
+
+    printf(
+        '<script type="application/ld+json">%s</script>',
+        wp_json_encode( $schema )
+    );
+}
+add_action( 'wp_head', 'pakpajoh_organization_schema', 5 );
+
+/**
+ * Add breadcrumb placeholder (Rank Math handles when active).
+ */
+function pakpajoh_breadcrumb() {
+    if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+        rank_math_the_breadcrumbs();
     }
 }
-add_action( 'wp_head', 'pakpajoh_schema_organization' );
-
-// افزودن hreflang برای ترجمه (در صورت استفاده از Translera)
-function pakpajoh_hreflang() {
-    if ( function_exists( 'translera_get_hreflang' ) ) {
-        echo translera_get_hreflang();
-    }
-}
-add_action( 'wp_head', 'pakpajoh_hreflang' );
-
-// حذف اطلاعات اضافی از هدر
-remove_action( 'wp_head', 'wp_generator' );
-remove_action( 'wp_head', 'wlwmanifest_link' );
-remove_action( 'wp_head', 'rsd_link' );
