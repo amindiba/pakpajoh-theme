@@ -1,36 +1,21 @@
 <?php
 /**
- * PakPajoh A4Site Theme — fallback template
- *
- * @package PakPajoh
+ * فالبک اصلی
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+get_header();
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<main id="primary" class="site-main" style="padding:4rem 2rem;max-width:1200px;margin:0 auto;">
-    <?php
-    if ( have_posts() ) :
-        while ( have_posts() ) :
-            the_post();
-            the_title( '<h1>', '</h1>' );
-            the_content();
-        endwhile;
-    else :
-        echo '<p>' . esc_html__( 'محتوایی یافت نشد.', 'pakpajoh' ) . '</p>';
-    endif;
-    ?>
-</main>
-<?php wp_footer(); ?>
-</body>
-</html>
+<div class="container section">
+    <?php if ( have_posts() ) : ?>
+        <?php while ( have_posts() ) : the_post(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <div><?php the_excerpt(); ?></div>
+            </article>
+        <?php endwhile; ?>
+        <?php the_posts_pagination(); ?>
+    <?php else : ?>
+        <p>مطلبی یافت نشد.</p>
+    <?php endif; ?>
+</div>
+<?php
+get_footer();

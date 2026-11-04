@@ -432,3 +432,86 @@ body.admin-bar .pp-header { top: 2.3rem; }
   transform: scale(1.1);
   opacity: 0.35 !important;
 }
+/* --- CPT Cards (services + equipment) --- */
+.wp-block-post-template.pp-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.pp-service-card {
+  background: var(--pp-white);
+  border-radius: var(--pp-radius);
+  padding: 1.75rem;
+  border: 1px solid rgba(45,45,45,0.06);
+  transition: transform var(--pp-transition), box-shadow var(--pp-transition);
+  position: relative;
+  overflow: hidden;
+}
+.pp-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 4px; height: 0;
+  background: var(--pp-accent);
+  transition: height var(--pp-transition);
+}
+.pp-service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+.pp-service-card:hover::before { height: 100%; }
+.pp-service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.pp-service-card .wp-block-post-title a {
+  color: var(--pp-primary);
+  text-decoration: none;
+  transition: color var(--pp-transition);
+}
+.pp-service-card .wp-block-post-title a:hover { color: var(--pp-accent); }
+.pp-service-card .wp-block-post-excerpt__more-link {
+  color: var(--pp-accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.pp-service-card .wp-block-post-excerpt__more-link:hover { color: var(--pp-accent-hover); }
+
+/* --- Single CPT pages --- */
+.single-pp_service .wp-block-post-content,
+.single-pp_equipment .wp-block-post-content {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--pp-primary);
+}
+
+@media (max-width: 1024px) {
+  .wp-block-post-template.pp-services { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .wp-block-post-template.pp-services { grid-template-columns: 1fr; padding: 0 1rem; }
+  .pp-service-card { padding: 1.25rem; }
+}
+/* --- Fallback Font Face --- */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+body, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea {
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif !important;
+}
+/* --- Header Spacing Fix --- */
+.pp-hero { padding-top: 10rem; }
+@media (max-width: 768px) {
+  .pp-hero { padding-top: 8rem; }
+}
+.pp-header { top: 2rem; }
+@media (max-width: 768px) {
+  .pp-header { top: 1rem; }
+}
