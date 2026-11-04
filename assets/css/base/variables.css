@@ -1,0 +1,14 @@
+/* ===== متغیرهای CSS ===== */
+:root {
+    --pp-bg: #F4F6F8;
+    --pp-surface: #FFFFFF;
+    --pp-primary: #0A2540;
+    --pp-secondary: #1E3A5F;
+    --pp-accent: #C9A96E;
+    --pp-accent-hover: #B08D5A;
+    --pp-muted: #5A6B7D;
+    --pp-border: #E0E4E8;
+    --pp-success: #4A9B68;
+    --pp-font: 'Vazirmatn', Tahoma, sans-serif;
+    --pp-container: 1600px;
+}

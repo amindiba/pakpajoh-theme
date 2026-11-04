@@ -1,0 +1,26 @@
+/* ===== Header ===== */
+.site-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; background: transparent; transition: all 0.4s; }
+.site-header.scrolled { padding: 0.8rem 0; background: rgba(10,37,64,0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.header-on-hero .brand-name, .header-on-hero .brand-url, .header-on-hero .primary-menu a { color: #fff; }
+.header-on-hero.scrolled .brand-name, .header-on-hero.scrolled .brand-url, .header-on-hero.scrolled .primary-menu a { color: #fff; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; max-width: var(--pp-container); margin: 0 auto; padding: 0 40px; }
+.brand-logo { display: flex; align-items: center; gap: 1rem; }
+.brand-pp { font-size: 2.2rem; font-weight: 900; color: #fff; letter-spacing: -2px; }
+.brand-text-group { display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,0.3); padding-right: 1rem; }
+.brand-name { font-size: 1rem; font-weight: 700; }
+.brand-url { font-size: 0.9rem; font-weight: 600; font-family: monospace; color: var(--pp-accent); }
+.primary-menu { display: flex; gap: 1.5rem; }
+.primary-menu a { font-weight: 500; font-size: 0.9rem; }
+.primary-menu a:hover { color: var(--pp-accent); }
+.header-actions { display: flex; align-items: center; gap: 1rem; }
+.btn-header { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 700; font-size: 0.9rem; }
+.btn-header-phone { color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+.btn-header-phone:hover { border-color: var(--pp-accent); color: var(--pp-accent); }
+.btn-header-primary { background: var(--pp-accent); color: var(--pp-primary); }
+.btn-header-primary:hover { background: var(--pp-accent-hover); }
+.mobile-menu-toggle { display: none; }
+@media (max-width: 768px) { .header-inner { padding: 0 15px; flex-wrap: nowrap; gap: 10px; } .mobile-menu-toggle { display: flex; flex-direction: column; gap: 4px; width: 24px; height: 18px; background: none; border: none; cursor: pointer; order: 1; } .mobile-menu-toggle span { width: 100%; height: 2px; background: #fff; } .site-branding { order: 2; flex-grow: 1; text-align: center; } .brand-pp { font-size: 1.5rem; } .brand-text-group { display: none; } .header-actions { order: 3; gap: 0.5rem; } .btn-header-phone { display: none; } .btn-header-primary { padding: 0.5rem; } .btn-header-primary span { display: none; } }
+
+
+/* اصلاح: حذف هدر تکراری */
+.site-header { z-index: 9999; }

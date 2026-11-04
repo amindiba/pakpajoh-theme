@@ -1,0 +1,31 @@
+/* ===== Footer (مدرن) ===== */
+.site-footer { background: #0A1419; color: #fff; padding: 4rem 0 2rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 3rem; max-width: 1600px; margin: 0 auto; padding: 0 40px 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.footer-logo-wrapper { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.footer-logo-wrapper .brand-pp { color: #fff; font-size: 2rem; }
+.footer-logo-wrapper .brand-name { color: #fff; font-size: 1rem; }
+.footer-logo-wrapper .brand-url { color: var(--pp-accent); font-size: 0.85rem; }
+.footer-desc { color: rgba(255,255,255,0.6); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.5rem; }
+.footer-socials { display: flex; gap: 0.8rem; }
+.footer-socials a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); color: #fff; border-radius: 50%; transition: all 0.3s ease; }
+.footer-socials a:hover { background: var(--pp-accent); color: var(--pp-primary); transform: translateY(-3px); }
+.footer-title { font-size: 1rem; font-weight: 700; color: var(--pp-accent); margin-bottom: 1.5rem; letter-spacing: 1px; }
+.footer-menu { list-style: none; padding: 0; margin: 0; }
+.footer-menu li { margin-bottom: 0.7rem; }
+.footer-menu a { color: rgba(255,255,255,0.7) !important; font-size: 0.95rem; text-decoration: none; transition: color 0.3s; }
+.footer-menu a:hover { color: var(--pp-accent) !important; padding-right: 5px; }
+.footer-contact-info ul { list-style: none; padding: 0; margin: 0; }
+.footer-contact-info li { display: flex; align-items: flex-start; gap: 0.7rem; margin-bottom: 1rem; color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6; }
+.footer-icon { color: var(--pp-accent); flex-shrink: 0; margin-top: 3px; }
+.footer-contact-info a { color: rgba(255,255,255,0.7) !important; text-decoration: none; }
+.footer-contact-info a:hover { color: var(--pp-accent) !important; }
+.footer-bottom { text-align: center; padding: 2rem 0 0; color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+
+/* ریسپانسیو */
+@media (max-width: 992px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; padding: 0 20px 2rem; } }
+@media (max-width: 768px) {
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 0 15px 2rem; text-align: center; }
+    .footer-logo-wrapper { justify-content: center; }
+    .footer-socials { justify-content: center; }
+    .footer-contact-info li { justify-content: center; }
+}

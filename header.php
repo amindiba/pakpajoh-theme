@@ -13,7 +13,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header id="masthead" class="site-header sticky-header">
+<header id="masthead" class="site-header header-on-hero">
     <div class="header-inner">
         <div class="site-branding">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-logo">
@@ -36,13 +36,14 @@
             ?>
         </nav>
 
-        <div class="header-contact">
-            <a href="tel:+982191092123" class="header-phone" dir="rtl">۰۲۱-۹۱۰۹۲۱۲۳</a>
-            <a href="/contact/" class="btn-accent btn-glow">
-                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span class="btn-text">ثبت درخواست</span>
+        <div class="header-actions">
+            <a href="tel:+982191092123" class="btn-header btn-header-phone">
+                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>۰۲۱-۹۱۰۹۲۱۲۳</span>
+            </a>
+            <a href="/request/" class="btn-header btn-header-primary">
+                <span>ثبت درخواست</span>
+                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
         </div>
         <button class="mobile-menu-toggle" aria-label="باز کردن منو">
