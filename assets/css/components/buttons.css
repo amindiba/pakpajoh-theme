@@ -1,48 +1,13 @@
 /* ===== Buttons (طلایی براق + گرد + هایلایت متحرک) ===== */
-.btn, .btn-primary, .btn-accent, .btn-header, .btn-header-primary, .btn-hero-primary, .btn-cta, .btn-emergency, .btn-banner {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.8rem;
-    border-radius: 50px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 0.95rem;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #C9A96E 0%, #D4A574 100%);
-    color: #0A2540;
-    box-shadow: 0 4px 15px rgba(201,169,110,0.3);
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
+
 
 /* افکت هایلایت متحرک (درخشش) */
-.btn::before, .btn-primary::before, .btn-accent::before, .btn-header::before, .btn-header-primary::before, .btn-hero-primary::before, .btn-cta::before, .btn-emergency::before, .btn-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.6s ease;
-}
+
 
 /* هاور: درخشش + حرکت نور + جابجایی */
-.btn:hover::before, .btn-primary:hover::before, .btn-accent:hover::before, .btn-header:hover::before, .btn-header-primary:hover::before, .btn-hero-primary:hover::before, .btn-cta:hover::before, .btn-emergency:hover::before, .btn-banner:hover::before {
-    left: 100%;
-}
 
-.btn:hover, .btn-primary:hover, .btn-accent:hover, .btn-header:hover, .btn-header-primary:hover, .btn-hero-primary:hover, .btn-cta:hover, .btn-emergency:hover, .btn-banner:hover {
-    background: linear-gradient(135deg, #E0B87A 0%, #F0C88A 100%);
-    box-shadow: 0 0 25px rgba(201,169,110,0.8), 0 0 50px rgba(201,169,110,0.4);
-    transform: translateY(-3px);
-    color: #0A2540;
-}
+
+
 
 /* دکمه‌های Outline (طلایی) */
 .btn-outline, .btn-header-outline, .btn-hero-outline {
@@ -64,10 +29,7 @@
 
 /* موبایل */
 @media (max-width: 768px) {
-    .btn, .btn-primary, .btn-accent, .btn-header, .btn-header-primary, .btn-hero-primary, .btn-cta, .btn-emergency, .btn-banner {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
-    }
+    
 }
 
 
@@ -107,4 +69,62 @@
 .light-bg .section-badge:hover {
     background: var(--pp-primary) !important;
     color: #fff !important;
+}
+
+/* ===== دکمه‌های طلایی (تیره‌تر برای خوانایی فونت سفید) ===== */
+.btn, .btn-primary, .btn-accent, .btn-hero-primary, .btn-cta, .btn-banner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #A8843E 0%, #8A6A2E 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(168,132,62,0.3) !important;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+
+
+/* ===== افکت هایلایت داخل دکمه (بدون سرریز) ===== */
+.btn, .btn-primary, .btn-accent, .btn-hero-primary, .btn-cta, .btn-banner, .btn-header-primary {
+    position: relative;
+    overflow: hidden !important;
+    isolation: isolate;
+}
+.btn::before, .btn-primary::before, .btn-accent::before, .btn-hero-primary::before, .btn-cta::before, .btn-banner::before, .btn-header-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+.btn:hover::before, .btn-primary:hover::before, .btn-accent:hover::before, .btn-hero-primary:hover::before, .btn-cta:hover::before, .btn-banner:hover::before, .btn-header-primary:hover::before {
+    left: 100%;
+}
+.btn:hover, .btn-primary:hover, .btn-accent:hover, .btn-hero-primary:hover, .btn-cta:hover, .btn-banner:hover {
+    background: linear-gradient(135deg, #C9A96E 0%, #A8843E 100%) !important;
+    box-shadow: 0 0 25px rgba(168,132,62,0.6) !important;
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+/* اطمینان از اینکه متن و آیکون روی نور قرار بگیرند */
+.btn > *, .btn-primary > *, .btn-accent > *, .btn-hero-primary > *, .btn-cta > *, .btn-banner > *, .btn-header-primary > * {
+    position: relative;
+    z-index: 2;
 }

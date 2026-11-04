@@ -1,26 +1,225 @@
 /* ===== Header ===== */
-.site-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; background: transparent; transition: all 0.4s; }
-.site-header.scrolled { padding: 0.8rem 0; background: rgba(10,37,64,0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-.header-on-hero .brand-name, .header-on-hero .brand-url, .header-on-hero .primary-menu a { color: #fff; }
-.header-on-hero.scrolled .brand-name, .header-on-hero.scrolled .brand-url, .header-on-hero.scrolled .primary-menu a { color: #fff; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; max-width: var(--pp-container); margin: 0 auto; padding: 0 40px; }
-.brand-logo { display: flex; align-items: center; gap: 1rem; }
-.brand-pp { font-size: 2.2rem; font-weight: 900; color: #fff; letter-spacing: -2px; }
-.brand-text-group { display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,0.3); padding-right: 1rem; }
-.brand-name { font-size: 1rem; font-weight: 700; }
-.brand-url { font-size: 0.9rem; font-weight: 600; font-family: monospace; color: var(--pp-accent); }
-.primary-menu { display: flex; gap: 1.5rem; }
-.primary-menu a { font-weight: 500; font-size: 0.9rem; }
-.primary-menu a:hover { color: var(--pp-accent); }
-.header-actions { display: flex; align-items: center; gap: 1rem; }
-.btn-header { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 700; font-size: 0.9rem; }
-.btn-header-phone { color: #fff; border: 1px solid rgba(255,255,255,0.3); }
-.btn-header-phone:hover { border-color: var(--pp-accent); color: var(--pp-accent); }
-.btn-header-primary { background: var(--pp-accent); color: var(--pp-primary); }
-.btn-header-primary:hover { background: var(--pp-accent-hover); }
+.site-header {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    padding: 1.2rem 0;
+    background: rgba(10,37,64,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.site-header.scrolled {
+    padding: 0.6rem 0;
+    background: rgba(10,37,64,0.98);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* ترازبندی عمودی همه عناصر */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 60px;
+    transition: height 0.4s ease;
+}
+.site-header.scrolled .header-inner { height: 45px; }
+
+/* لوگو */
+.brand-logo { display: flex; align-items: center; gap: 1rem; position: relative; height: 100%; }
+.brand-pp { font-size: 2rem; font-weight: 900; color: #fff; letter-spacing: -2px; line-height: 1; transition: font-size 0.4s ease; }
+
+
+
+.site-header.scrolled .brand-pp { font-size: 1.5rem; }
+.site-header.scrolled 
+.site-header.scrolled 
+
+/* منوی افقی (رفع منوی عمودی) */
+.main-navigation { display: flex; align-items: center; height: 100%; }
+.primary-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.primary-menu li { margin: 0 !important; }
+.primary-menu a { color: #fff !important; font-weight: 500; font-size: 0.9rem; line-height: 1; white-space: nowrap; }
+.primary-menu a:hover { color: var(--pp-accent) !important; }
+
+/* دکمه‌ها */
+.header-actions { display: flex; align-items: center; gap: 0.8rem; height: 100%; }
+.btn-header { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; height: 40px; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+
+.btn-header-phone:hover { border-color: var(--pp-accent); color: var(--pp-accent); background: rgba(201,169,110,0.1); }
+
+
+
+
+.site-header.scrolled 
+
+
+/* چراغ سبز (حفظ شده) */
+.status-dot { position: absolute; top: -5px; right: -10px; width: 10px; height: 10px; background-color: #20c997; border-radius: 50%; opacity: 0; transition: opacity 0.4s ease, box-shadow 0.4s ease; pointer-events: none; }
+.brand-logo:hover .status-dot { opacity: 1; box-shadow: 0 0 10px #20c997, 0 0 20px #20c997; animation: pulse-green 1.5s infinite; }
+@keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(32, 201, 151, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(32, 201, 151, 0); } 100% { box-shadow: 0 0 0 0 rgba(32, 201, 151, 0); } }
+
+/* موبایل */
 .mobile-menu-toggle { display: none; }
-@media (max-width: 768px) { .header-inner { padding: 0 15px; flex-wrap: nowrap; gap: 10px; } .mobile-menu-toggle { display: flex; flex-direction: column; gap: 4px; width: 24px; height: 18px; background: none; border: none; cursor: pointer; order: 1; } .mobile-menu-toggle span { width: 100%; height: 2px; background: #fff; } .site-branding { order: 2; flex-grow: 1; text-align: center; } .brand-pp { font-size: 1.5rem; } .brand-text-group { display: none; } .header-actions { order: 3; gap: 0.5rem; } .btn-header-phone { display: none; } .btn-header-primary { padding: 0.5rem; } .btn-header-primary span { display: none; } }
+@media (max-width: 768px) {
+    .header-inner { padding: 0 15px; height: 55px; }
+    .mobile-menu-toggle { display: flex; flex-direction: column; justify-content: center; gap: 4px; width: 24px; height: 18px; background: none; border: none; cursor: pointer; order: 1; }
+    .mobile-menu-toggle span { width: 100%; height: 2px; background: #fff; }
+    .site-branding { order: 2; flex-grow: 1; text-align: center; }
+    .brand-pp { font-size: 1.4rem; }
+    
+    .header-actions { order: 3; gap: 0.5rem; }
+    
+    .btn-header { padding: 0; width: 40px; height: 40px; border-radius: 50%; }
+    .main-navigation { display: none; }
+}
 
 
-/* اصلاح: حذف هدر تکراری */
-.site-header { z-index: 9999; }
+/* ===== لوگو (ترازبندی دقیق) ===== */
+.brand-text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    padding-right: 0.8rem;
+    height: 100%;
+    width: 130px;
+    transition: all 0.4s ease;
+}
+.brand-name {
+    display: block;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    text-align: right;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 3px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+.brand-url {
+    display: block;
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--pp-accent);
+    font-family: 'Vazirmatn', monospace;
+    line-height: 1.3;
+    text-align: right;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+.site-header.scrolled .brand-text-group { width: 110px; }
+.site-header.scrolled .brand-name { font-size: 0.8rem; }
+.site-header.scrolled .brand-url { font-size: 0.7rem; letter-spacing: 1.2px; }
+
+/* ===== دکمه‌های هدر (سفید) ===== */
+.btn-header-phone {
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.08);
+}
+.btn-header-phone:hover {
+    border-color: var(--pp-accent);
+    color: var(--pp-accent) !important;
+    background: rgba(201,169,110,0.15);
+}
+
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    display: block;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+.btn-text {
+    white-space: nowrap;
+    color: #ffffff !important;
+    transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+/* ===== دکمه اصلی هدر (نارنجی آجری با هایلایت) ===== */
+
+.btn-header-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+.btn-header-primary:hover::before {
+    left: 100%;
+}
+
+
+/* ===== دکمه اصلی هدر (نارنجی آجری با هایلایت - نسخه نهایی) ===== */
+.btn-header-primary {
+    background: linear-gradient(135deg, #E8743A 0%, #C55A2A 50%, #A84A20 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(232,116,58,0.4) !important;
+    position: relative;
+    overflow: hidden;
+}
+.btn-header-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+.btn-header-primary:hover::before {
+    left: 100%;
+}
+.btn-header-primary:hover {
+    background: linear-gradient(135deg, #F0844A 0%, #D66A3A 50%, #B85A30 100%) !important;
+    box-shadow: 0 0 25px rgba(232,116,58,0.8), 0 0 50px rgba(232,116,58,0.4) !important;
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+
+/* ===== حالت چسبان: فقط آیکون (بدون متن) ===== */
+.site-header.scrolled .btn-text {
+    display: none !important;
+}
+.site-header.scrolled .btn-header {
+    padding: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    gap: 0 !important;
+}
+.site-header.scrolled .btn-header-phone {
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.4) !important;
+    color: #ffffff !important;
+}
+.site-header.scrolled .btn-header-primary {
+    background: linear-gradient(135deg, #E8743A 0%, #C55A2A 50%, #A84A20 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(232,116,58,0.4) !important;
+}
+.site-header.scrolled .btn-icon {
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+    display: block !important;
+}

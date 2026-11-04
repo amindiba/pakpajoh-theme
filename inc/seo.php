@@ -1,6 +1,6 @@
 <?php
 /**
- * SEO: سازگاری با Rank Math
+ * SEO: سازگاری کامل با Rank Math + تنظیمات پیش‌فرض
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -13,6 +13,7 @@ function pakpajoh_schema_organization() {
             'name'     => 'شرکت پاک‌پژوه',
             'legalName' => 'آتیه مهرگان انعکاس',
             'url'      => home_url( '/' ),
+            'logo'     => PAKPAJOH_URI . '/assets/images/logo.png',
             'description' => 'ارائه دهنده خدمات تخصصی نظافت صنعتی',
             'address' => array(
                 '@type' => 'PostalAddress',
@@ -33,7 +34,7 @@ function pakpajoh_schema_organization() {
 }
 add_action( 'wp_head', 'pakpajoh_schema_organization' );
 
-// اسکیما Breadcrumb
+// Breadcrumb
 function pakpajoh_schema_breadcrumb() {
     if ( is_singular() && ! is_front_page() && function_exists( 'rank_math_the_breadcrumbs' ) ) {
         echo '<div class="breadcrumb-wrapper container">';
@@ -42,6 +43,14 @@ function pakpajoh_schema_breadcrumb() {
     }
 }
 add_action( 'wp_body_open', 'pakpajoh_schema_breadcrumb', 5 );
+
+// تنظیمات پیش‌فرض Rank Math (عنوان و توضیحات)
+add_filter( 'rank_math/frontend/title', function( $title ) {
+    if ( is_front_page() ) {
+        return 'پاک‌پژوه | خدمات تخصصی نظافت صنعتی';
+    }
+    return $title;
+} );
 
 // حذف نسخه وردپرس
 add_filter( 'the_generator', '__return_empty_string' );
