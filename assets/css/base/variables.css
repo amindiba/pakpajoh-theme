@@ -1,14 +1,55 @@
-/* ===== متغیرهای CSS ===== */
-:root {
-    --pp-bg: #F4F6F8;
-    --pp-surface: #FFFFFF;
-    --pp-primary: #0A2540;
-    --pp-secondary: #1E3A5F;
-    --pp-accent: #C9A96E;
-    --pp-accent-hover: #B08D5A;
-    --pp-muted: #5A6B7D;
-    --pp-border: #E0E4E8;
-    --pp-success: #4A9B68;
-    --pp-font: 'Vazirmatn', Tahoma, sans-serif;
-    --pp-container: 1600px;
+﻿/**
+ * Design Tokens — PakPajoh Theme (v3.0)
+ * مرجع: DESIGN-SYSTEM.md | ایزوله: متغیرها فقط در :root
+ */
+@layer tokens {
+    :root {
+        /* Colors */
+        --pp-primary: #1B5E4A;
+        --pp-primary-dark: #154A3A;
+        --pp-secondary: #E8F5E9;
+        --pp-accent: #4CAF50;
+        --pp-accent-hover: #388E3C;
+        --pp-bg-light: #F9F9F9;
+        --pp-surface: #FFFFFF;
+        --pp-text-dark: #333333;
+        --pp-text-muted: #666666;
+        --pp-border: #E0E0E0;
+        --pp-error: #D32F2F;
+        --pp-success: #2E7D32;
+
+        /* Typography */
+        --pp-font: 'Vazirmatn', Tahoma, sans-serif;
+        --pp-h1: 3.5rem;
+        --pp-h2: 2.5rem;
+        --pp-h3: 1.25rem;
+        --pp-h4: 1rem;
+        --pp-body: 1rem;
+        --pp-small: 0.875rem;
+
+        /* Spacing */
+        --pp-space-1: 4px;
+        --pp-space-2: 8px;
+        --pp-space-3: 12px;
+        --pp-space-4: 16px;
+        --pp-space-5: 24px;
+        --pp-space-6: 32px;
+        --pp-space-7: 48px;
+        --pp-space-8: 64px;
+        --pp-space-9: 96px;
+
+        /* Layout */
+        --pp-container: 1200px;
+        --pp-radius-sm: 8px;
+        --pp-radius-md: 12px;
+        --pp-radius-pill: 50px;
+
+        /* Shadows */
+        --pp-shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+        --pp-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
+        --pp-shadow-accent: 0 4px 12px rgba(76, 175, 80, 0.3);
+
+        /* Transitions */
+        --pp-transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
 }

@@ -1,1 +1,44 @@
-/* forms styles */
+/* ===== Forms (پالت #0A2540 / #C9A96E — قوانین ۲۳۴–۲۴۰) ===== */
+
+.pakpajoh-form { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-group label { font-weight: 700; color: var(--pp-primary); font-size: 0.95rem; }
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 0.9rem 1.2rem;
+    border: 2px solid #E0E4E8; border-radius: 12px;
+    font-family: inherit; font-size: 1rem;
+    background: #FAFAFA; color: var(--pp-primary);
+    transition: all 0.3s ease;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    outline: none; border-color: var(--pp-accent); background: #fff;
+    box-shadow: 0 0 0 4px rgba(201,169,110,0.1);
+}
+.pakpajoh-form .btn { align-self: flex-start; margin-top: 0.5rem; }
+
+.contact-form-wrapper { background: #fff; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(10,37,64,0.08); }
+.contact-form-wrapper .btn-primary { align-self: flex-start; margin-top: 0.5rem; }
+.contact-info-wrapper { padding: 2rem 0; }
+.contact-info-list { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+.contact-info-list li { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-icon { color: var(--pp-accent); flex-shrink: 0; margin-top: 3px; }
+.contact-info-list strong { display: block; font-size: 1rem; font-weight: 800; color: var(--pp-primary); margin-bottom: 0.3rem; }
+.contact-info-list span { color: var(--pp-muted); font-size: 0.95rem; line-height: 1.7; }
+
+@media (max-width: 992px) { .contact-form-wrapper { padding: 2rem; } }
+@media (max-width: 768px) {
+    .contact-form-wrapper .btn-primary, .pakpajoh-form .btn { width: 100%; align-self: stretch; }
+}
+
+/* btn-glow (طلایی درخشان — قانون ۲۳۶) */
+.btn-glow {
+    background: linear-gradient(135deg, #A8843E 0%, #8A6A2E 100%) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(168,132,62,0.35) !important;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.btn-glow:hover {
+    background: linear-gradient(135deg, #C9A96E 0%, #A8843E 100%) !important;
+    box-shadow: 0 0 30px rgba(201,169,110,0.7) !important;
+    transform: translateY(-2px);
+}

@@ -1,1 +1,377 @@
-/* cards styles */
+/* ===== Cards (پالت #0A2540 / #C9A96E) ===== */
+
+
+.safety-item { background: #fff; padding: 2rem; border-radius: 16px; border: 1px solid #E0E4E8; text-align: center; transition: all 0.4s; }
+.safety-item:hover { border-color: var(--pp-accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(10,37,64,0.05); }
+.safety-icon { color: var(--pp-accent); margin-bottom: 1rem; }
+.safety-item h4 { font-size: 1.05rem; font-weight: 800; color: var(--pp-primary); margin-bottom: 0.5rem; }
+.safety-item p { font-size: 0.9rem; color: var(--pp-muted); line-height: 1.6; }
+
+.trust-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem; border: 1px solid #E0E4E8; border-radius: 16px; background: #fff; transition: all 0.4s; }
+.trust-card:hover { border-color: var(--pp-accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(10,37,64,0.05); }
+.trust-icon { color: var(--pp-accent); margin-bottom: 0.8rem; width: 32px; height: 32px; }
+.trust-card span { font-weight: 700; color: var(--pp-primary); font-size: 0.95rem; }
+
+.service-item { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; background: var(--pp-surface); border: 1px solid var(--pp-border); border-radius: 12px; transition: all 0.4s; }
+.service-item:hover { border-color: var(--pp-accent); transform: translateX(-10px); box-shadow: 0 10px 30px rgba(10,37,64,0.08); }
+.service-title { font-size: 1.1rem; font-weight: 700; color: var(--pp-primary); }
+.service-arrow { font-size: 1.5rem; color: var(--pp-accent); opacity: 0; transform: translateX(10px); transition: all 0.3s ease; }
+.service-item:hover .service-arrow { opacity: 1; transform: translateX(0); }
+
+.gallery-item { position: relative; overflow: hidden; border-radius: 20px; cursor: pointer; aspect-ratio: 4/3; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,37,64,0.95) 0%, rgba(10,37,64,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 2rem; opacity: 0; transition: opacity 0.4s ease; }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay h3 { color: #fff; font-size: 1.3rem; font-weight: 800; margin: 0; transform: translateY(20px); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); position: relative; }
+.gallery-overlay h3::after { content: ''; display: block; width: 40px; height: 3px; background: var(--pp-accent); margin-top: 0.8rem; transform: scaleX(0); transform-origin: right; transition: transform 0.4s ease; }
+.gallery-item:hover .gallery-overlay h3 { transform: translateY(0); }
+.gallery-item:hover .gallery-overlay h3::after { transform: scaleX(1); }
+.gallery-item::before { content: ''; position: absolute; inset: 0; border-radius: 20px; padding: 2px; background: linear-gradient(135deg, transparent, var(--pp-accent), transparent); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.4s ease; z-index: 2; pointer-events: none; }
+.gallery-item:hover::before { opacity: 1; }
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+.portfolio-card { background: var(--pp-surface); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(10,37,64,0.05); transition: all 0.4s; }
+.portfolio-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(10,37,64,0.1); }
+.portfolio-card img { width: 100%; height: 250px; object-fit: cover; }
+.portfolio-caption { padding: 1rem; text-align: center; }
+.portfolio-caption h3 { font-size: 1rem; font-weight: 700; color: var(--pp-primary); }
+
+.portfolio-archive-card { position: relative; cursor: pointer; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(10,37,64,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.portfolio-archive-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(10,37,64,0.15); }
+.portfolio-archive-thumb img { width: 100%; height: 250px; object-fit: cover; }
+.portfolio-archive-body { padding: 1.5rem; }
+.portfolio-card-title { font-size: 1.15rem; font-weight: 800; color: var(--pp-primary); margin: 0 0 0.5rem; line-height: 1.4; }
+.portfolio-card-summary { font-size: 0.85rem; color: var(--pp-muted); line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+.testimonial-card { background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+.testimonial-content { color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 1.5rem; font-style: italic; }
+.testimonial-author h4 { color: #fff; font-size: 1rem; margin-bottom: 0.25rem; }
+.testimonial-author span { color: var(--pp-accent); font-size: 0.85rem; }
+
+.cta-section { background: var(--pp-accent); padding: 5rem 0; text-align: center; }
+.cta-section h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--pp-primary); }
+
+.process-step-item { display: flex; gap: 2rem; align-items: flex-start; position: relative; }
+.process-step-number { flex-shrink: 0; width: 60px; height: 60px; background: var(--pp-accent); color: var(--pp-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 900; z-index: 2; }
+.process-step-content h3 { font-size: 1.3rem; font-weight: 800; color: var(--pp-primary); margin-bottom: 0.5rem; }
+.process-step-content p { color: var(--pp-muted); font-size: 0.95rem; line-height: 1.7; }
+
+.package-card { background: #fff; padding: 2.5rem; border-radius: 20px; border: 2px solid #E0E4E8; transition: all 0.4s; }
+.package-card:hover { border-color: var(--pp-accent); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(10,37,64,0.08); }
+.package-card.featured { border-color: var(--pp-accent); background: var(--pp-primary); color: #fff; }
+.package-card.featured h3, .package-card.featured li { color: #fff; }
+.package-card h3 { font-size: 1.5rem; font-weight: 900; color: var(--pp-primary); margin-bottom: 1rem; }
+.package-card p { color: var(--pp-muted); margin-bottom: 1.5rem; line-height: 1.7; }
+.package-card.featured p { color: rgba(255,255,255,0.8); }
+.package-card ul { list-style: none; padding: 0; }
+.package-card li { padding: 0.6rem 0; border-bottom: 1px solid #E0E4E8; color: var(--pp-primary); font-size: 0.95rem; }
+.package-card.featured li { border-bottom-color: rgba(255,255,255,0.1); }
+
+.service-archive-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(10,37,64,0.05); transition: all 0.4s; }
+.service-archive-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(10,37,64,0.1); }
+.service-archive-thumb img { width: 100%; height: 220px; object-fit: cover; }
+.service-archive-body { padding: 1.5rem; }
+.service-archive-body h3 { font-size: 1.2rem; font-weight: 800; color: var(--pp-primary); margin-bottom: 0.8rem; }
+.service-archive-body p { color: var(--pp-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+.service-archive-link { color: var(--pp-accent); font-weight: 700; font-size: 0.9rem; }
+
+.equipment-archive-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(10,37,64,0.05); transition: all 0.4s; }
+.equipment-archive-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(10,37,64,0.1); }
+.equipment-archive-thumb img { width: 100%; height: 300px; object-fit: cover; }
+.equipment-archive-body { padding: 2rem; }
+.equipment-archive-body h3 { font-size: 1.5rem; font-weight: 800; color: var(--pp-primary); margin-bottom: 1rem; }
+.equipment-archive-body p { color: var(--pp-muted); font-size: 0.95rem; line-height: 1.7; }
+
+.blog-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(10,37,64,0.05); transition: all 0.4s; }
+.blog-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(10,37,64,0.1); }
+.blog-thumb img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s; }
+.blog-card:hover .blog-thumb img { transform: scale(1.05); }
+.blog-body { padding: 1.5rem; }
+.blog-date { font-size: 0.8rem; color: var(--pp-muted); }
+.blog-title { font-size: 1.15rem; font-weight: 800; margin: 0.5rem 0 0.8rem; line-height: 1.4; }
+.blog-title a { color: var(--pp-primary); }
+.blog-title a:hover { color: var(--pp-accent); }
+.blog-excerpt { color: var(--pp-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+.blog-link { color: var(--pp-accent); font-weight: 700; font-size: 0.9rem; }
+
+.faq-header h2 { color: #0A2540; }
+.faq-item { border-bottom: 1px solid #E0E4E8; }
+.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; background: none; border: none; text-align: right; font-size: 1.05rem; font-weight: 700; color: #0A2540; cursor: pointer; transition: color 0.3s; }
+.faq-question:hover { color: #C9A96E; }
+.faq-icon { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #C9A96E; color: #0A2540; font-size: 1.2rem; font-weight: 700; transition: transform 0.3s ease; }
+.faq-item.active .faq-icon { transform: rotate(45deg); background: #B08D5A; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-item.active .faq-answer { max-height: 300px; }
+.faq-answer p { padding: 0 0 1.5rem; color: #5A6B7D; line-height: 1.8; font-size: 0.95rem; }
+
+@media (max-width: 992px) {
+    .portfolio-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .portfolio-grid, .testimonials-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* ===== Portfolio Modal ===== */
+.portfolio-modal { display: none; position: fixed; inset: 0; width: 100%; height: 100%; z-index: 9999; }
+.portfolio-modal.active { display: block; }
+.portfolio-modal-overlay { position: absolute; inset: 0; background: rgba(10,37,64,0.85); backdrop-filter: blur(8px); }
+.portfolio-modal-content {
+    position: relative;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 5vh auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(201,169,110,0.3);
+    border: 1px solid rgba(201,169,110,0.3);
+    animation: modalIn 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.portfolio-modal-header { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; }
+.portfolio-modal-header h2 { font-size: 1.5rem; font-weight: 900; color: var(--pp-primary); margin: 0; }
+.portfolio-modal-close {
+    background: transparent; border: none; font-size: 1.5rem; color: var(--pp-muted);
+    cursor: pointer; transition: all 0.3s; line-height: 1;
+}
+.portfolio-modal-close:hover { color: var(--pp-accent); transform: rotate(90deg); }
+.portfolio-modal-divider { height: 1px; background: linear-gradient(to right, transparent, var(--pp-accent), transparent); margin: 0 2rem; }
+.portfolio-modal-body { padding: 2rem; }
+.portfolio-modal-image { margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden; }
+.portfolio-modal-image img { width: 100%; height: auto; display: block; }
+.portfolio-modal-body p { color: var(--pp-muted); line-height: 1.8; margin-bottom: 1.5rem; }
+.portfolio-modal-details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; background: #F8F9FA; padding: 1.5rem; border-radius: 12px; }
+.modal-detail-item { font-size: 0.9rem; color: var(--pp-primary); }
+.modal-detail-item strong { color: var(--pp-accent); font-weight: 700; }
+body.modal-open { overflow: hidden; }
+@media (max-width: 768px) {
+    .portfolio-modal-content { margin: 10vh 15px; max-height: 80vh; }
+    .portfolio-modal-details { grid-template-columns: 1fr; }
+}
+
+
+/* ===== Portfolio Card (صفحه اصلی داینامیک) ===== */
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
+.portfolio-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid var(--pp-border); transition: all 0.4s cubic-bezier(0.25,1,0.5,1); }
+.portfolio-card:hover { border-color: var(--pp-accent); transform: translateY(-6px); box-shadow: 0 15px 40px rgba(10,37,64,0.1); }
+.portfolio-card-thumb { display: block; position: relative; overflow: hidden; aspect-ratio: 4/3; }
+.portfolio-card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.portfolio-card:hover .portfolio-card-thumb img { transform: scale(1.08); }
+.portfolio-card-overlay { position: absolute; inset: 0; background: rgba(10,37,64,0.0); display: flex; align-items: center; justify-content: center; transition: background 0.4s ease; }
+.portfolio-card:hover .portfolio-card-overlay { background: rgba(10,37,64,0.55); }
+.portfolio-card-view { opacity: 0; transform: translateY(15px); transition: all 0.4s ease; width: 56px; height: 56px; border-radius: 50%; background: var(--pp-accent); color: #fff; display: flex; align-items: center; justify-content: center; }
+.portfolio-card:hover .portfolio-card-view { opacity: 1; transform: translateY(0); }
+.portfolio-card-caption { padding: 1.2rem 1.5rem; }
+.portfolio-card-caption h3 { font-size: 1.1rem; font-weight: 800; color: var(--pp-primary); margin-bottom: 0.4rem; }
+.portfolio-card-caption h3 a { color: inherit; }
+.portfolio-card-caption h3 a:hover { color: var(--pp-accent); }
+.portfolio-card-location { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--pp-muted); font-size: 0.85rem; }
+.portfolio-card-location svg { color: var(--pp-accent); }
+.portfolio-section-actions { text-align: center; margin-top: 3rem; }
+
+/* ===== Testimonials (آواتار + ستاره) ===== */
+.testimonial-stars { display: flex; gap: 2px; color: var(--pp-accent); margin-bottom: 1rem; }
+.testimonial-card .testimonial-content { margin-bottom: 1.5rem; }
+.testimonial-author { display: flex; align-items: center; gap: 0.9rem; }
+.testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #C9A96E 0%, #A8843E 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; flex-shrink: 0; }
+.testimonial-meta h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.15rem; }
+.testimonial-meta span { font-size: 0.8rem; color: var(--pp-accent); }
+
+/* ===== CTA (بازطراحی‌شده) ===== */
+.cta-section { background: linear-gradient(135deg, #0A2540 0%, #123456 50%, #0B1F35 100%); padding: 6rem 0; text-align: center; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(201,169,110,0.15) 0%, transparent 50%); pointer-events: none; }
+.cta-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+.cta-badge { display: inline-block; padding: 0.4rem 1rem; border: 1px solid var(--pp-accent); color: var(--pp-accent); border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 1.5rem; }
+.cta-desc { font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.9; margin-bottom: 2rem; }
+.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 992px) {
+    .services-grid, .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-title { font-size: 2rem; }
+}
+@media (max-width: 768px) {
+    .services-grid, .portfolio-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .cta-section { padding: 4rem 0; }
+    .cta-title { font-size: 1.6rem; }
+    .cta-actions { flex-direction: column; align-items: stretch; }
+    .cta-actions .btn { width: 100%; }
+}
+/* ===== CTA اصلاحات (بدون حذف موارد قبلی) ===== */
+.cta-section .cta-desc { color: rgba(255,255,255,0.85) !important; }
+.cta-section .cta-actions { gap: 1.2rem; }
+
+/* دکمه Outline داخل CTA: حاشیه طلایی + متن طلایی (قانون ۲۳۹) */
+.cta-section .btn.btn-outline {
+    background: transparent !important;
+    color: #C9A96E !important;
+    border: 2px solid #C9A96E !important;
+    box-shadow: none !important;
+}
+.cta-section .btn.btn-outline:hover {
+    background: #C9A96E !important;
+    color: #0A2540 !important;
+    box-shadow: 0 0 25px rgba(201,169,110,0.6) !important;
+    transform: translateY(-2px);
+}
+.cta-section .btn.btn-outline svg { color: inherit; }
+/* ===== Testimonials Section (پس‌زمینه تیره — بازگردانی) ===== */
+.testimonials-section { background: var(--pp-primary); color: #fff; padding: 6rem 0; }
+.testimonials-section .section-title { color: #fff; }
+.testimonials-section .section-badge { color: var(--pp-accent) !important; border-color: var(--pp-accent) !important; }
+.testimonials-section .testimonial-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+.testimonials-section .testimonial-content { color: rgba(255,255,255,0.85) !important; }
+.testimonials-section .testimonial-meta h4 { color: #fff !important; }
+.testimonials-section .testimonial-meta span { color: var(--pp-accent) !important; }
+/* ===== Portfolio Carousel (اسلایدر صفحه اصلی) ===== */
+.portfolio-carousel { position: relative; margin-top: 2.5rem; padding: 0 60px; }
+.portfolio-carousel-viewport { overflow: hidden; }
+.portfolio-carousel-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+.portfolio-carousel-track .carousel-slide {
+    flex: 0 0 calc((100% - 4rem) / 3);
+    min-width: 0;
+}
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--pp-accent);
+    background: #ffffff;
+    color: var(--pp-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    box-shadow: 0 4px 15px rgba(10,37,64,0.08);
+    transition: all 0.3s ease;
+}
+.carousel-nav:hover { background: var(--pp-accent); color: #fff; box-shadow: 0 0 20px rgba(201,169,110,0.5); }
+.carousel-nav:disabled { opacity: 0.35; cursor: not-allowed; }
+.carousel-prev { right: 0; }
+.carousel-next { left: 0; }
+/* RTL: prev/next جهت‌ها را برعکس می‌کند */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(10,37,64,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.carousel-dot.active { background: var(--pp-accent); width: 28px; border-radius: 6px; }
+
+@media (max-width: 992px) {
+    .portfolio-carousel { padding: 0 50px; }
+    .portfolio-carousel-track .carousel-slide { flex: 0 0 calc((100% - 2rem) / 2); }
+    .portfolio-carousel-track { gap: 2rem; }
+}
+@media (max-width: 768px) {
+    .portfolio-carousel { padding: 0; }
+    .portfolio-carousel-track .carousel-slide { flex: 0 0 100%; }
+    .portfolio-carousel-track { gap: 0; }
+    .carousel-nav { width: 40px; height: 40px; }
+    .carousel-prev { right: 8px; }
+    .carousel-next { left: 8px; }
+}
+/* ===== CTA: کوتاه/بلند (پیش‌فرض دسکتاپ) ===== */
+.cta-btn-text .cta-short { display: none; }
+.cta-btn-text .cta-long { display: inline; }
+
+/* ===== CTA موبایل (عنوان کوچک، دکمه‌های پهن و کم‌ارتفاع) ===== */
+@media (max-width: 768px) {
+    .cta-section { padding: 1.8rem 0; }
+    .cta-inner { padding: 0 10px; }
+    .cta-badge { display: none; }
+    .cta-title {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.2px;
+    }
+    .cta-desc {
+        font-size: 0.75rem;
+        line-height: 1.6;
+        margin-bottom: 0.8rem;
+    }
+    .cta-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem;
+    }
+    .cta-actions .btn {
+        padding: 0.5rem 0.3rem;
+        font-size: 0.72rem;
+        gap: 0.2rem;
+        white-space: nowrap;
+        line-height: 1.2;
+        text-align: center;
+        min-height: 0;
+        height: 36px;
+        border-radius: 30px;
+        flex: unset;
+        width: 100%;
+    }
+    .cta-actions .btn svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .cta-btn-text .cta-short { display: inline; }
+    .cta-btn-text .cta-long { display: none; }
+}
+/* ===== CTA Title — فقط موبایل (دسکتاپ دست‌نخورده) ===== */
+@media (max-width: 768px) {
+    .cta-section .cta-title {
+        font-size: 0.78rem !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+        margin-bottom: 0.5rem !important;
+        line-height: 1.5 !important;
+        letter-spacing: -0.2px !important;
+    }
+}
+/* ===== CTA Title: رنگ سفید ثابت (دسکتاپ + موبایل) ===== */
+.cta-section .cta-title { color: #ffffff !important; }
+/* ===== Portfolio Carousel Loop: موبایل ===== */
+@media (max-width: 768px) {
+    .portfolio-carousel[data-carousel-loop] { padding: 0; }
+    .portfolio-carousel[data-carousel-loop] .carousel-nav { display: none !important; visibility: hidden !important; width: 0 !important; height: 0 !important; }
+    .portfolio-carousel[data-carousel-loop] .portfolio-carousel-track { gap: 0.6rem; }
+    .portfolio-carousel[data-carousel-loop] .carousel-slide { flex: 0 0 calc(100% - 1.5rem); }
+    .portfolio-carousel[data-carousel-loop] .carousel-dots { margin-top: 0.7rem; gap: 0.3rem; }
+    .portfolio-carousel[data-carousel-loop] .carousel-dot { width: 6px; height: 6px; }
+    .portfolio-carousel[data-carousel-loop] .carousel-dot.active { width: 18px; }
+
+    .portfolio-carousel[data-carousel-loop] .portfolio-card-caption { padding: 0.6rem 0.8rem; }
+    .portfolio-carousel[data-carousel-loop] .portfolio-card-caption h3 { font-size: 0.88rem; margin-bottom: 0.2rem; }
+    .portfolio-carousel[data-carousel-loop] .portfolio-card-location { font-size: 0.7rem; gap: 0.2rem; }
+    .portfolio-carousel[data-carousel-loop] .portfolio-card-location svg { width: 11px; height: 11px; }
+    .portfolio-carousel[data-carousel-loop] .portfolio-card-view { width: 36px; height: 36px; }
+    .portfolio-carousel[data-carousel-loop] .portfolio-card-view svg { width: 16px; height: 16px; }
+    .portfolio-carousel[data-carousel-loop] .portfolio-card-overlay { display: none !important; }
+}
+/* ===== Portfolio: حذف فضای خالی چپ و راست در موبایل ===== */
+@media (max-width: 768px) {
+    .portfolio-section { padding-left: 0 !important; padding-right: 0 !important; }
+    .portfolio-section > .container { padding-left: 0.5rem !important; padding-right: 0.5rem !important; max-width: 100% !important; }
+    .portfolio-section .section-badge,
+    .portfolio-section .section-title { padding-left: 0.8rem; padding-right: 0.8rem; }
+    .portfolio-carousel[data-carousel-loop] { padding-left: 0 !important; padding-right: 0 !important; }
+    .portfolio-carousel[data-carousel-loop] .carousel-slide { flex: 0 0 calc(100% - 1rem); }
+}

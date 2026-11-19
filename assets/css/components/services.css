@@ -1,0 +1,45 @@
+/* ===== Services Grid (دسکتاپ ۳ ستون، موبایل ۲ ستون فشرده) ===== */
+
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
+.service-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid var(--pp-border); transition: all 0.4s cubic-bezier(0.25,1,0.5,1); display: flex; flex-direction: column; }
+.service-card:hover { border-color: var(--pp-accent); transform: translateY(-6px); box-shadow: 0 15px 40px rgba(10,37,64,0.1); }
+.service-card-thumb { display: block; overflow: hidden; aspect-ratio: 16/10; }
+.service-card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.service-card:hover .service-card-thumb img { transform: scale(1.06); }
+.service-card-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.service-card-title { font-size: 1.15rem; font-weight: 800; color: var(--pp-primary); margin-bottom: 0.6rem; line-height: 1.4; }
+.service-card-title a { color: inherit; }
+.service-card-title a:hover { color: var(--pp-accent); }
+.service-card-excerpt { color: var(--pp-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; flex-grow: 1; }
+.service-card-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--pp-accent); font-weight: 700; font-size: 0.9rem; align-self: flex-start; }
+.service-card-link:hover { color: var(--pp-accent-hover); gap: 0.7rem; }
+.services-section-actions { text-align: center; margin-top: 3rem; }
+
+@media (max-width: 992px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.6rem !important;
+        margin-top: 1.2rem;
+    }
+    .service-card { border-radius: 10px; }
+    .service-card-thumb { aspect-ratio: 4/3; }
+    .service-card-body { padding: 0.6rem 0.55rem; }
+    .service-card-title { font-size: 0.78rem; margin-bottom: 0.25rem; line-height: 1.35; }
+    .service-card-excerpt { font-size: 0.68rem; line-height: 1.45; margin-bottom: 0.4rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .service-card-link { font-size: 0.68rem; gap: 0.25rem; }
+    .service-card-link svg { width: 12px; height: 12px; }
+    .services-section-actions { margin-top: 1.5rem; }
+    .services-section-actions .btn { font-size: 0.78rem; padding: 0.55rem 1rem; }
+}
+/* ===== Services: حذف فضای خالی چپ و راست در موبایل ===== */
+@media (max-width: 768px) {
+    .services-section { padding-left: 0 !important; padding-right: 0 !important; }
+    .services-section > .container { padding-left: 0.5rem !important; padding-right: 0.5rem !important; max-width: 100% !important; }
+    .services-section .section-badge,
+    .services-section .section-title { padding-left: 0.8rem; padding-right: 0.8rem; }
+    .services-grid { padding: 0 !important; }
+}

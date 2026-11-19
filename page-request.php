@@ -33,6 +33,10 @@ get_header();
                         <label for="req-service">نوع خدمت</label>
                         <select name="req_service" id="req-service" required>
                             <option value="">انتخاب کنید...</option>
+                            <option value="design">طراحی و برنامه‌ریزی خدمات پاکسازی</option>
+                            <option value="execution">مدیریت و اجرای عملیات</option>
+                            <option value="quality-control">کنترل کیفیت و ارزیابی</option>
+                            <option value="documentation">مستندسازی و گزارش‌دهی</option>
                             <option value="residential">نظافت مجتمع‌های مسکونی و اداری</option>
                             <option value="commercial">نظافت مراکز تجاری و فروشگاه‌ها</option>
                             <option value="healthcare">نظافت هتل‌ها، بیمارستان‌ها و مراکز آموزشی</option>

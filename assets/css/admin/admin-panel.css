@@ -1,0 +1,238 @@
+/**
+ * Admin Panel CSS — PakPajoh Theme (v1.0)
+ * طراحی پریمیوم ۲۰۲۹ — راست‌چین، فونت وزیرمتن، اعداد فارسی
+ */
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../../fonts/Vazirmatn-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../../fonts/Vazirmatn-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* ===== پایه ===== */
+body.wp-admin, #wpadminbar, #adminmenu, #adminmenu a, .wp-core-ui, .wrap h1, .wrap h2 {
+    font-family: 'Vazirmatn', Tahoma, sans-serif !important;
+}
+body.wp-admin { background: #F4F6F8 !important; direction: rtl; }
+.wrap { max-width: 1300px; margin: 0 auto; padding: 20px 30px; }
+
+/* ===== کارت‌های شیشه‌ای ===== */
+.pakpajoh-card, .wrap > .card, .postbox, .stuffbox {
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    border: 1px solid #E8ECF0;
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.pakpajoh-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+/* ===== هدر صفحه ===== */
+.wrap > h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #005E80;
+    margin-bottom: 8px;
+    padding: 0;
+}
+.wrap > h1::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(to bottom, #4CAF50, #1B5E4A);
+    border-radius: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* ===== دکمه‌های پریمیوم ===== */
+.wp-core-ui .button, .wp-core-ui .button-primary, .wp-core-ui .button-secondary {
+    border-radius: 50px !important;
+    padding: 8px 20px !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    transition: all 0.3s !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+    font-family: 'Vazirmatn', Tahoma, sans-serif !important;
+}
+.wp-core-ui .button-primary {
+    background: linear-gradient(135deg, #1B5E4A, #2E7D32) !important;
+    color: #FFF !important;
+}
+.wp-core-ui .button-primary:hover {
+    background: linear-gradient(135deg, #2E7D32, #388E3C) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(46,125,50,0.3) !important;
+}
+.wp-core-ui .button:hover {
+    transform: translateY(-1px) !important;
+}
+
+/* ===== جدول‌ها ===== */
+.wp-list-table {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 1px solid #E8ECF0 !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04) !important;
+}
+.wp-list-table thead th {
+    background: linear-gradient(135deg, #1B5E4A, #2E7D32) !important;
+    color: #FFF !important;
+    font-weight: 700 !important;
+    padding: 14px 16px !important;
+    font-size: 0.85rem !important;
+}
+.wp-list-table tbody td {
+    padding: 12px 16px !important;
+    font-size: 0.85rem !important;
+    border-bottom: 1px solid #F0F2F5 !important;
+}
+.wp-list-table tbody tr:hover {
+    background: #F8FAFB !important;
+}
+
+/* ===== فیلدهای ورودی ===== */
+input[type="text"], input[type="tel"], input[type="email"], input[type="number"],
+input[type="password"], textarea, select {
+    border-radius: 10px !important;
+    border: 1.5px solid #E0E4E8 !important;
+    padding: 10px 14px !important;
+    font-family: 'Vazirmatn', Tahoma, sans-serif !important;
+    font-size: 0.9rem !important;
+    transition: all 0.3s !important;
+    background: #FFF !important;
+}
+input:focus, textarea:focus, select:focus {
+    border-color: #4CAF50 !important;
+    box-shadow: 0 0 0 4px rgba(76,175,80,0.1) !important;
+    outline: none !important;
+}
+
+/* ===== منوی مدیریت ===== */
+#adminmenu {
+    background: linear-gradient(180deg, #0A2540 0%, #0B1F35 100%) !important;
+}
+#adminmenu li a {
+    color: rgba(255,255,255,0.85) !important;
+    border-radius: 8px !important;
+    margin: 2px 8px !important;
+    transition: all 0.3s !important;
+}
+#adminmenu li a:hover, #adminmenu li.current a {
+    background: rgba(255,255,255,0.1) !important;
+    color: #FFF !important;
+}
+#adminmenu .wp-menu-image svg { fill: rgba(255,255,255,0.7) !important; }
+#adminmenu li.current .wp-menu-image svg { fill: #C9A96E !important; }
+
+/* ===== اعداد فارسی ===== */
+.pakpajoh-card, .wrap, .wp-list-table, .form-table {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 782px) {
+    .wrap { padding: 12px 16px; }
+    .pakpajoh-card { padding: 16px; }
+}
+
+/* ===== دکمه‌های آیکونی با تولتیپ ===== */
+.pakpajoh-icon-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    margin: 0 2px;
+    text-decoration: none;
+}
+.pakpajoh-icon-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.5;
+}
+.pakpajoh-icon-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* رنگ‌بندی دکمه‌ها */
+.pakpajoh-icon-btn.view { background: #E8F5E9; color: #1B5E4A; }
+.pakpajoh-icon-btn.view:hover { background: #1B5E4A; color: #FFF; }
+.pakpajoh-icon-btn.edit { background: #E3F2FD; color: #005E80; }
+.pakpajoh-icon-btn.edit:hover { background: #005E80; color: #FFF; }
+.pakpajoh-icon-btn.delete { background: #FFEBEE; color: #D32F2F; }
+.pakpajoh-icon-btn.delete:hover { background: #D32F2F; color: #FFF; }
+.pakpajoh-icon-btn.add { background: #F1F8E9; color: #388E3C; }
+.pakpajoh-icon-btn.add:hover { background: #388E3C; color: #FFF; }
+
+/* تولتیپ */
+.pakpajoh-icon-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    right: 50%;
+    transform: translateX(50%) translateY(4px);
+    background: #0A2540;
+    color: #FFF;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    pointer-events: none;
+    z-index: 100;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+}
+.pakpajoh-icon-btn::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 2px);
+    right: 50%;
+    transform: translateX(50%);
+    border: 6px solid transparent;
+    border-top-color: #0A2540;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    pointer-events: none;
+    z-index: 100;
+}
+.pakpajoh-icon-btn:hover::after,
+.pakpajoh-icon-btn:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(50%) translateY(0);
+}
+
+/* ===== استایل جدید جداول مدیریت ===== */
+.wp-list-table thead th {
+    background: #F2F4F7 !important; /* خاکستری ملایم */
+    color: #000000 !important;      /* مشکی */
+    font-weight: 700 !important;
+    border-bottom: 1px solid #E0E4E8 !important;
+}
+.wp-list-table thead th a,
+.wp-list-table thead th a:hover {
+    color: #000000 !important;
+}

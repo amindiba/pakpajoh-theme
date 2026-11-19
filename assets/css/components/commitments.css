@@ -1,0 +1,37 @@
+/* ===== Commitments (۴ آیتم، پالت #0A2540/#C9A96E) ===== */
+
+.commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.commit-card {
+    background: var(--pp-surface);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid var(--pp-border);
+    transition: all 0.4s ease;
+}
+.commit-card:hover { border-color: var(--pp-accent); transform: translateY(-8px); box-shadow: 0 15px 40px rgba(10,37,64,0.08); }
+.commit-card h3 { font-size: 2.5rem; font-weight: 900; color: var(--pp-accent); margin-bottom: 0.5rem; }
+.commit-card h4 { font-size: 1.2rem; font-weight: 800; color: var(--pp-primary); margin-bottom: 0.8rem; }
+.commit-card p { color: var(--pp-muted); font-size: 0.95rem; line-height: 1.7; }
+.commit-icon { color: var(--pp-accent); margin-bottom: 1.2rem; }
+
+@media (max-width: 992px) {
+    .commitments-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+    .commitments-section { padding: 2.5rem 0 !important; }
+    .commitments-section > .container { padding-left: 0.5rem !important; padding-right: 0.5rem !important; max-width: 100% !important; }
+    .commitments-section .section-badge,
+    .commitments-section .section-title { padding-left: 0.8rem; padding-right: 0.8rem; }
+    .commitments-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.6rem !important; }
+    .commit-card { padding: 0.9rem 0.6rem; border-radius: 10px; }
+    .commit-card h3 { font-size: 1.6rem; margin-bottom: 0.2rem; }
+    .commit-card h4 { font-size: 0.78rem; margin-bottom: 0.3rem; line-height: 1.3; }
+    .commit-card p { font-size: 0.66rem; line-height: 1.45; }
+    .commit-icon { width: 28px; height: 28px; margin-bottom: 0.5rem; }
+}

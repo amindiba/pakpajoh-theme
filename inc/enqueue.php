@@ -1,25 +1,47 @@
-<?php
+﻿<?php
 /**
- * Enqueue: بارگذاری استایل و اسکریپت
+ * Enqueue — PakPajoh Theme (v4.0) - تعریف کامل فونت‌های Vazirmatn
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-function pakpajoh_enqueue_assets() {
-    $v = PAKPAJOH_VERSION;
-    // فونت محلی
-    wp_enqueue_style( 'pp-font', PAKPAJOH_URI . '/assets/fonts/Vazirmatn/Vazirmatn-font-face.css', array(), $v );
-    // استایل‌های ماژولار
-    wp_enqueue_style( 'pp-reset', PAKPAJOH_URI . '/assets/css/base/reset.css', array( 'pp-font' ), $v );
-    wp_enqueue_style( 'pp-variables', PAKPAJOH_URI . '/assets/css/base/variables.css', array( 'pp-reset' ), $v );
-    wp_enqueue_style( 'pp-typography', PAKPAJOH_URI . '/assets/css/base/typography.css', array( 'pp-variables' ), $v );
-    wp_enqueue_style( 'pp-header', PAKPAJOH_URI . '/assets/css/layout/header.css', array( 'pp-typography' ), $v );
-    wp_enqueue_style( 'pp-sections', PAKPAJOH_URI . '/assets/css/layout/sections.css', array( 'pp-header' ), $v );
-    wp_enqueue_style( 'pp-footer', PAKPAJOH_URI . '/assets/css/layout/footer.css', array( 'pp-sections' ), $v );
-    wp_enqueue_style( 'pp-buttons', PAKPAJOH_URI . '/assets/css/components/buttons.css', array( 'pp-footer' ), $v );
-    if ( is_front_page() ) {
-        wp_enqueue_style( 'pp-home', PAKPAJOH_URI . '/assets/css/pages/home.css', array( 'pp-buttons' ), $v );
-    }
-    // اسکریپت
-    wp_enqueue_script( 'pakpajoh-main', PAKPAJOH_URI . '/assets/js/app.js', array(), $v, true );
-}
 add_action( 'wp_enqueue_scripts', 'pakpajoh_enqueue_assets' );
+function pakpajoh_enqueue_assets() {
+    $uri = get_template_directory_uri();
+    $ver = wp_get_theme()->get( 'Version' );
+
+    // JS اسکرول هدر
+    wp_enqueue_script( 'pp-header-scroll', $uri . '/assets/js/header-scroll.js', array(), '1.0', true );
+    wp_enqueue_script( 'pp-slider', get_template_directory_uri() . '/assets/js/slider.js', array(), '1.0', true );
+
+    // CSS پایه (همه صفحات)
+    wp_enqueue_style( 'pp-variables', $uri . '/assets/css/base/variables.css', array(), $ver );
+    wp_enqueue_style( 'pp-reset', $uri . '/assets/css/base/reset.css', array( 'pp-variables' ), $ver );
+    wp_enqueue_style( 'pp-header', $uri . '/assets/css/layout/header.css', array( 'pp-reset' ), $ver );
+
+    // CSS صفحه اصلی (گلوبال)
+    wp_enqueue_style( 'pp-home', $uri . '/assets/css/pages/home.css', array( 'pp-header' ), $ver );
+}
+
+/**
+ * تعریف فونت‌های Vazirmatn (لوکال، بدون ارتباط خارجی)
+ */
+add_action( 'wp_enqueue_scripts', 'pakpajoh_enqueue_fonts', 5 );
+function pakpajoh_enqueue_fonts() {
+    $font_uri = get_template_directory_uri() . '/assets/fonts';
+    $inline_css = "
+        @font-face { font-family: 'Vazirmatn'; src: url('{$font_uri}/Vazirmatn-Thin.woff2') format('woff2'); font-weight: 100; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Vazirmatn'; src: url('{$font_uri}/Vazirmatn-ExtraLight.woff2') format('woff2'); font-weight: 200; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Vazirmatn'; src: url('{$font_uri}/Vazirmatn-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Vazirmatn'; src: url('{$font_uri}/Vazirmatn-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Vazirmatn'; src: url('{$font_uri}/Vazirmatn-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Vazirmatn'; src: url('{$font_uri}/Vazirmatn-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Vazirmatn'; src: url('{$font_uri}/Vazirmatn-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Vazirmatn'; src: url('{$font_uri}/Vazirmatn-ExtraBold.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Vazirmatn'; src: url('{$font_uri}/Vazirmatn-Black.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: swap; }
+    ";
+    wp_register_style( 'pp-font', false );
+    wp_enqueue_style( 'pp-font' );
+    wp_add_inline_style( 'pp-font', $inline_css );
+}
+
+
