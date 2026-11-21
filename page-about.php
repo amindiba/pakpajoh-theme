@@ -5,105 +5,208 @@
 get_header();
 
 $about_hero_badge = get_option( 'pakpajoh_text_about_hero_badge', 'درباره پاک‌پژوه' );
-$about_hero_title = get_option( 'pakpajoh_text_about_hero_title', 'درخشش در عمل' );
-$about_hero_slogan = get_option( 'pakpajoh_text_about_hero_slogan', '«نظافت مدرن، تعهد به کیفیت»' );
-$about_hero_desc = get_option( 'pakpajoh_text_about_hero_desc', 'شرکت پاک‌پژوه با نام قانونی آتیه مهرگان انعکاس، از سال ۱۴۰۳ با هدف ارائه خدمات مهندسی نظافت صنعتی فعالیت می‌کند.' );
+$about_hero_title = get_option( 'pakpajoh_text_about_hero_title', 'پاک‌پژوه؛ نگاهی متفاوت به پاکیزگی محیط‌های کاری' );
+$about_hero_slogan = get_option( 'pakpajoh_text_about_hero_slogan', 'پاکیزگی، بخشی از مدیریت حرفه‌ای محیط کار است.' );
+$about_hero_desc = get_option( 'pakpajoh_text_about_hero_desc', 'برای هر محیط کاری، راهکاری متناسب با نوع فعالیت و نیازهای واقعی مجموعه طراحی می‌کنیم.' );
 $about_history_badge = get_option( 'pakpajoh_text_about_history_badge', 'تاریخچه ما' );
 $about_history_title = get_option( 'pakpajoh_text_about_history_title', 'از سال ۱۴۰۳ در خدمت صنعت' );
 $about_history_desc = get_option( 'pakpajoh_text_about_history_desc', 'شرکت آتیه مهرگان انعکاس (شماره ثبت ۶۳۸۲۱۷) با برند پاک‌پژوه، فعالیت خود را در حوزه مدیریت خدمات مهندسی نظافت صنعتی آغاز کرده است.' );
 ?>
 
-<style>
-    .services-hero { padding: 80px 0 60px; background: linear-gradient(135deg, #0A2540 0%, #123456 50%, #0B1F35 100%) !important; text-align: center !important; }
-    .services-hero .container { width: 100% !important; max-width: 1200px !important; margin: 0 auto !important; padding: 0 24px !important; }
-    .services-hero-badge { display: inline-block !important; background: rgba(255,255,255,0.15) !important; color: #FFFFFF !important; font-size: 0.9rem !important; font-weight: 700 !important; padding: 8px 24px !important; border-radius: 50px !important; margin-bottom: 20px !important; }
-    .services-hero-title { font-size: 2.2rem !important; font-weight: 900 !important; color: #FFFFFF !important; margin-bottom: 16px !important; line-height: 1.4 !important; }
-    .services-hero-slogan { font-size: 1.2rem !important; color: #C9A96E !important; font-style: italic !important; margin-bottom: 16px !important; }
-    .services-hero-desc { font-size: 1rem !important; color: rgba(255,255,255,0.85) !important; line-height: 1.8 !important; max-width: 750px !important; margin: 0 auto 30px !important; }
-    .section { padding: 60px 0 !important; }
-    .section-badge { display: inline-block !important; background: #E8F5E9 !important; color: #1B5E4A !important; font-size: 0.9rem !important; font-weight: 700 !important; padding: 8px 24px !important; border-radius: 50px !important; margin-bottom: 16px !important; }
-    .section-title-large { font-size: 1.8rem !important; font-weight: 800 !important; color: #005E80 !important; margin-bottom: 16px !important; }
-    .container { width: 100% !important; max-width: 1200px !important; margin: 0 auto !important; padding: 0 24px !important; }
-    .about-layout { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 40px !important; align-items: center !important; }
-    .about-image img { width: 100% !important; border-radius: 12px !important; }
-    .commitments-grid { display: grid !important; grid-template-columns: repeat(3,1fr) !important; gap: 20px !important; margin-top: 30px !important; }
-    .commit-card { background: #F9F9F9 !important; border-radius: 12px !important; padding: 24px !important; text-align: center !important; border: 1px solid #E0E4E8 !important; }
-    .commit-icon { color: #4CAF50 !important; margin-bottom: 12px !important; }
-    .safety-grid { display: grid !important; grid-template-columns: repeat(4,1fr) !important; gap: 20px !important; margin-top: 30px !important; }
-    .safety-item { background: #F9F9F9 !important; border-radius: 12px !important; padding: 24px !important; text-align: center !important; border: 1px solid #E0E4E8 !important; }
-    .safety-icon { color: #4CAF50 !important; margin-bottom: 12px !important; }
-    .contact-layout { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 40px !important; }
-    .contact-info-list { list-style: none !important; padding: 0 !important; margin: 0 !important; }
-    .contact-info-list li { display: flex !important; align-items: flex-start !important; gap: 12px !important; margin-bottom: 20px !important; }
-    .contact-icon { color: #4CAF50 !important; flex-shrink: 0 !important; }
-    .contact-form-wrapper .pakpajoh-form .form-group { margin-bottom: 16px !important; }
-    .contact-form-wrapper .pakpajoh-form label { display: block !important; font-weight: 600 !important; margin-bottom: 6px !important; }
-    .contact-form-wrapper .pakpajoh-form input,
-    .contact-form-wrapper .pakpajoh-form textarea { width: 100% !important; padding: 10px 14px !important; border: 1px solid #E0E4E8 !important; border-radius: 8px !important; }
-    .process-timeline { display: flex !important; flex-direction: column !important; gap: 20px !important; margin-top: 30px !important; }
-    .process-step-item { display: flex !important; gap: 16px !important; background: #F9F9F9 !important; border-radius: 12px !important; padding: 20px !important; border: 1px solid #E0E4E8 !important; }
-    .process-step-number { display: flex !important; align-items: center !important; justify-content: center !important; width: 48px !important; height: 48px !important; background: #4CAF50 !important; color: #FFF !important; border-radius: 50% !important; font-weight: 800 !important; flex-shrink: 0 !important; }
-    .packages-grid { display: grid !important; grid-template-columns: repeat(3,1fr) !important; gap: 20px !important; margin-top: 30px !important; }
-    .package-card { background: #F9F9F9 !important; border-radius: 12px !important; padding: 24px !important; border: 1px solid #E0E4E8 !important; }
-    .package-card.featured { border-color: #4CAF50 !important; background: #E8F5E9 !important; }
-    .package-card ul { list-style: none !important; padding: 0 !important; margin: 12px 0 0 0 !important; }
-    .package-card ul li { padding: 4px 0 !important; font-size: 0.9rem !important; }
-    @media (max-width: 1024px) {
-        .about-layout, .contact-layout, .commitments-grid, .packages-grid { grid-template-columns: 1fr !important; }
-        .safety-grid { grid-template-columns: repeat(2,1fr) !important; }
-    }
-    @media (max-width: 600px) {
-        .safety-grid { grid-template-columns: 1fr !important; }
-    }
-</style>
-<section class="services-hero" style="background: linear-gradient(135deg, #0A2540 0%, #123456 50%, #0B1F35 100%);">
-    <div class="container">
-        <div class="services-hero-inner">
-            <span class="services-hero-badge"><?php echo wp_kses_post( $about_hero_badge ); ?></span>
-            <h1 class="services-hero-title"><?php echo wp_kses_post( $about_hero_title ); ?></h1>
-            <p class="services-hero-slogan"><?php echo wp_kses_post( $about_hero_slogan ); ?></p>
-            <p class="services-hero-desc"><?php echo wp_kses_post( $about_hero_desc ); ?></p>
+<div class="about-page">
+    <section class="about-hero" aria-labelledby="about-hero-title">
+        <div class="about-hero-media">
+            <img
+                src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-hero.jpeg' ); ?>"
+                alt="ساختمان اداری مدرن در میان فضای سبز"
+                fetchpriority="high"
+            >
         </div>
-    </div>
-</section>
+        <div class="about-hero-inner">
+            <div class="about-hero-copy">
+                <img
+                    class="about-brand"
+                    src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>"
+                    alt="پاک‌پژوه"
+                    width="112"
+                    height="112"
+                >
+                <span class="about-eyebrow"><?php echo wp_kses_post( $about_hero_badge ); ?></span>
+                <h1 id="about-hero-title"><?php echo wp_kses_post( $about_hero_title ); ?></h1>
+                <p class="about-hero-slogan"><?php echo wp_kses_post( $about_hero_slogan ); ?></p>
+                <p class="about-hero-desc"><?php echo wp_kses_post( $about_hero_desc ); ?></p>
+            </div>
+        </div>
+        <div class="about-hero-edge" aria-hidden="true"></div>
+    </section>
 
-<section class="section about-intro">
-    <div class="container about-layout">
-        <div class="about-text">
-            <span class="section-badge"><?php echo wp_kses_post( $about_history_badge ); ?></span>
-            <h2 class="section-title-large"><?php echo wp_kses_post( $about_history_title ); ?></h2>
-            <p><?php echo wp_kses_post( $about_history_desc ); ?></p>
-            <p>اصول کاری ما بر پایه <strong>بهینه‌سازی مصرف آب و انرژی</strong>، <strong>تضمین کیفیت از طریق چک‌لیست‌های مدون</strong> و <strong>حفظ ایمنی و سلامت پرسنل</strong> استوار است.</p>
+    <section class="about-pillars" aria-label="نگاهی به پاک‌پژوه">
+        <div class="about-container">
+            <div class="about-pillars-grid">
+                <article class="about-pillar">
+                    <span class="about-pillar-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <circle cx="21" cy="24" r="13" />
+                            <circle cx="21" cy="24" r="6" />
+                            <path d="m25.5 19.5 14-14m-7 0h7v7" />
+                        </svg>
+                    </span>
+                    <h2>چرا پاک‌پژوه؟</h2>
+                    <p>مدیریت پاکیزگی را به بخشی از عملکرد حرفه‌ای محیط کار تبدیل می‌کنیم.</p>
+                </article>
+                <article class="about-pillar">
+                    <span class="about-pillar-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M17 29c0-3.5-6-6.2-6-13a13 13 0 0 1 26 0c0 6.8-6 9.5-6 13H17Z" />
+                            <path d="M18 35h12m-10 5h8M24 7v4m-10 4 3 2m17-2-3 2" />
+                        </svg>
+                    </span>
+                    <h2>فلسفه فعالیت</h2>
+                    <p>با پاکیزگی هدفمند، برای کارکنان و سازمان‌ها ارزش واقعی می‌سازیم.</p>
+                </article>
+                <article class="about-pillar">
+                    <span class="about-pillar-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="m5 18 9-7 9 6-7 8-7-3-6 4m40-8-9-7-9 6 7 8 7-3 6 4M16 25l9 9a4 4 0 0 0 6-5l-7-8" />
+                            <path d="m14 30 5 5a4 4 0 0 0 6 0m-9-10-4 4a4 4 0 0 0 6 6m14-12 5 5a4 4 0 0 1-6 6" />
+                        </svg>
+                    </span>
+                    <h2>اصول ما</h2>
+                    <p>کیفیت، شفافیت و مسئولیت‌پذیری را در تمام مراحل همکاری جدی می‌گیریم.</p>
+                </article>
+                <article class="about-pillar">
+                    <span class="about-pillar-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M7 39V27m11 12V19m11 20V11m11 28V5" />
+                            <path d="m6 20 12-8 10 4L42 5m-8 0h8v8" />
+                        </svg>
+                    </span>
+                    <h2>چشم‌انداز ما</h2>
+                    <p>به سوی آینده‌ای حرفه‌ای‌تر و قابل‌اندازه‌گیری در خدمات پاکیزگی حرکت می‌کنیم.</p>
+                </article>
+            </div>
         </div>
-        <div class="about-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/palet.webp' ); ?>" alt="درباره پاک‌پژوه" loading="lazy"></div>
-    </div>
-</section>
+    </section>
 
-<section class="section commitments-section">
-    <div class="container">
-        <span class="section-badge">منشور تعهد</span>
-        <h2 class="section-title-large">تعهدات شرکت پاک‌پژوه</h2>
-        <div class="commitments-grid">
-            <div class="commit-card"><svg class="commit-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg><h4>بهینه‌سازی مصرف</h4><p>استفاده از فناوری‌های مکانیزه و شوینده‌های بایو برای کاهش مصرف آب و انرژی.</p></div>
-            <div class="commit-card"><svg class="commit-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><h4>تضمین کیفیت</h4><p>پایداری کیفیت خدمات با چک‌لیست‌های مدون تحویل کار و نظارت سرپرست مقیم.</p></div>
-            <div class="commit-card"><svg class="commit-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><h4>محیط بهداشتی</h4><p>ایجاد محیطی تمیز و ایمن، شایسته مشتریان و ساکنان.</p></div>
-        </div>
-    </div>
-</section>
+    <section class="about-approach" aria-labelledby="about-approach-title">
+        <div class="about-container">
+            <div class="about-approach-panel">
+                <div class="about-approach-visual" aria-hidden="true">
+                    <div class="about-visual-orbit about-visual-orbit-one"></div>
+                    <div class="about-visual-orbit about-visual-orbit-two"></div>
+                    <div class="about-visual-document">
+                        <span class="about-visual-kicker">شناخت محیط</span>
+                        <span class="about-visual-check"></span>
+                        <span class="about-visual-check"></span>
+                        <span class="about-visual-check"></span>
+                        <span class="about-visual-footer">برنامه‌ریزی دقیق، اجرای مطمئن</span>
+                    </div>
+                    <span class="about-visual-caption">راهکار متناسب با هر فضا</span>
+                </div>
 
-<section class="section safety-section">
-    <div class="container">
-        <span class="section-badge">استانداردها و ایمنی</span>
-        <h2 class="section-title-large">الزامات اجرایی ما</h2>
-        <div class="safety-grid">
-            <div class="safety-item"><svg class="safety-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><h4>حفظ ایمنی پرسنل</h4><p>استفاده از تجهیزات حفاظت فردی کامل و پوشش متحدالشکل.</p></div>
-            <div class="safety-item"><svg class="safety-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><h4>سرپرست مقیم</h4><p>حضور مستمر سرپرست پروژه برای نظارت بر اجرا.</p></div>
-            <div class="safety-item"><svg class="safety-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><h4>عدم اختلال در کار</h4><p>اجرای فرآیندها بدون برهم زدن چرخه کاری مشتری.</p></div>
-            <div class="safety-item"><svg class="safety-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><h4>پایش مستمر</h4><p>ارزیابی کیفی با چک‌لیست و ارائه گزارش.</p></div>
+                <div class="about-approach-copy">
+                    <span class="about-section-kicker">نگاه مهندسی به پاکیزگی</span>
+                    <h2 id="about-approach-title">رویکرد ما؛ راهکاری متناسب با هر محیط</h2>
+                    <p>پاک‌پژوه با توجه به نوع فعالیت، ویژگی‌های فضا و نیازهای هر سازمان، راهکاری روشن و قابل ارزیابی طراحی می‌کند.</p>
+                    <p>از برنامه‌ریزی تا اجرا و پایش، کیفیت، ایمنی و تداوم کار مجموعه را در کنار هم می‌بینیم.</p>
+                </div>
+                <div class="about-history-note">
+                    <span><?php echo wp_kses_post( $about_history_badge ); ?></span>
+                    <h3><?php echo wp_kses_post( $about_history_title ); ?></h3>
+                    <p><?php echo wp_kses_post( $about_history_desc ); ?></p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="about-values" aria-labelledby="about-values-title">
+        <div class="about-container">
+            <div class="about-section-heading">
+                <span class="about-section-kicker">آنچه به آن پایبندیم</span>
+                <h2 id="about-values-title">ارزش‌های ما</h2>
+            </div>
+            <div class="about-values-grid">
+                <article class="about-value">
+                    <span class="about-value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11l15-6Z" />
+                            <path d="m17 24 5 5 10-11" />
+                        </svg>
+                    </span>
+                    <h3>کیفیت‌گرایی</h3>
+                    <p>کیفیت را با چک‌لیست، پایش و گزارش مستند می‌کنیم.</p>
+                </article>
+                <article class="about-value">
+                    <span class="about-value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="m5 18 9-7 9 6-7 8-7-3-6 4m40-8-9-7-9 6 7 8 7-3 6 4M16 25l9 9a4 4 0 0 0 6-5l-7-8" />
+                            <path d="m14 30 5 5a4 4 0 0 0 6 0m-9-10-4 4a4 4 0 0 0 6 6m14-12 5 5a4 4 0 0 1-6 6" />
+                        </svg>
+                    </span>
+                    <h3>شناخت نیاز مشتری</h3>
+                    <p>پیش از طراحی، شرایط و انتظارها را می‌شناسیم.</p>
+                </article>
+                <article class="about-value">
+                    <span class="about-value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M8 11h32v26H8zM15 19h18m-18 7h12" />
+                            <circle cx="34" cy="32" r="5" />
+                        </svg>
+                    </span>
+                    <h3>شفافیت و همکاری</h3>
+                    <p>مسئولیت‌ها، معیارها و گزارش‌ها روشن‌اند.</p>
+                </article>
+                <article class="about-value">
+                    <span class="about-value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M7 12h34M7 24h34M7 36h34" />
+                            <circle cx="18" cy="12" r="4" />
+                            <circle cx="31" cy="24" r="4" />
+                            <circle cx="21" cy="36" r="4" />
+                        </svg>
+                    </span>
+                    <h3>تناسب راهکار</h3>
+                    <p>برنامه را با واقعیت هر محیط هماهنگ می‌کنیم.</p>
+                </article>
+                <article class="about-value">
+                    <span class="about-value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="16" r="7" />
+                            <path d="M10 40v-4a14 14 0 0 1 28 0v4M7 21a6 6 0 0 0 0 12m34-12a6 6 0 0 1 0 12" />
+                        </svg>
+                    </span>
+                    <h3>مسئولیت‌پذیری</h3>
+                    <p>با سرپرستی پیوسته، ایمنی نیروها و تداوم کار را حفظ می‌کنیم.</p>
+                </article>
+                <article class="about-value">
+                    <span class="about-value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M7 39V27m11 12V19m11 20V11m11 28V5" />
+                            <path d="m6 20 12-8 10 4L42 5m-8 0h8v8" />
+                        </svg>
+                    </span>
+                    <h3>یادگیری و بهبود</h3>
+                    <p>با فناوری مکانیزه و شوینده‌های بایو، مصرف منابع را کاهش می‌دهیم.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-cta" aria-labelledby="about-cta-title">
+        <div class="about-cta-decoration" aria-hidden="true"></div>
+        <div class="about-cta-inner">
+            <div class="about-cta-actions">
+                <a class="about-cta-primary" href="<?php echo esc_url( home_url( '/request/' ) ); ?>">درخواست بازدید اولیه</a>
+                <a class="about-cta-secondary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">تماس با پاک‌پژوه</a>
+            </div>
+            <div class="about-cta-copy">
+                <span class="about-section-kicker">همراهی مطمئن برای محیط کار</span>
+                <h2 id="about-cta-title">برای ساختن محیطی پاکیزه‌تر، کنار شما هستیم.</h2>
+                <p>برای شناخت نیازهای مجموعه و بررسی مسیر همکاری با ما در ارتباط باشید.</p>
+            </div>
+        </div>
+    </section>
+</div>
 
 <?php
-
 get_footer();

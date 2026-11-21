@@ -39,6 +39,15 @@ function pakpajoh_enqueue_assets() {
             filemtime( get_template_directory() . '/assets/css/pages/process.css' )
         );
     }
+
+    if ( is_page( 'about' ) || is_page_template( 'page-about.php' ) ) {
+        wp_enqueue_style(
+            'pp-about-page',
+            $uri . '/assets/css/pages/about.css',
+            array( 'pp-home' ),
+            filemtime( get_template_directory() . '/assets/css/pages/about.css' )
+        );
+    }
 }
 
 /**
