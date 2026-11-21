@@ -8,11 +8,35 @@ $hero_desc = get_option( 'pakpajoh_text_home_hero_desc', 'طراحی، مدیر�
 $hero_btn1 = get_option( 'pakpajoh_text_home_hero_btn1', 'درخواست بازدید اولیه رایگان' );
 $hero_btn2 = get_option( 'pakpajoh_text_home_hero_btn2', 'آشنایی با خدمات' );
 ?>
-<section class="hero-section" aria-label="بخش معرفی">
+<style>
+/* ===== Isolated hero mobile ===== */
+@media (max-width: 640px) {
+    .hero-section { display: flex; flex-direction: column; min-height: auto !important; }
+    .hero-slider { position: relative; inset: auto; height: auto; width: 100%; }
+    .hero-slide, .hero-slide .hero-bg { position: relative; inset: auto; height: auto; }
+    .hero-slide .hero-bg img { width: 100%; height: auto; object-fit: contain; object-position: center; }
+    .hero-slide .hero-overlay { display: none; }
+    .hero-container { position: relative; z-index: 2; padding: 0.3rem 1rem 0; width: 100%; max-width: 100%; justify-content: center; }
+    .hero-content { max-width: 100%; padding: 0.3rem 0; text-align: center; }
+    .hero-section .hero-title { font-size: 1.5rem !important; line-height: 1.2; }
+    .hero-section .hero-subtitle { font-size: 1rem !important; }
+    .hero-section .hero-desc { font-size: 0.85rem !important; line-height: 1.6; }
+    .hero-section .hero-actions { display: flex; flex-direction: row; gap: 0.4rem; flex-wrap: nowrap; margin-top: -1.2rem; position: relative; z-index: 3; justify-content: center; }
+    .hero-section .hero-actions .btn { padding: 0.35rem 0.6rem; font-size: 0.65rem; white-space: nowrap; flex: 1; max-width: 48%; justify-content: center; }
+    .hero-pagination { display: none !important; }
+}
+/* ===== Isolated hero desktop font scale ===== */
+@media (min-width: 993px) {
+    .hero-section .hero-title { font-size: 3.42rem !important; }
+    .hero-section .hero-subtitle { font-size: 2.07rem !important; }
+    .hero-section .hero-desc { font-size: 1.14rem !important; }
+}
+</style>
+<section class="hero-section" aria-label="بخش معرفی" style="min-height: 34.5vh;">
     <div class="hero-slider">
         <div class="hero-slide active">
             <div class="hero-bg">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-industrial.webp' ); ?>" alt="نظافت صنعتی پاک پژوه" loading="eager" fetchpriority="high">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-home.jpeg' ); ?>" alt="نظافت صنعتی پاک پژوه" loading="eager" fetchpriority="high">
                 <div class="hero-overlay"></div>
             </div>
         </div>

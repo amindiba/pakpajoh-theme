@@ -444,6 +444,23 @@
     modal.addEventListener('click', function(e) { if (e.target === modal) modal.classList.remove('is-open'); });
 })();
 </script>
+<style>
+/* ===== Isolated footer font scale + hover highlight ===== */
+.footer-menu a, .footer-desc, .footer-title, .footer-contact-info li, .footer-bottom, .footer-logo-wrapper .brand-name, .footer-logo-wrapper .brand-url, .footer-logo-wrapper .brand-pp {
+    font-size: 1.15em;
+}
+.footer-menu a {
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+.footer-menu a:hover {
+    background: rgba(201,169,110,0.18);
+    color: #C9A96E !important;
+    transform: translateX(-4px);
+}
+</style>
 <?php wp_footer(); ?>
 </body>
 </html>

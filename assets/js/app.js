@@ -1,18 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('.site-header');
-    if (header) {
-        const onScroll = function() { header.classList.toggle('scrolled', window.pageYOffset > 50); };
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
-    }
-
-    document.querySelectorAll('.hero-section, .services-hero, .inner-hero').forEach(function(hero) {
-        hero.addEventListener('mousemove', function(e) {
-            const rect = hero.getBoundingClientRect();
-            hero.style.setProperty('--mouse-x', ((e.clientX - rect.left) / rect.width) * 100 + '%');
-            hero.style.setProperty('--mouse-y', ((e.clientY - rect.top) / rect.height) * 100 + '%');
-        });
-    });
 
     // Mobile Drawer
     const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -22,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const openDrawer = function() {
         if (!drawer) return;
-        drawer.classList.add('active');
-        if (overlay) overlay.classList.add('active');
+        drawer.classList.add('is-open');
+        if (overlay) overlay.classList.add('is-open');
         document.body.style.overflow = 'hidden';
     };
     const closeDrawer = function() {
         if (!drawer) return;
-        drawer.classList.remove('active');
-        if (overlay) overlay.classList.remove('active');
+        drawer.classList.remove('is-open');
+        if (overlay) overlay.classList.remove('is-open');
         document.body.style.overflow = '';
     };
 
@@ -37,13 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
     if (overlay) overlay.addEventListener('click', closeDrawer);
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && drawer && drawer.classList.contains('active')) closeDrawer();
+        if (e.key === 'Escape' && drawer && drawer.classList.contains('is-open')) closeDrawer();
     });
 
+    // FAQ Accordion
     document.querySelectorAll('.faq-question').forEach(function(btn) {
         btn.addEventListener('click', function() { this.parentElement.classList.toggle('active'); });
     });
 
+    // Scroll Reveal (IntersectionObserver)
     const revealElements = document.querySelectorAll('.reveal-up, .reveal');
     if ('IntersectionObserver' in window && revealElements.length > 0) {
         const observer = new IntersectionObserver(function(entries) {
@@ -60,6 +48,30 @@ document.addEventListener('DOMContentLoaded', function() {
         revealElements.forEach(function(el) { el.classList.add('is-visible'); });
     }
 
+    // Process Timeline Scroll Animation
+    const processSteps = document.querySelectorAll('.process-step');
+    if ('IntersectionObserver' in window && processSteps.length > 0) {
+        const processObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    processObserver.unobserve(entry.target);
+                }
+            });
+        }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+        processSteps.forEach(function(el) { processObserver.observe(el); });
+    } else {
+        processSteps.forEach(function(el) { el.classList.add('is-visible'); });
+    }
+
+    // Hero mouse move parallax
+    document.querySelectorAll('.hero-section, .services-hero, .inner-hero').forEach(function(hero) {
+        hero.addEventListener('mousemove', function(e) {
+            const rect = hero.getBoundingClientRect();
+            hero.style.setProperty('--mouse-x', ((e.clientX - rect.left) / rect.width) * 100 + '%');
+            hero.style.setProperty('--mouse-y', ((e.clientY - rect.top) / rect.height) * 100 + '%');
+        });
+    });
 
     // ===== Portfolio Carousel (RTL-friendly) =====
     // ===== Loop Carousel (پروژه‌های صفحه اصلی) =====
@@ -285,6 +297,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (moved) { e.stopPropagation(); e.preventDefault(); }
         }, true);
     });
+
+    // ===== Portfolio Modal =====
     const modal = document.getElementById('portfolio-modal');
     if (modal) {
         modal.style.display = 'none'; modal.classList.remove('active');
@@ -338,52 +352,4 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
     }
 
-    // ===== Hero Stats Carousel (موبایل — ۲ آیتم + اتوماتیک) =====
-    (function() {
-        const root = document.querySelector('[data-stats-carousel]');
-        if (!root) return;
-        const track = root.querySelector('.hero-stats-inner');
-        if (!track) return;
-        const items = Array.from(track.querySelectorAll('.stat-item'));
-        if (items.length < 3) return;
-
-        const getVisible = function() { return window.innerWidth <= 768 ? 2 : items.length; };
-        let currentIndex = 0;
-        let timer = null;
-
-        const stepPx = function() {
-            if (items.length === 0) return 0;
-            return items[0].getBoundingClientRect().width;
-        };
-
-        const goTo = function(idx) {
-            const visible = getVisible();
-            const maxIndex = Math.max(0, items.length - visible);
-            currentIndex = ((idx % (maxIndex + 1)) + (maxIndex + 1)) % (maxIndex + 1);
-            const offset = currentIndex * stepPx();
-            track.style.transform = 'translateX(' + offset + 'px)';
-        };
-
-        const startAuto = function() {
-            if (timer) clearInterval(timer);
-            if (window.innerWidth > 768) {
-                track.style.transform = '';
-                return;
-            }
-            timer = setInterval(function() { goTo(currentIndex + 1); }, 3000);
-        };
-
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                currentIndex = 0;
-                goTo(0);
-                startAuto();
-            }, 200);
-        });
-
-        goTo(0);
-        startAuto();
-    })();
 });
