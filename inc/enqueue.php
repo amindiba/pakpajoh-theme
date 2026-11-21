@@ -47,6 +47,13 @@ function pakpajoh_enqueue_assets() {
             array( 'pp-home' ),
             filemtime( get_template_directory() . '/assets/css/pages/about.css' )
         );
+        wp_enqueue_script(
+            'pp-about-dialogs',
+            $uri . '/assets/js/about-dialogs.js',
+            array(),
+            filemtime( get_template_directory() . '/assets/js/about-dialogs.js' ),
+            true
+        );
     }
 }
 

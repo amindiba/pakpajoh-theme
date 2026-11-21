@@ -137,13 +137,15 @@
 .about-pillars {
     position: relative;
     z-index: 2;
-    margin-top: -26px;
+    margin-top: 0;
     padding-bottom: 24px;
 }
 
 .about-pillars-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 860px;
+    margin-inline: auto;
     gap: 14px;
 }
 
@@ -193,6 +195,59 @@
     color: var(--about-muted);
     font-size: 0.78rem;
     line-height: 1.75;
+}
+
+.about-dialog-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    cursor: pointer;
+    transition: color 0.18s ease;
+}
+
+.about-approach-copy .about-dialog-trigger,
+.about-vision-card .about-dialog-trigger {
+    justify-content: flex-start;
+}
+
+.about-dialog-trigger:hover {
+    color: var(--about-blue);
+}
+
+.about-dialog-mark {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    color: var(--about-green);
+    font-size: 0.9em;
+    line-height: 1;
+    transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.about-dialog-trigger:hover .about-dialog-mark {
+    background: rgba(117, 184, 42, 0.1);
+    transform: rotate(90deg);
+}
+
+.about-dialog-hint {
+    display: block;
+    margin-top: 7px;
+    color: var(--about-blue);
+    font-size: 0.68rem;
+    font-weight: 750;
+    line-height: 1.5;
 }
 
 .about-approach {
@@ -382,6 +437,10 @@
     line-height: 1.75;
 }
 
+.about-approach-copy .about-dialog-hint {
+    margin-top: 9px;
+}
+
 .about-values {
     padding-block: 12px 40px;
 }
@@ -454,6 +513,114 @@
     color: var(--about-muted);
     font-size: 0.7rem;
     line-height: 1.65;
+}
+
+.about-value .about-dialog-hint {
+    margin-top: 5px;
+    font-size: 0.64rem;
+}
+
+.about-vision {
+    padding-block: 0 26px;
+}
+
+.about-vision-card {
+    position: relative;
+    overflow: hidden;
+    padding: 22px 26px;
+    border: 1px solid #e1ebf0;
+    border-right: 4px solid var(--about-green);
+    border-radius: 16px;
+    background: linear-gradient(110deg, #f7fafb, #eef5f8);
+}
+
+.about-vision-card h2 {
+    margin: 0 0 5px;
+    color: var(--about-navy);
+    font-size: 1.12rem;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+.about-vision-card p {
+    margin: 0;
+    color: var(--about-muted);
+    font-size: 0.8rem;
+    line-height: 1.75;
+}
+
+.about-vision-card .about-dialog-hint {
+    margin-top: 8px;
+}
+
+.about-dialog {
+    width: min(640px, calc(100% - 32px));
+    max-height: min(84vh, 760px);
+    padding: 0;
+    overflow: auto;
+    border: 1px solid #dfe9ef;
+    border-radius: 20px;
+    background: #fff;
+    color: var(--about-ink);
+    box-shadow: 0 24px 80px rgba(5, 33, 54, 0.28);
+}
+
+.about-dialog::backdrop {
+    background: rgba(3, 25, 43, 0.62);
+    backdrop-filter: blur(3px);
+}
+
+.about-dialog-panel {
+    position: relative;
+    padding: 30px 32px 32px;
+}
+
+.about-dialog-close-form {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.about-dialog-close {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid #dce7ed;
+    border-radius: 50%;
+    background: #f5f8fa;
+    color: var(--about-navy);
+    font: inherit;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.about-dialog-panel > .about-section-kicker {
+    margin: 0 48px 8px 0;
+}
+
+.about-dialog-panel h2 {
+    margin: 0 36px 14px 0;
+    color: var(--about-navy);
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 900;
+    line-height: 1.55;
+}
+
+.about-dialog-body {
+    color: var(--about-muted);
+    font-size: 0.94rem;
+    line-height: 1.95;
+}
+
+.about-dialog-body p {
+    margin: 0 0 12px;
+}
+
+.about-dialog-body p:last-child {
+    margin-bottom: 0;
 }
 
 .about-cta {
@@ -560,6 +727,11 @@
 
 .about-page a:focus-visible {
     outline: 3px solid #f4c95d;
+    outline-offset: 3px;
+}
+
+.about-page button:focus-visible {
+    outline: 3px solid #d89c24;
     outline-offset: 3px;
 }
 
@@ -709,7 +881,7 @@
     }
 
     .about-approach {
-        padding-block: 0 20px;
+        padding-block: 8px 20px;
     }
 
     .about-approach-panel {
@@ -785,6 +957,11 @@
         line-height: 1.6;
     }
 
+    .about-approach-copy .about-dialog-hint {
+        margin-top: 6px;
+        font-size: 0.59rem;
+    }
+
     .about-history-note {
         margin: 0 8px 10px;
         gap: 2px 7px;
@@ -852,6 +1029,85 @@
         line-height: 1.5;
     }
 
+    .about-dialog-trigger {
+        gap: 4px;
+    }
+
+    .about-dialog-mark {
+        width: 16px;
+        height: 16px;
+        font-size: 0.8em;
+    }
+
+    .about-dialog-hint {
+        margin-top: 4px;
+        font-size: 0.6rem;
+    }
+
+    .about-value .about-dialog-hint {
+        font-size: 0.58rem;
+    }
+
+    .about-vision {
+        padding-bottom: 18px;
+    }
+
+    .about-vision-card {
+        padding: 14px 15px;
+        border-radius: 13px;
+    }
+
+    .about-vision-card h2 {
+        font-size: 0.88rem;
+    }
+
+    .about-vision-card p {
+        font-size: 0.7rem;
+        line-height: 1.6;
+    }
+
+    .about-vision-card .about-dialog-hint {
+        font-size: 0.6rem;
+    }
+
+    .about-dialog {
+        width: calc(100% - 24px);
+        max-height: 86dvh;
+        border-radius: 16px;
+    }
+
+    .about-dialog-panel {
+        padding: 24px 18px 22px;
+    }
+
+    .about-dialog-close-form {
+        top: 11px;
+        left: 11px;
+    }
+
+    .about-dialog-close {
+        width: 32px;
+        height: 32px;
+    }
+
+    .about-dialog-panel > .about-section-kicker {
+        font-size: 0.64rem;
+    }
+
+    .about-dialog-panel h2 {
+        margin-bottom: 11px;
+        font-size: 1.05rem;
+    }
+
+    .about-dialog-body {
+        font-size: 0.82rem;
+        line-height: 1.8;
+    }
+
+    .about-dialog-body p {
+        margin-bottom: 9px;
+    }
+
     .about-cta {
         width: calc(100% - 20px);
         margin-bottom: 16px;
@@ -883,9 +1139,10 @@
     .about-cta-primary,
     .about-cta-secondary {
         flex: 1;
-        min-height: 38px;
+        min-height: 42px;
         padding: 7px 9px;
         font-size: 0.7rem;
+        line-height: 1.45;
     }
 }
 
