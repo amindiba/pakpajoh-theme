@@ -16,7 +16,8 @@ function pakpajoh_enqueue_assets() {
     // CSS پایه (همه صفحات)
     wp_enqueue_style( 'pp-variables', $uri . '/assets/css/base/variables.css', array(), $ver );
     wp_enqueue_style( 'pp-reset', $uri . '/assets/css/base/reset.css', array( 'pp-variables' ), $ver );
-    wp_enqueue_style( 'pp-header', $uri . '/assets/css/layout/header.css', array( 'pp-reset' ), $ver );
+    wp_enqueue_style( 'pp-header', $uri . '/assets/css/layout/header.css', array( 'pp-reset' ), filemtime( get_template_directory() . '/assets/css/layout/header.css' ) );
+    wp_enqueue_script( 'pp-mobile-menu', $uri . '/assets/js/mobile-menu.js', array(), filemtime( get_template_directory() . '/assets/js/mobile-menu.js' ), true );
 
     // CSS صفحه اصلی (گلوبال)
     wp_enqueue_style( 'pp-home', $uri . '/assets/css/pages/home.css', array( 'pp-header' ), $ver );

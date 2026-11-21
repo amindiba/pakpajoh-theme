@@ -4,12 +4,6 @@
  */
 $img_uri = get_template_directory_uri() . '/assets/images';
 ?>
-<?php
-/**
- * Services Section — PakPajoh Theme (v1.2) - ترتیب جدید تصاویر
- */
-$img_uri = get_template_directory_uri() . '/assets/images';
-?>
 <style>
 .services-title { font-size: 26px !important; font-weight: 800 !important; color: #003b73 !important; }
 .services-header .line-decor {
@@ -21,11 +15,44 @@ $img_uri = get_template_directory_uri() . '/assets/images';
     opacity: 0.8 !important;
 }
 .svc-sub-mobile { display: none; }
+.services-section { padding: 4rem 0; }
+.services-header { text-align: center; margin-bottom: 0.75rem; }
+.services-subtitle { text-align: center; }
 @media (max-width: 640px) {
-    .services-title { font-size: 20px !important; }
+    .services-section { padding: 1.5rem 0 1.75rem; }
+    .services-container { padding: 0 8px !important; }
+    .services-header { gap: 8px !important; margin-bottom: 0.35rem !important; }
+    .services-title { font-size: 17px !important; line-height: 1.45; }
     .services-header .line-decor { display: none !important; }
     .svc-sub-desktop { display: none; }
     .svc-sub-mobile { display: inline; }
+    .services-subtitle { font-size: 10.5px !important; line-height: 1.5; margin: 0 0 0.65rem !important; }
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 7px !important;
+        margin-top: 0 !important;
+    }
+    .service-card { min-width: 0; border-radius: 12px !important; }
+    .service-card-image { height: 92px !important; }
+    .service-card-body { padding: 8px 7px 9px !important; }
+    .service-card-title { font-size: 11.5px !important; line-height: 1.35; margin-bottom: 4px !important; min-height: 31px; }
+    .service-num { margin-left: 2px; }
+    .service-card-desc {
+        font-size: 9.5px !important;
+        line-height: 1.5 !important;
+        min-height: 0 !important;
+        display: block !important;
+        -webkit-line-clamp: unset !important;
+        overflow: visible !important;
+    }
+}
+@media (max-width: 380px) {
+    .services-container { padding-left: 6px !important; padding-right: 6px !important; }
+    .services-grid { gap: 5px !important; }
+    .service-card-image { height: 82px !important; }
+    .service-card-body { padding: 7px 6px 8px !important; }
+    .service-card-title { font-size: 10.5px !important; }
+    .service-card-desc { font-size: 9px !important; }
 }
 </style>
 <section class="services-section" aria-label="خدمات اصلی">
@@ -35,12 +62,11 @@ $img_uri = get_template_directory_uri() . '/assets/images';
     <span class="line-decor"></span>
     <h2 class="services-title"><?php echo wp_kses_post( get_option( "pakpajoh_text_home_services_title", "چهار محور اصلی خدمات ما" ) ); ?></h2>
     <span class="line-decor"></span>
-</div>
+        </div>
             <p class="services-subtitle">
     <span class="svc-sub-desktop"><?php echo wp_kses_post( get_option( "pakpajoh_text_home_services_subtitle", "طراحی، اجرا، کنترل و مستندسازی خدمات پاکسازی" ) ); ?></span>
     <span class="svc-sub-mobile">طراحی، اجرا، کنترل، مستندسازی</span>
 </p>
-        </div>
 
         <div class="services-grid">
             <!-- کارت ۱: طراحی و برنامه‌ریزی -->
