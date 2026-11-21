@@ -45,6 +45,8 @@ $img_uri = get_template_directory_uri() . '/assets/images';
 .pain-card:hover .pain-card-image img { transform: scale(1.15) rotate(5deg); }
 .pain-card-title { font-size: 1.3rem; font-weight: 800; color: #0A2540; margin-bottom: 0.4rem; }
 .pain-card-desc { font-size: 0.98rem; color: #5A6B7C; line-height: 1.6; margin: 0; }
+/* Desktop: keep only image, title and short desc — hide expandable details */
+.pain-card-details { display: none; }
 @media (max-width: 640px) {
     .pain-points-section { padding: 2rem 0; }
     .pain-points-grid { grid-template-columns: 1fr !important; gap: 1rem; }
@@ -54,7 +56,7 @@ $img_uri = get_template_directory_uri() . '/assets/images';
     .pain-card-desc { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.8rem; }
 
     /* Inline detail content for mobile */
-    .pain-card-details { margin-top: 1rem; border-top: 1px solid rgba(74,144,226,0.2); padding-top: 0.8rem; }
+    .pain-card-details { display: block; margin-top: 1rem; border-top: 1px solid rgba(74,144,226,0.2); padding-top: 0.8rem; }
     .pain-card-toggle {
         width: 100%;
         background: transparent;
