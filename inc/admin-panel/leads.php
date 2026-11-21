@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 function pakpajoh_lead_status_label( $status ) {
     $labels = array(
-        'new'       => 'جدید (تکمیل شده، تایید پیامکی نشده)',
+        'new'       => 'جدید',
         'contacted' => 'تماس گرفته شده',
         'qualified' => 'واجد شرایط',
         'won'       => 'تبدیل شده به مشتری',
@@ -24,6 +24,16 @@ function pakpajoh_lead_status_icon( $status ) {
         'lost'      => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D32F2F" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
     );
     return isset( $icons[ $status ] ) ? $icons[ $status ] : '';
+}
+
+function pakpajoh_lead_source_label( $source ) {
+    $labels = array(
+        'site'      => 'فرم سایت',
+        'request'   => 'فرم درخواست',
+        'modal'     => 'مودال مشاوره',
+        'newsletter'=> 'خبرنامه',
+    );
+    return isset( $labels[ $source ] ) ? $labels[ $source ] : $source;
 }
 
 function pakpajoh_leads_page() {
@@ -76,7 +86,7 @@ function pakpajoh_leads_page() {
                         <tr><th>نام:</th><td><?php echo esc_html( $lead->name ); ?></td></tr>
                         <tr><th>تلفن:</th><td><?php echo esc_html( $lead->phone ); ?></td></tr>
                         <tr><th>ایمیل:</th><td><?php echo esc_html( $lead->email ); ?></td></tr>
-                        <tr><th>منبع:</th><td><?php echo esc_html( $lead->source ); ?></td></tr>
+                        <tr><th>منبع:</th><td><?php echo esc_html( pakpajoh_lead_source_label( $lead->source ) ); ?></td></tr>
                         <tr><th>نوع خدمت:</th><td><?php echo esc_html( $lead->service ); ?></td></tr>
                         <tr><th>پیام:</th><td><?php echo nl2br( esc_html( $lead->message ) ); ?></td></tr>
                         <tr><th>وضعیت:</th><td><?php echo esc_html( pakpajoh_lead_status_label( $lead->status ) ); ?></td></tr>
@@ -125,6 +135,7 @@ $search = isset( $_GET['s'] ) ? sanitize_text_field( $_GET['s'] ) : '';
                 <option value="site">فرم تماس</option>
                 <option value="request">فرم درخواست</option>
                 <option value="modal">مودال مشاوره</option>
+                <option value="newsletter">خبرنامه</option>
             </select>
             <a href="?page=pakpajoh-leads" class="button" style="border-radius:50px;padding:8px 16px;">حذف فیلترها</a>
         </div>
@@ -149,7 +160,7 @@ $search = isset( $_GET['s'] ) ? sanitize_text_field( $_GET['s'] ) : '';
                         <tr data-status="<?php echo esc_attr( $lead->status ); ?>" data-source="<?php echo esc_attr( $lead->source ); ?>">
                             <td><?php echo esc_html( $lead->name ); ?></td>
                             <td><?php echo esc_html( $lead->phone ); ?></td>
-                            <td><?php echo esc_html( $lead->source ); ?></td>
+                            <td><?php echo esc_html( pakpajoh_lead_source_label( $lead->source ) ); ?></td>
                             <td><?php echo esc_html( $lead->service ); ?></td>
                             <td style="display:flex;align-items:center;gap:6px;">
                                 <?php echo pakpajoh_lead_status_icon( $lead->status ); ?>

@@ -6,7 +6,7 @@
 <style>
 /* ===== Isolated: process-timeline section ===== */
 .pp-pt-section {
-    padding: 5rem 0;
+    padding: 4rem 0;
     background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
     position: relative;
     overflow: hidden;
@@ -19,10 +19,10 @@
     background: radial-gradient(circle, rgba(39,174,96,0.08) 0%, transparent 70%);
     pointer-events: none;
 }
-.pp-pt-container { max-width: 100%; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
-.pp-pt-header { text-align: center; margin-bottom: 3.5rem; }
+.pp-pt-container { max-width: 1440px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+.pp-pt-header { text-align: center; margin-bottom: 2.5rem; }
 .pp-pt-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.7rem, 2.4vw, 2.2rem);
     font-weight: 900;
     color: #0A2540;
     margin: 0 0 0.8rem;
@@ -50,13 +50,13 @@
 .pp-pt-timeline {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 1rem;
 }
 .pp-pt-timeline::before {
     content: '';
     position: absolute;
-    top: 60px;
+    top: 56px;
     left: 5%; right: 5%;
     height: 2px;
     background: linear-gradient(90deg, transparent 0%, #27AE60 15%, #4A90E2 50%, #27AE60 85%, transparent 100%);
@@ -66,31 +66,18 @@
 .pp-pt-step {
     position: relative;
     z-index: 1;
+    min-width: 0;
     background: #fff;
-    border-radius: 20px;
-    padding: 2rem 1.5rem 1.5rem;
+    border-radius: 18px;
+    padding: 1.5rem 1rem 1.25rem;
     text-align: center;
-    box-shadow: 0 10px 40px rgba(10,37,64,0.06);
-    border: 1px solid rgba(10,37,64,0.05);
-    transition: all 0.4s cubic-bezier(0.25,1,0.5,1);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: pp-pt-fadeUp 0.6s ease forwards;
+    box-shadow: 0 8px 28px rgba(10,37,64,0.055);
+    border: 1px solid rgba(10,37,64,0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.pp-pt-step:nth-child(1) { animation-delay: 0.1s; }
-.pp-pt-step:nth-child(2) { animation-delay: 0.2s; }
-.pp-pt-step:nth-child(3) { animation-delay: 0.3s; }
-.pp-pt-step:nth-child(4) { animation-delay: 0.4s; }
-.pp-pt-step:nth-child(5) { animation-delay: 0.5s; }
-.pp-pt-step:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes pp-pt-fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-}
-
 .pp-pt-step:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(10,37,64,0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(10,37,64,0.1);
     border-color: rgba(39,174,96,0.3);
 }
 
@@ -127,11 +114,6 @@
     inset: 0;
     border-radius: 50%;
     border: 2px solid rgba(39,174,96,0.3);
-    animation: pp-pt-pulse 2s ease-out infinite;
-}
-@keyframes pp-pt-pulse {
-    0% { transform: scale(1); opacity: 0.6; }
-    100% { transform: scale(1.4); opacity: 0; }
 }
 
 .pp-pt-icon {
@@ -156,76 +138,61 @@
     margin: 0;
 }
 
-.pp-pt-cta {
-    text-align: center;
-    margin-top: 3rem;
-}
-.pp-pt-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #27AE60 0%, #1E8449 100%);
-    color: #fff;
-    padding: 0.5rem 1.6rem;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 14px rgba(39,174,96,0.25);
-    position: relative;
-    overflow: hidden;
-}
-.pp-pt-cta-btn::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
-    transition: left 0.5s ease;
-}
-.pp-pt-cta-btn:hover::before {
-    left: 100%;
-}
-.pp-pt-cta-btn:hover {
-    background: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(39,174,96,0.4);
-}
-.pp-pt-cta-btn:hover {
-    background: linear-gradient(135deg, #27AE60 0%, #1E8449 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(39,174,96,0.35);
-}
-
-@media (max-width: 992px) {
-    .pp-pt-timeline { grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+@media (max-width: 1100px) {
+    .pp-pt-section { padding: 3.25rem 0; }
+    .pp-pt-container { padding: 0 24px; }
+    .pp-pt-header { margin-bottom: 2rem; }
+    .pp-pt-timeline { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
     .pp-pt-timeline::before { display: none; }
     .pp-pt-title { font-size: 1.8rem; }
-    .pp-pt-step { padding: 1.2rem 0.8rem; }
+    .pp-pt-step { padding: 1.15rem 0.8rem; border-radius: 16px; }
     .pp-pt-number { width: 36px; height: 36px; font-size: 0.95rem; }
     .pp-pt-marker { width: 48px; height: 48px; margin-bottom: 0.8rem; }
     .pp-pt-icon { width: 28px; height: 28px; margin-bottom: 0.6rem; }
-    .pp-pt-step-title { font-size: 0.85rem; }
-    .pp-pt-step-desc { font-size: 0.75rem; line-height: 1.5; }
+    .pp-pt-step-title { font-size: 0.9rem; }
+    .pp-pt-step-desc { font-size: 0.78rem; line-height: 1.6; }
 }
 @media (max-width: 640px) {
-    .pp-pt-timeline { grid-template-columns: repeat(3, 1fr); gap: 5px; }
-    .pp-pt-section { padding: 2.5rem 0; }
-    .pp-pt-title { font-size: 1.4rem; }
-    .pp-pt-step { padding: 2px; border-radius: 14px; }
-    .pp-pt-number { width: 32px; height: 32px; font-size: 0.85rem; }
-    .pp-pt-marker { width: 40px; height: 40px; margin-bottom: 0.6rem; }
-    .pp-pt-ring { border-width: 1.5px; }
-    .pp-pt-icon { width: 22px; height: 22px; margin-bottom: 0.5rem; }
-    .pp-pt-step-title { font-size: 0.75rem; margin-bottom: 0.3rem; }
-    .pp-pt-step-desc { font-size: 0.65rem; line-height: 1.4; }
-    .pp-pt-header { margin-bottom: 2rem; }
-    .pp-pt-subtitle { font-size: 0.85rem; margin-top: 1rem; }
+    .pp-pt-container { padding: 0 14px; }
+    .pp-pt-section { padding: 1.9rem 0 2.1rem; }
+    .pp-pt-title { font-size: 1.25rem; line-height: 1.45; }
+    .pp-pt-title::after { bottom: -7px; width: 42px; height: 3px; }
+    .pp-pt-header { margin-bottom: 1.35rem; }
+    .pp-pt-subtitle { font-size: 0.78rem; line-height: 1.6; margin-top: 1rem; }
     .pp-pt-sub-desktop { display: none; }
     .pp-pt-sub-mobile { display: inline; }
-    .pp-pt-cta { margin-top: 2rem; }
-    .pp-pt-cta-btn { padding: 0.7rem 1.5rem; font-size: 0.85rem; }
+    .pp-pt-timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .pp-pt-timeline::before { display: none; }
+    .pp-pt-step {
+        display: grid;
+        grid-template-columns: 30px minmax(0, 1fr);
+        grid-template-areas: "marker title" "icon desc";
+        align-items: center;
+        gap: 4px 8px;
+        padding: 10px 9px;
+        border-radius: 13px;
+        text-align: right;
+        box-shadow: 0 4px 14px rgba(10,37,64,0.055);
+    }
+    .pp-pt-marker { grid-area: marker; width: 30px; height: 30px; margin: 0; }
+    .pp-pt-number { width: 28px; height: 28px; font-size: 0.78rem; }
+    .pp-pt-ring { border-width: 1px; }
+    .pp-pt-icon { grid-area: icon; width: 19px; height: 19px; margin: 0 auto; }
+    .pp-pt-step-title { grid-area: title; min-width: 0; font-size: 0.82rem; line-height: 1.45; margin: 0; }
+    .pp-pt-step-desc { grid-area: desc; min-width: 0; font-size: 0.72rem; line-height: 1.5; }
+    .pp-pt-step:hover { transform: none; }
+}
+@media (max-width: 380px) {
+    .pp-pt-container { padding: 0 10px; }
+    .pp-pt-timeline { gap: 6px; }
+    .pp-pt-step { grid-template-columns: 27px minmax(0, 1fr); gap: 4px 6px; padding: 9px 7px; }
+    .pp-pt-marker { width: 27px; height: 27px; }
+    .pp-pt-number { width: 26px; height: 26px; font-size: 0.72rem; }
+    .pp-pt-step-title { font-size: 0.76rem; }
+    .pp-pt-step-desc { font-size: 0.68rem; }
+}
+@media (hover: none) {
+    .pp-pt-step:hover { transform: none; }
 }
 </style>
 
@@ -301,11 +268,5 @@
             </article>
         </div>
 
-        <div class="pp-pt-cta">
-            <a href="<?php echo esc_url( home_url( '/process/' ) ); ?>" class="pp-pt-cta-btn">
-                <span>مشاهده روش کار کامل</span>
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-            </a>
-        </div>
     </div>
 </section>

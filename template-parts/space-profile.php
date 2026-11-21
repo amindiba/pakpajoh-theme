@@ -6,7 +6,7 @@ $img_uri = get_template_directory_uri() . '/assets/images';
 ?>
 <style>
     .space-profile-content {
-        background: linear-gradient(to left, rgba(232, 245, 233, 0.95) 0%, rgba(232, 245, 233, 0.85) 40%, rgba(232, 245, 233, 0.1) 100%), url('https://pakpajoh.ir/wp-content/themes/pakpajoh_a4site_theme/assets/images/palet.webp') center/cover no-repeat !important;
+        background: linear-gradient(to left, rgba(232, 245, 233, 0.95) 0%, rgba(232, 245, 233, 0.85) 40%, rgba(232, 245, 233, 0.1) 100%), url('<?php echo esc_url( $img_uri . '/palet.webp' ); ?>') center/cover no-repeat !important;
         padding: 30px 40px !important;
         border-radius: 16px !important;
         position: relative !important;
@@ -69,6 +69,104 @@ $img_uri = get_template_directory_uri() . '/assets/images';
     .space-profile-content .space-link:hover {
         background: #1B5E4A !important;
         color: #FFFFFF !important;
+    }
+    @media (max-width: 1024px) {
+        .space-profile-section { padding: 2.75rem 0 !important; }
+        .space-profile-container { padding: 0 24px !important; }
+        .space-profile-layout {
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
+            gap: 20px !important;
+            align-items: center !important;
+        }
+        .space-profile-content {
+            min-height: 100% !important;
+            padding: 24px !important;
+            border-radius: 18px !important;
+        }
+        .space-profile-content .space-badge {
+            font-size: 0.76rem !important;
+            padding: 6px 14px !important;
+            margin-bottom: 12px !important;
+        }
+        .space-profile-content .space-title {
+            font-size: 1.3rem !important;
+            line-height: 1.45 !important;
+            margin-bottom: 10px !important;
+        }
+        .space-profile-content .space-title-blue { font-size: 1.05rem !important; }
+        .space-profile-content .space-desc {
+            max-width: 100% !important;
+            font-size: 0.82rem !important;
+            line-height: 1.7 !important;
+            margin-bottom: 14px !important;
+        }
+        .space-profile-content .space-link {
+            align-items: center !important;
+            gap: 7px !important;
+            padding: 9px 14px !important;
+            font-size: 0.8rem !important;
+        }
+        .space-profile-grid-wrapper { margin-top: 0 !important; }
+        .space-grid-title { font-size: 0.88rem !important; line-height: 1.5 !important; margin-bottom: 12px !important; }
+        .space-profile-grid { gap: 8px !important; }
+        .space-grid-item { aspect-ratio: 4 / 3 !important; border-radius: 11px !important; }
+        .space-grid-item.space-grid-wide { aspect-ratio: 2.8 / 1 !important; }
+        .space-grid-label {
+            background: linear-gradient(to top, rgba(10, 37, 64, 0.8), rgba(10, 37, 64, 0)) !important;
+            color: #fff !important;
+            font-size: 0.7rem !important;
+            padding: 22px 6px 7px !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45) !important;
+        }
+    }
+    @media (max-width: 640px) {
+        .space-profile-section { padding: 1.75rem 0 2rem !important; }
+        .space-profile-container { padding: 0 14px !important; }
+        .space-profile-layout { grid-template-columns: minmax(0, 1fr) !important; gap: 16px !important; }
+        .space-profile-content {
+            min-height: 0 !important;
+            padding: 19px 17px !important;
+            border-radius: 16px !important;
+        }
+        .space-profile-content .space-badge {
+            font-size: 0.7rem !important;
+            padding: 5px 11px !important;
+            margin-bottom: 9px !important;
+        }
+        .space-profile-content .space-title {
+            font-size: 1.12rem !important;
+            line-height: 1.45 !important;
+            margin-bottom: 8px !important;
+        }
+        .space-profile-content .space-title-blue { font-size: 0.94rem !important; }
+        .space-profile-content .space-desc {
+            font-size: 0.8rem !important;
+            line-height: 1.7 !important;
+            margin-bottom: 12px !important;
+        }
+        .space-profile-content .space-link {
+            width: 100% !important;
+            min-height: 42px !important;
+            justify-content: center !important;
+            padding: 8px 10px !important;
+            border-radius: 12px !important;
+            font-size: 0.76rem !important;
+        }
+        .space-profile-content .space-link svg { width: 16px; height: 16px; flex: 0 0 auto; }
+        .space-profile-grid-wrapper { margin-top: 0 !important; }
+        .space-grid-title { font-size: 0.82rem !important; margin-bottom: 9px !important; }
+        .space-profile-grid { gap: 7px !important; }
+        .space-grid-item { aspect-ratio: 16 / 10 !important; border-radius: 10px !important; }
+        .space-grid-item.space-grid-wide { aspect-ratio: 2.8 / 1 !important; }
+        .space-grid-label { font-size: 0.64rem !important; padding: 19px 5px 6px !important; }
+    }
+    @media (max-width: 380px) {
+        .space-profile-container { padding: 0 10px !important; }
+        .space-profile-content { padding: 16px 14px !important; }
+        .space-profile-content .space-title { font-size: 1.04rem !important; }
+        .space-profile-content .space-title-blue { font-size: 0.88rem !important; }
+        .space-profile-content .space-desc { font-size: 0.76rem !important; }
+        .space-grid-label { font-size: 0.6rem !important; }
     }
 </style>
 <section id="space-passport" class="space-profile-section" aria-label="شناسنامه فضا">

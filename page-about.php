@@ -10,7 +10,7 @@ $about_hero_slogan = get_option( 'pakpajoh_text_about_hero_slogan', '«نظاف�
 $about_hero_desc = get_option( 'pakpajoh_text_about_hero_desc', 'شرکت پاک‌پژوه با نام قانونی آتیه مهرگان انعکاس، از سال ۱۴۰۳ با هدف ارائه خدمات مهندسی نظافت صنعتی فعالیت می‌کند.' );
 $about_history_badge = get_option( 'pakpajoh_text_about_history_badge', 'تاریخچه ما' );
 $about_history_title = get_option( 'pakpajoh_text_about_history_title', 'از سال ۱۴۰۳ در خدمت صنعت' );
-$about_history_desc = get_option( 'pakpajoh_text_about_history_desc', 'شرکت پاک‌پژوه با نام قانونی آتیه مهرگان انعکاس (شماره ثبت ۶۳۸۲۱۷) از سال ۱۴۰۳ فعالیت خود را در حوزه خدمات مهندسی نظافت صنعتی آغاز کرده است.' );
+$about_history_desc = get_option( 'pakpajoh_text_about_history_desc', 'شرکت آتیه مهرگان انعکاس (شماره ثبت ۶۳۸۲۱۷) با برند پاک‌پژوه، فعالیت خود را در حوزه مدیریت خدمات مهندسی نظافت صنعتی آغاز کرده است.' );
 ?>
 
 <style>

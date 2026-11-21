@@ -20,3 +20,95 @@ function pakpajoh_handle_request_form() {
 }
 add_action( 'admin_post_pakpajoh_request_form', 'pakpajoh_handle_request_form' );
 add_action( 'admin_post_nopriv_pakpajoh_request_form', 'pakpajoh_handle_request_form' );
+
+function pakpajoh_newsletter_redirect( $status ) {
+    $referer = wp_get_referer();
+    $redirect_to = $referer ? remove_query_arg( 'newsletter_status', $referer ) : home_url( '/' );
+    wp_safe_redirect( add_query_arg( 'newsletter_status', $status, $redirect_to ) );
+    exit;
+}
+
+function pakpajoh_handle_newsletter_signup() {
+    if (
+        ! isset( $_POST['pakpajoh_newsletter_nonce'] )
+        || ! wp_verify_nonce(
+            sanitize_text_field( wp_unslash( $_POST['pakpajoh_newsletter_nonce'] ) ),
+            'pakpajoh_newsletter_signup'
+        )
+    ) {
+        wp_die( 'درخواست معتبر نیست. لطفاً صفحه را تازه‌سازی و دوباره تلاش کنید.' );
+    }
+
+    if ( empty( $_POST['newsletter_consent'] ) ) {
+        pakpajoh_newsletter_redirect( 'consent' );
+    }
+
+    $phone = isset( $_POST['newsletter_phone'] )
+        ? sanitize_text_field( wp_unslash( $_POST['newsletter_phone'] ) )
+        : '';
+    $phone = strtr( $phone, array(
+        '۰' => '0', '۱' => '1', '۲' => '2', '۳' => '3', '۴' => '4',
+        '۵' => '5', '۶' => '6', '۷' => '7', '۸' => '8', '۹' => '9',
+        '٠' => '0', '١' => '1', '٢' => '2', '٣' => '3', '٤' => '4',
+        '٥' => '5', '٦' => '6', '٧' => '7', '٨' => '8', '٩' => '9',
+    ) );
+    $phone = preg_replace( '/[\s\-\(\)]/', '', $phone );
+
+    if ( 0 === strpos( $phone, '+98' ) ) {
+        $phone = '0' . substr( $phone, 3 );
+    } elseif ( 0 === strpos( $phone, '0098' ) ) {
+        $phone = '0' . substr( $phone, 4 );
+    } elseif ( 0 === strpos( $phone, '98' ) ) {
+        $phone = '0' . substr( $phone, 2 );
+    } elseif ( 0 !== strpos( $phone, '0' ) ) {
+        $phone = '0' . $phone;
+    }
+
+    if ( ! preg_match( '/^09[0-9]{9}$/', $phone ) ) {
+        pakpajoh_newsletter_redirect( 'invalid' );
+    }
+
+    global $wpdb;
+    $table = $wpdb->prefix . 'pakpajoh_leads';
+    $table_exists = $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table ) ) );
+    if ( $table !== $table_exists ) {
+        error_log( 'PakPajoh: newsletter signup could not find the leads table.' );
+        pakpajoh_newsletter_redirect( 'error' );
+    }
+
+    $existing_id = $wpdb->get_var( $wpdb->prepare(
+        "SELECT id FROM $table WHERE phone = %s AND source = %s LIMIT 1",
+        $phone,
+        'newsletter'
+    ) );
+    if ( ! empty( $wpdb->last_error ) ) {
+        error_log( 'PakPajoh: newsletter signup could not check for an existing lead.' );
+        pakpajoh_newsletter_redirect( 'error' );
+    }
+    if ( $existing_id ) {
+        pakpajoh_newsletter_redirect( 'duplicate' );
+    }
+
+    $inserted = $wpdb->insert(
+        $table,
+        array(
+            'name'    => 'عضویت خبرنامه',
+            'phone'   => $phone,
+            'email'   => '',
+            'service' => 'newsletter',
+            'message' => 'ثبت شماره در خبرنامه با رضایت کاربر برای پیگیری و اطلاع‌رسانی',
+            'status'  => 'new',
+            'source'  => 'newsletter',
+        ),
+        array( '%s', '%s', '%s', '%s', '%s', '%s', '%s' )
+    );
+
+    if ( false === $inserted ) {
+        error_log( 'PakPajoh: newsletter signup lead insert failed.' );
+        pakpajoh_newsletter_redirect( 'error' );
+    }
+
+    pakpajoh_newsletter_redirect( 'success' );
+}
+add_action( 'admin_post_pakpajoh_newsletter_signup', 'pakpajoh_handle_newsletter_signup' );
+add_action( 'admin_post_nopriv_pakpajoh_newsletter_signup', 'pakpajoh_handle_newsletter_signup' );

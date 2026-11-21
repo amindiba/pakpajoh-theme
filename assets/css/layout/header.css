@@ -327,10 +327,12 @@
 @media (max-width: 640px) {
     .site-header { height: 62px; }
     .site-header.is-scrolled { height: 58px; }
-    .header-container { gap: 10px; padding: 0 14px; }
+    .header-container { position: relative; gap: 10px; padding: 0 14px; }
+    .site-logo { position: absolute; left: 50%; transform: translateX(-50%); }
     .site-logo-img { height: 44px; max-width: 126px; }
     .site-header.is-scrolled .site-logo-img { height: 41px; }
-    .mobile-menu-toggle { width: 42px; height: 42px; border-radius: 13px; }
+    .mobile-menu-toggle { position: absolute; right: 14px; width: 42px; height: 42px; border-radius: 13px; }
+    .header-actions { position: absolute; left: 14px; }
     .header-actions .btn-header-cta {
         width: 42px;
         min-height: 42px;
@@ -359,6 +361,8 @@
 
 @media (max-width: 360px) {
     .header-container { padding-right: 10px; padding-left: 10px; }
+    .mobile-menu-toggle { right: 10px; }
+    .header-actions { left: 10px; }
     .site-logo-img { max-width: 112px; }
 }
 
