@@ -64,6 +64,23 @@ function pakpajoh_enqueue_assets() {
             filemtime( get_template_directory() . '/assets/css/pages/contact.css' )
         );
     }
+
+    if ( is_page( 'request' ) || is_page_template( 'page-request.php' ) ) {
+        wp_enqueue_style(
+            'pp-request-page',
+            $uri . '/assets/css/pages/request.css',
+            array( 'pp-home' ),
+            filemtime( get_template_directory() . '/assets/css/pages/request.css' )
+        );
+        wp_enqueue_script(
+            'pp-request-form',
+            $uri . '/assets/js/request-form.js',
+            array(),
+            filemtime( get_template_directory() . '/assets/js/request-form.js' ),
+            true
+        );
+    }
+
 }
 
 /**

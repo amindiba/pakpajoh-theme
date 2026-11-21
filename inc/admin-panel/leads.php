@@ -49,11 +49,11 @@ function pakpajoh_leads_page() {
         $lead = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $table WHERE id = %d", $lead_id ) );
         if ( $lead ) {
             $wpdb->insert( $customers_table, array(
-                'company_name' => $lead->name,
+                'company_name' => ! empty( $lead->organization ) ? $lead->organization : $lead->name,
                 'contact_name' => $lead->name,
                 'phone'        => $lead->phone,
                 'email'        => $lead->email,
-                'address'      => '',
+                'address'      => $lead->address,
                 'city'         => '',
                 'industry'     => '',
                 'status'       => 'active',
@@ -86,6 +86,11 @@ function pakpajoh_leads_page() {
                         <tr><th>نام:</th><td><?php echo esc_html( $lead->name ); ?></td></tr>
                         <tr><th>تلفن:</th><td><?php echo esc_html( $lead->phone ); ?></td></tr>
                         <tr><th>ایمیل:</th><td><?php echo esc_html( $lead->email ); ?></td></tr>
+                        <tr><th>سازمان:</th><td><?php echo esc_html( $lead->organization ); ?></td></tr>
+                        <tr><th>سمت:</th><td><?php echo esc_html( $lead->contact_position ); ?></td></tr>
+                        <tr><th>نشانی محل بازدید:</th><td><?php echo nl2br( esc_html( $lead->address ) ); ?></td></tr>
+                        <tr><th>مساحت تقریبی:</th><td><?php echo esc_html( $lead->site_area ); ?></td></tr>
+                        <tr><th>کد ملی:</th><td><?php echo esc_html( $lead->national_id ); ?></td></tr>
                         <tr><th>منبع:</th><td><?php echo esc_html( pakpajoh_lead_source_label( $lead->source ) ); ?></td></tr>
                         <tr><th>نوع خدمت:</th><td><?php echo esc_html( $lead->service ); ?></td></tr>
                         <tr><th>پیام:</th><td><?php echo nl2br( esc_html( $lead->message ) ); ?></td></tr>

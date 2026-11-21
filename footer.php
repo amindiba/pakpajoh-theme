@@ -483,6 +483,7 @@ $newsletter_feedback = isset( $newsletter_messages[ $newsletter_status ] ) ? $ne
         <p>برای دریافت مشاوره رایگان، فرم زیر را تکمیل کنید.</p>
         <form action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="POST" class="pakpajoh-form-modal">
             <input type="hidden" name="action" value="pakpajoh_request_form">
+            <input type="hidden" name="req_source" value="modal">
             <?php wp_nonce_field( 'pakpajoh_request_nonce', 'pakpajoh_nonce' ); ?>
             <div class="form-group">
                 <label for="modal-req-name">نام و نام خانوادگی</label>

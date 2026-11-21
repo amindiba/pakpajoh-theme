@@ -13,12 +13,17 @@ $charset_collate = $wpdb->get_charset_collate();
 
 // جدول سرنخ‌ها
 $table_leads = $wpdb->prefix . 'pakpajoh_leads';
-$sql_leads = "CREATE TABLE IF NOT EXISTS $table_leads (
+$sql_leads = "CREATE TABLE $table_leads (
     id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
     phone varchar(50) NOT NULL,
     email varchar(255) DEFAULT '',
     service varchar(100) DEFAULT '',
+    organization varchar(255) DEFAULT '',
+    contact_position varchar(255) DEFAULT '',
+    address text,
+    site_area varchar(50) DEFAULT '',
+    national_id varchar(10) DEFAULT '',
     message text,
     status varchar(50) DEFAULT 'new',
     source varchar(100) DEFAULT 'site',
@@ -31,7 +36,7 @@ $sql_leads = "CREATE TABLE IF NOT EXISTS $table_leads (
 
 // جدول مشتریان
 $table_customers = $wpdb->prefix . 'pakpajoh_customers';
-$sql_customers = "CREATE TABLE IF NOT EXISTS $table_customers (
+$sql_customers = "CREATE TABLE $table_customers (
     id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
     company_name varchar(255) NOT NULL,
     contact_name varchar(255) DEFAULT '',
@@ -50,7 +55,7 @@ $sql_customers = "CREATE TABLE IF NOT EXISTS $table_customers (
 
 // جدول یادداشت‌های CRM
 $table_notes = $wpdb->prefix . 'pakpajoh_crm_notes';
-$sql_notes = "CREATE TABLE IF NOT EXISTS $table_notes (
+$sql_notes = "CREATE TABLE $table_notes (
     id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
     customer_id bigint(20) unsigned NOT NULL,
     note_type varchar(50) DEFAULT 'note',
