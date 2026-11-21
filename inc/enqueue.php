@@ -21,6 +21,24 @@ function pakpajoh_enqueue_assets() {
 
     // CSS صفحه اصلی (گلوبال)
     wp_enqueue_style( 'pp-home', $uri . '/assets/css/pages/home.css', array( 'pp-header' ), $ver );
+
+    if ( is_page( 'activities' ) || is_page_template( 'page-activities.php' ) ) {
+        wp_enqueue_style(
+            'pp-activities-page',
+            $uri . '/assets/css/pages/activities.css',
+            array( 'pp-home' ),
+            filemtime( get_template_directory() . '/assets/css/pages/activities.css' )
+        );
+    }
+
+    if ( is_page( 'process' ) || is_page_template( 'page-process.php' ) ) {
+        wp_enqueue_style(
+            'pp-process-page',
+            $uri . '/assets/css/pages/process.css',
+            array( 'pp-home' ),
+            filemtime( get_template_directory() . '/assets/css/pages/process.css' )
+        );
+    }
 }
 
 /**

@@ -5,8 +5,8 @@
 ?>
 <div class="area-modal" id="areaModal" aria-hidden="true">
     <div class="area-modal-overlay" data-close="1"></div>
-    <div class="area-modal-dialog" role="dialog" aria-modal="true">
-        <button class="area-modal-close" data-close="1" aria-label="بستن">×</button>
+    <div class="area-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="areaModalTitle" tabindex="-1">
+        <button class="area-modal-close" type="button" data-close="1" aria-label="بستن">×</button>
         <h2 class="area-modal-title" id="areaModalTitle"></h2>
         <p class="area-modal-desc" id="areaModalDesc"></p>
         <h3 class="area-modal-sub">فضاهای قابل بررسی</h3>
@@ -16,7 +16,7 @@
         <h3 class="area-modal-sub">خدمات مرتبط پاک پژوه</h3>
         <ul class="area-modal-list" id="areaModalServices"></ul>
         <div class="area-modal-actions">
-            <a href="/?area=manufacturing#request-form" class="area-modal-btn" id="areaModalBtn">درخواست بررسی</a>
+            <a href="<?php echo esc_url( home_url( '/?area=manufacturing#request-form' ) ); ?>" class="area-modal-btn" id="areaModalBtn">درخواست بررسی</a>
         </div>
     </div>
 </div>
@@ -74,26 +74,68 @@
       services: ['شناخت فضاهای اقامتی و عمومی','طراحی برنامه اختصاصی پاکیزگی','مدیریت اجرای عملیات','کنترل کیفیت و پیگیری اصلاحات','مستندسازی و گزارش‌دهی']
     }
   };
-  function openModal(key){
+  var modal = document.getElementById('areaModal');
+  var closeButton = modal.querySelector('.area-modal-close');
+  var activeCard = null;
+  var previousOverflow = '';
+
+  function openModal(key, card){
     var d = data[key]; if(!d) return;
+    activeCard = card;
     document.getElementById('areaModalTitle').textContent = d.title;
     document.getElementById('areaModalDesc').textContent = d.desc;
     var s = document.getElementById('areaModalSpaces'); s.innerHTML=''; d.spaces.forEach(function(t){var li=document.createElement('li');li.textContent=t;s.appendChild(li);});
     var n = document.getElementById('areaModalNotes'); n.innerHTML=''; d.notes.forEach(function(t){var li=document.createElement('li');li.textContent=t;n.appendChild(li);});
     var sv = document.getElementById('areaModalServices'); sv.innerHTML=''; d.services.forEach(function(t){var li=document.createElement('li');li.textContent=t;sv.appendChild(li);});
-    document.getElementById('areaModalBtn').href = '/?area=' + key + '#request-form';
-    document.getElementById('areaModal').classList.add('is-open');
-    document.getElementById('areaModal').setAttribute('aria-hidden','false');
+    var requestUrl = new URL(document.getElementById('areaModalBtn').href, window.location.origin);
+    requestUrl.searchParams.set('area', key);
+    requestUrl.hash = 'request-form';
+    document.getElementById('areaModalBtn').href = requestUrl.toString();
+    previousOverflow = document.body.style.overflow;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
   }
   function closeModal(){
-    document.getElementById('areaModal').classList.remove('is-open');
-    document.getElementById('areaModal').setAttribute('aria-hidden','true');
+    if (!modal.classList.contains('is-open')) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = previousOverflow;
+    if (activeCard) activeCard.focus();
+    activeCard = null;
   }
   document.addEventListener('click', function(e){
     var card = e.target.closest('.card1[data-area]');
-    if(card){ openModal(card.getAttribute('data-area')); return; }
-    if(e.target && e.target.getAttribute && e.target.getAttribute('data-close')){ closeModal(); }
+    if(card){ openModal(card.getAttribute('data-area'), card); return; }
+    if(e.target.closest('[data-close="1"]')){ closeModal(); }
   });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+  document.addEventListener('keydown', function(e){
+    if (modal.classList.contains('is-open')) {
+      if (e.key === 'Escape') {
+        closeModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        var focusable = modal.querySelectorAll('button:not([disabled]), a[href]');
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+      return;
+    }
+
+    var card = e.target.closest('.card1[data-area]');
+    if (card && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      openModal(card.getAttribute('data-area'), card);
+    }
+  });
 })();
 </script>

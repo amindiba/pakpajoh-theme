@@ -43,7 +43,7 @@
                             <span class="doc-card-badge">نمونه نمایشی</span>
                         </div>
                         <h3 class="doc-card-title">گزارش نقص و اصلاحات</h3>
-                        <p class="doc-card-desc">تیت و پیگیری مورد</p>
+                        <p class="doc-card-desc">ثبت و پیگیری موارد</p>
                     </div>
 
                     <div class="doc-card">
@@ -52,7 +52,7 @@
                             <span class="doc-card-badge">نمونه نمایشی</span>
                         </div>
                         <h3 class="doc-card-title">چک‌لیست کیفیت</h3>
-                        <p class="doc-card-desc">معیارها و تبعات ارزیابی</p>
+                        <p class="doc-card-desc">معیارها و نتایج ارزیابی</p>
                     </div>
 
                     <div class="doc-card">
@@ -61,7 +61,7 @@
                             <span class="doc-card-badge">نمونه نمایشی</span>
                         </div>
                         <h3 class="doc-card-title">برنامه نظافت</h3>
-                        <p class="doc-card-desc">فعلیت‌ها و زمان‌بندی</p>
+                        <p class="doc-card-desc">فعالیت‌ها و زمان‌بندی</p>
                     </div>
 
                 </div>

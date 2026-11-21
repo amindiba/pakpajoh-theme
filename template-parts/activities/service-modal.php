@@ -5,8 +5,8 @@
 ?>
 <div class="svc-modal" id="svcModal" aria-hidden="true">
     <div class="svc-modal-overlay" data-close="1"></div>
-    <div class="svc-modal-dialog" role="dialog" aria-modal="true">
-        <button class="svc-modal-close" data-close="1" aria-label="بستن">×</button>
+    <div class="svc-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle" tabindex="-1">
+        <button class="svc-modal-close" type="button" data-close="1" aria-label="بستن">×</button>
         <h2 class="svc-modal-title" id="svcModalTitle"></h2>
         <p class="svc-modal-desc" id="svcModalDesc"></p>
         <h3 class="svc-modal-sub">مسئله‌ای که خدمت حل می‌کند</h3>
@@ -16,7 +16,7 @@
         <h3 class="svc-modal-sub">خروجی‌های قابل تحویل</h3>
         <ul class="svc-modal-list" id="svcModalOutputs"></ul>
         <div class="svc-modal-actions">
-            <a href="/#request-form" class="svc-modal-btn" id="svcModalBtn">درخواست مشاوره</a>
+            <a href="<?php echo esc_url( home_url( '/#request-form' ) ); ?>" class="svc-modal-btn" id="svcModalBtn">درخواست مشاوره</a>
         </div>
     </div>
 </div>
@@ -34,7 +34,6 @@
 .svc-modal-list { margin: 0; padding-right: 20px; color: #444; font-size: 14px; line-height: 1.8; }
 .svc-modal-actions { margin-top: 20px; text-align: center; }
 .svc-modal-btn { display: inline-block; background: #35BA38; color: #fff; padding: 10px 24px; border-radius: 10px; font-weight: 700; text-decoration: none; }
-@media (max-width: 640px) { .svc-modal-dialog { margin: 4vh 12px; padding: 24px 18px; } }
 </style>
 <script>
 (function(){
@@ -68,28 +67,70 @@
       outputs: ['گزارش عملکرد','سوابق اجرای برنامه','گزارش وضعیت و اصلاحات']
     }
   };
-  function openModal(key){
+  var modal = document.getElementById('svcModal');
+  var closeButton = modal.querySelector('.svc-modal-close');
+  var activeCard = null;
+  var previousOverflow = '';
+
+  function openModal(key, card){
     var d = data[key]; if(!d) return;
+    activeCard = card;
     document.getElementById('svcModalTitle').textContent = d.title;
     document.getElementById('svcModalDesc').textContent = d.desc;
     document.getElementById('svcModalProblem').textContent = d.problem;
-    document.getElementById('svcModalBtn').href = '/?service=' + key + '#request-form';
+    var requestUrl = new URL(document.getElementById('svcModalBtn').href, window.location.origin);
+    requestUrl.searchParams.set('service', key);
+    requestUrl.hash = 'request-form';
+    document.getElementById('svcModalBtn').href = requestUrl.toString();
     var a = document.getElementById('svcModalActivities'); a.innerHTML = '';
     d.activities.forEach(function(t){ var li=document.createElement('li'); li.textContent=t; a.appendChild(li); });
     var o = document.getElementById('svcModalOutputs'); o.innerHTML = '';
     d.outputs.forEach(function(t){ var li=document.createElement('li'); li.textContent=t; o.appendChild(li); });
-    document.getElementById('svcModal').classList.add('is-open');
-    document.getElementById('svcModal').setAttribute('aria-hidden','false');
+    previousOverflow = document.body.style.overflow;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
   }
   function closeModal(){
-    document.getElementById('svcModal').classList.remove('is-open');
-    document.getElementById('svcModal').setAttribute('aria-hidden','true');
+    if (!modal.classList.contains('is-open')) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = previousOverflow;
+    if (activeCard) activeCard.focus();
+    activeCard = null;
   }
   document.addEventListener('click', function(e){
     var card = e.target.closest('.sv-card');
-    if(card && card.id && data[card.id]){ openModal(card.id); return; }
-    if(e.target && e.target.getAttribute && e.target.getAttribute('data-close')){ closeModal(); }
+    if(card && card.id && data[card.id]){ openModal(card.id, card); return; }
+    if(e.target.closest('[data-close="1"]')){ closeModal(); }
   });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+  document.addEventListener('keydown', function(e){
+    if (modal.classList.contains('is-open')) {
+      if (e.key === 'Escape') {
+        closeModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        var focusable = modal.querySelectorAll('button:not([disabled]), a[href]');
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+      return;
+    }
+
+    var card = e.target.closest('.sv-card');
+    if (card && data[card.id] && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      openModal(card.id, card);
+    }
+  });
 })();
 </script>

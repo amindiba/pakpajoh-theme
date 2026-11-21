@@ -3,7 +3,7 @@
  * Cooperation Process Section — PakPajoh Theme
  */
 ?>
-<section class="coopproc-section">
+<section class="coopproc-section" id="cooperation-process">
     <div class="coopproc-container">
         <h2 class="coopproc-title">از شناخت محیط تا طراحی برنامه مناسب</h2>
         <div class="coopproc-steps">

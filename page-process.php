@@ -4,19 +4,20 @@
  */
 get_header();
 ?>
+<div class="process-page">
 
-<section class="hero-section" aria-label="بخش معرفی" style="min-height: calc(39vh + 60px);">
+<section class="hero-section process-hero" aria-label="بخش معرفی">
     <div class="hero-slider">
         <div class="hero-slide active">
             <div class="hero-bg">
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/process-hero.jpeg' ); ?>" alt="روش کار ما پاک پژوه" loading="eager" fetchpriority="high">
-                <div class="hero-overlay" style="background: linear-gradient(to left, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 30%, transparent 100%);"></div>
+                <div class="hero-overlay"></div>
             </div>
         </div>
     </div>
 
-    <div class="hero-container" style="justify-content: flex-start;">
-        <div class="hero-content" style="padding-right: 3%;">
+    <div class="hero-container">
+        <div class="hero-content">
             <h1 class="hero-title">پاکیزگی قابل اندازه‌گیری، با یک روش کار مشخص</h1>
             <p class="hero-desc">در پاک پژوه، خدمات پاکیزگی با شناخت محیط، طراحی برنامه متناسب، مدیریت اجرا، ارزیابی کیفیت و مستندسازی انجام می‌شود.</p>
 
@@ -24,21 +25,15 @@ get_header();
                 <a href="<?php echo esc_url( home_url( '/request/' ) ); ?>" class="btn btn-primary">
                     <span>درخواست بازدید اولیه رایگان</span>
                 </a>
-                <a href="<?php echo esc_url( home_url( '/process/' ) ); ?>" class="btn btn-outline">
-                    <span>آشنایی با مراحل کار ←</span>
+                <a href="#process-steps" class="btn btn-outline">
+                    <span>مشاهده مراحل همکاری</span>
                 </a>
-            </div>
-
-            <div class="hero-pagination" aria-hidden="true">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
             </div>
         </div>
     </div>
 </section>
 
-<section class="pp-why" aria-label="چرا پیش از اجرا، محیط را می‌شناسیم؟" style="background: linear-gradient(135deg, #E8F4FC 0%, #DCEFF9 50%, #E8F4FC 100%); border-radius: 24px; margin: 12px 24px; padding: 0; overflow: hidden; width: calc(100% - 48px);">
+<section class="pp-why" aria-label="چرا پیش از اجرا، محیط را می‌شناسیم؟">
     <div class="pp-why-inner">
         <div class="pp-why-badge-wrap">
             <div class="pp-why-badge">
@@ -54,7 +49,7 @@ get_header();
             <p class="pp-why-desc">محیط‌های کاری از نظر نوع فعالیت، وسعت، تجهیزات و شرایط بهره‌برداری با یکدیگر متفاوت‌اند. بنابراین، برنامه پاکیزگی باید بر اساس شرایط واقعی هر مجموعه طراحی شود.</p>
         </div>
         <div class="pp-why-image">
-            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/process-why.webp' ); ?>" alt="شناخت محیط پیش از اجرا">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/process-why.webp' ); ?>" alt="شناخت محیط پیش از اجرا" loading="lazy">
         </div>
     </div>
 </section>
@@ -94,63 +89,58 @@ get_header();
     .pp-steps-title::before, .pp-steps-title::after { content: ''; position: absolute; top: 50%; width: 16vw; height: 3px; transform: translateY(-50%); }
     .pp-steps-title::before { left: 100%; margin-left: 12px; background: linear-gradient(to right, #35BA38, transparent); }
     .pp-steps-title::after { right: 100%; margin-right: 12px; background: linear-gradient(to left, #35BA38, transparent); }
-    .pp-step-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; cursor: pointer; border: 2px solid #D1D5DB; }
-    .pp-step-card:hover { transform: translateY(-8px) scale(1.02); border-color: #4caf50; box-shadow: 0 0 0 3px rgba(76,175,80,0.15), 0 12px 32px rgba(76, 175, 80, 0.25); }`n    .pp-step-card:hover .pp-step-circle { background: linear-gradient(135deg, #1a3a5c 0%, #0d2b4a 100%); transform: translate(-50%, -50%) rotate(-30deg); }
-    @media (max-width: 768px) {
-        .pp-steps-cards { flex-wrap: wrap !important; }
-        .pp-step-card { width: calc(50% - 10px) !important; }
-    }
+    .pp-step-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; cursor: default; border: 2px solid #D1D5DB; }
     .pp-step-card .pp-step-arrow { position: absolute; top: 50%; right: -18px; transform: translateY(-50%); color: #4caf50; font-size: 20px; font-weight: bold; z-index: 5; }
     .pp-step-card .pp-step-circle { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); width: 59px; height: 59px; background: #4caf50; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 29px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.15); z-index: 10; transition: background 0.4s ease, transform 0.4s ease; }
     .pp-step-card .pp-step-title { font-size: 16px; font-weight: 800; color: #003b73; line-height: 1.5; margin-bottom: 10px; min-height: 50px; display: flex; align-items: center; justify-content: center; }
     .pp-step-card .pp-step-desc { font-size: 14px; font-weight: 700; color: #003b73; line-height: 1.6; }
 </style>
 
-<section class="pp-steps" aria-label="مراحل همکاری با پاک پژوه" style="background: transparent; padding: 25px 24px; width: 100%; box-sizing: border-box;">
-    <div style="width: 100%; max-width: 100%; margin: 0 auto; background: #FFFFFF; border-radius: 20px; padding: 25px 15px; position: relative; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; overflow: visible;">
+<section class="pp-steps" id="process-steps" aria-label="مراحل همکاری با پاک پژوه">
+    <div class="pp-steps-container">
         <h2 class="pp-steps-title">مراحل همکاری با پاک پژوه</h2>
-        <div class="pp-steps-cards" style="display: flex; justify-content: center; align-items: stretch; gap: 20px; position: relative; width: 100%; flex-wrap: wrap; overflow-y: visible; padding-top: 20px;">
-<div class="pp-step-card" style="width: 200px; background: rgba(255,255,255,0.85); border-radius: 15px; padding: 40px 8px 10px; text-align: center; position: relative; z-index: 1; backdrop-filter: blur(5px); border: 2px solid #D1D5DB; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: visible;">
+        <div class="pp-steps-cards">
+<div class="pp-step-card">
 <div class="pp-step-circle">۱</div>
                 <div class="pp-step-title">دریافت درخواست و شناخت اولیه نیازها</div>
-                <div style="width: 100%; height: 120px; border-radius: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden;"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-1.jpeg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"></div>
+                <div class="pp-step-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-1.jpeg' ); ?>" alt="ثبت درخواست خدمات" loading="lazy"></div>
                 <div class="pp-step-desc">ثبت درخواست و ارائه اطلاعات اولیه</div>
             </div>
-<div class="pp-step-card" style="width: 200px; background: rgba(255,255,255,0.85); border-radius: 15px; padding: 40px 8px 10px; text-align: center; position: relative; z-index: 1; backdrop-filter: blur(5px); border: 2px solid #D1D5DB; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: visible;">
+<div class="pp-step-card">
 <div class="pp-step-circle">۲</div>
                 <div class="pp-step-title">بازدید و شناخت محیط</div>
-                <div style="width: 100%; height: 120px; border-radius: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden;"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-2.jpeg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"></div>
+                <div class="pp-step-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-2.jpeg' ); ?>" alt="بازدید و شناخت محیط" loading="lazy"></div>
                 <div class="pp-step-desc">بررسی شرایط و ابزارهای مجموعه</div>
             </div>
-<div class="pp-step-card" style="width: 200px; background: rgba(255,255,255,0.85); border-radius: 15px; padding: 40px 8px 10px; text-align: center; position: relative; z-index: 1; backdrop-filter: blur(5px); border: 2px solid #D1D5DB; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: visible;">
+<div class="pp-step-card">
 <div class="pp-step-circle">۳</div>
                 <div class="pp-step-title">طراحی برنامه پاکیزگی</div>
-                <div style="width: 100%; height: 120px; border-radius: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden;"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-3.jpg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"></div>
+                <div class="pp-step-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-3.jpg' ); ?>" alt="طراحی برنامه پاکیزگی" loading="lazy"></div>
                 <div class="pp-step-desc">تعیین روش، تنظیم و معیارهای کیفیت</div>
             </div>
-<div class="pp-step-card" style="width: 200px; background: rgba(255,255,255,0.85); border-radius: 15px; padding: 40px 8px 10px; text-align: center; position: relative; z-index: 1; backdrop-filter: blur(5px); border: 2px solid #D1D5DB; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: visible;">
+<div class="pp-step-card">
 <div class="pp-step-circle">۴</div>
                 <div class="pp-step-title">سازماندهی منابع و آماده‌سازی اجرا</div>
-                <div style="width: 100%; height: 120px; border-radius: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden;"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-4.jpg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"></div>
+                <div class="pp-step-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-4.jpg' ); ?>" alt="آماده‌سازی منابع و تجهیزات" loading="lazy"></div>
                 <div class="pp-step-desc">تأمین نیرو و تجهیزات مورد نیاز</div>
             </div>
-<div class="pp-step-card" style="width: 200px; background: rgba(255,255,255,0.85); border-radius: 15px; padding: 40px 8px 10px; text-align: center; position: relative; z-index: 1; backdrop-filter: blur(5px); border: 2px solid #D1D5DB; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: visible;">
+<div class="pp-step-card">
 <div class="pp-step-circle">۵</div>
                 <div class="pp-step-title">اجرا و کنترل کیفیت</div>
-                <div style="width: 100%; height: 120px; border-radius: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden;"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-5.jpeg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"></div>
+                <div class="pp-step-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-5.jpeg' ); ?>" alt="اجرای خدمات و کنترل کیفیت" loading="lazy"></div>
                 <div class="pp-step-desc">اجرای خدمات و ارزیابی کیفیت</div>
             </div>
-<div class="pp-step-card" style="width: 200px; background: rgba(255,255,255,0.85); border-radius: 15px; padding: 40px 8px 10px; text-align: center; position: relative; z-index: 1; backdrop-filter: blur(5px); border: 2px solid #D1D5DB; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: visible;">
+<div class="pp-step-card">
                 <div class="pp-step-circle">۶</div>
                 <div class="pp-step-title">مستندسازی و بهبود</div>
-                <div style="width: 100%; height: 120px; border-radius: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden;"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-6.jpg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"></div>
-                <div class="pp-step-desc">ارائه گزارش و بهبین مستمر</div>
+                <div class="pp-step-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-6.jpg' ); ?>" alt="گزارش عملکرد و بهبود مستمر" loading="lazy"></div>
+                <div class="pp-step-desc">ارائه گزارش و بهبود مستمر</div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="pp-s7" aria-label="انعطاف‌پذیری در تأمین و اجرای خدمات" style="background: transparent; padding: 25px 24px; width: 100%; box-sizing: border-box;">
+<section class="pp-s7" aria-label="انعطاف‌پذیری در تأمین و اجرای خدمات">
     <style>
         .pp-s7 .pp-s7-container { width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; background: linear-gradient(135deg, #f0faf7 0%, #e8f5f0 50%, #f5fbf9 100%); border-radius: 24px; padding: 35px 40px; box-shadow: 0 8px 32px rgba(0,80,120,0.06), 0 2px 8px rgba(0,80,120,0.04), inset 0 1px 0 rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.6); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
         .pp-s7 .pp-s7-container:hover { box-shadow: 0 12px 40px rgba(0,80,120,0.1), 0 4px 12px rgba(0,80,120,0.06), inset 0 1px 0 rgba(255,255,255,0.8); }
@@ -159,13 +149,13 @@ get_header();
         .pp-s7 .pp-s7-highlight { background: rgba(10,74,122,0.08); border-right: 3px solid #0a4a7a; padding: 12px 16px; border-radius: 8px; margin: 16px 0; }
         .pp-s7 .pp-s7-highlight p { font-size: 15px; color: #0a4a7a; line-height: 1.9; font-weight: 700; text-align: justify; text-align-last: right; }
         .pp-s7 .pp-s7-list { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-        .pp-s7 .pp-s7-list li { background: rgba(255,255,255,0.9); border: 1px solid rgba(10,74,122,0.15); border-radius: 20px; padding: 8px 16px; font-size: 14px; color: #0a4a7a; font-weight: 700; cursor: pointer; transition: all 0.3s ease; }`n        .pp-s7 .pp-s7-list li:hover { background: #0a4a7a; color: white; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(10,74,122,0.2); }
+        .pp-s7 .pp-s7-list li { background: rgba(255,255,255,0.9); border: 1px solid rgba(10,74,122,0.15); border-radius: 20px; padding: 8px 16px; font-size: 14px; color: #0a4a7a; font-weight: 700; cursor: default; transition: all 0.3s ease; }
     </style>
     <div class="pp-s7-container">
         <h2 class="pp-s7-title">ساختار اجرا، متناسب با نیاز هر پروژه</h2>
         <p class="pp-s7-desc">پروژه‌ها از نظر وسعت، نوع فعالیت، تعداد فضاها، ساعات بهره‌برداری و سطح خدمات موردنیاز یکسان نیستند. به همین دلیل، پاک پژوه ساختار اجرایی خود را متناسب با شرایط هر پروژه سازماندهی می‌کند.</p>
         <div class="pp-s7-highlight">
-            <p>تأمین منابع می‌تواند با استفاده از ترکیبی از نیروهای داخلی و همکاران قراردادی انجام شود. ترکیب منابع، نحوه سازماندهی و مسئولیتها در پیشنهاد اجرایی و توافق همکاری مشخص خواهد شد.</p>
+            <p>تأمین منابع می‌تواند با استفاده از ترکیبی از نیروهای داخلی و همکاران قراردادی انجام شود. ترکیب منابع، نحوه سازماندهی و مسئولیت‌ها در پیشنهاد اجرایی و توافق همکاری مشخص خواهد شد.</p>
         </div>
         <p class="pp-s7-desc">هدف این است که ساختار اجرا با نیاز واقعی پروژه متناسب باشد؛ نه اینکه یک الگوی ثابت برای همه مجموعه‌ها به کار گرفته شود.</p>
         <ul class="pp-s7-list">
@@ -176,14 +166,15 @@ get_header();
         </ul>
     </div>
 </section>
-<section class="pp-s8" aria-label="شناسنامه مهندسی فضا" style="background: transparent; padding: 25px 24px; width: 100%; box-sizing: border-box;">
+<section class="pp-s8" aria-label="شناسنامه مهندسی فضا">
     <style>
         .pp-s8 .pp-s8-container { width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; background: linear-gradient(135deg, #f0f7fa 0%, #e8f0f8 50%, #f5fafd 100%); border-radius: 24px; padding: 35px 40px; box-shadow: 0 8px 32px rgba(0,80,120,0.06), 0 2px 8px rgba(0,80,120,0.04), inset 0 1px 0 rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.6); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
         .pp-s8 .pp-s8-container:hover { box-shadow: 0 12px 40px rgba(0,80,120,0.1), 0 4px 12px rgba(0,80,120,0.06), inset 0 1px 0 rgba(255,255,255,0.8); }
         .pp-s8 .pp-s8-title { font-size: 20px; font-weight: 800; color: #0a4a7a; line-height: 1.6; margin-bottom: 14px; text-align: center; }
         .pp-s8 .pp-s8-desc { font-size: 13px; color: #1565a8; line-height: 1.9; text-align: justify; text-align-last: center; margin-bottom: 20px; }
         .pp-s8 .pp-s8-list { list-style: none; padding: 0; margin: 0 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-        .pp-s8 .pp-s8-list li { background: rgba(255,255,255,0.9); border: 1px solid rgba(10,74,122,0.12); border-radius: 12px; padding: 10px 14px; font-size: 14px; color: #0a4a7a; font-weight: 700; text-align: right; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; }`n        .pp-s8 .pp-s8-list li { cursor: pointer; }`n        .pp-s8 .pp-s8-list li:hover { background: #0a4a7a; color: white; transform: translateY(-3px) scale(1.03); box-shadow: 0 6px 16px rgba(10,74,122,0.25); }`n        .pp-s8 .pp-s8-list li:hover svg { fill: white; transform: scale(1.2); }`n        .pp-s8 .pp-s8-list li svg { width: 7px; height: 7px; fill: #0a4a7a; flex-shrink: 0; transition: fill 0.3s ease, transform 0.3s ease; }`n        .pp-s8 .pp-s8-list li:hover svg { fill: white; }
+        .pp-s8 .pp-s8-list li { background: rgba(255,255,255,0.9); border: 1px solid rgba(10,74,122,0.12); border-radius: 12px; padding: 10px 14px; font-size: 14px; color: #0a4a7a; font-weight: 700; text-align: right; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; cursor: default; }
+        .pp-s8 .pp-s8-list li svg { width: 7px; height: 7px; fill: #0a4a7a; flex-shrink: 0; transition: fill 0.3s ease, transform 0.3s ease; }
         .pp-s8 .pp-s8-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #0d5a8f 0%, #0a4a7a 100%); color: white; border: none; border-radius: 24px; padding: 10px 22px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Vazirmatn', Tahoma, sans-serif; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 4px 12px rgba(13,90,143,0.2); text-decoration: none; }
         .pp-s8 .pp-s8-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,90,143,0.35); background: linear-gradient(135deg, #0e6aa3 0%, #0b558f 100%); }
         .pp-s8 .pp-s8-btn-wrap { text-align: center; }
@@ -211,7 +202,7 @@ get_header();
         </div>
     </div>
 </section>
-<section class="pp-s4" aria-label="خدمات پاک پژوه" style="background: transparent; padding: 25px 24px; width: 100%; box-sizing: border-box;">
+<section class="pp-s4" aria-label="خدمات پاک پژوه">
     <style>
         .pp-s4 .pp-s4-container { display: flex; flex-direction: row-reverse; justify-content: center; gap: 24px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
         .pp-s4 .pp-s4-card { flex: 1; min-width: 280px; max-width: 400px; background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 50%, #dce8f5 100%); border-radius: 18px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.6); display: flex; flex-direction: column; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; }
@@ -286,12 +277,12 @@ get_header();
                 <div class="pp-s4-card-desc">تمام فعالیت‌ها ثبت و گزارش می‌شود تا تصویر شفافی از عملکرد ارائه کرده و بهبود مستمر را تسهیل نماید.</div>
                 <div class="pp-s4-card-image-wrap">
                     <div class="pp-s4-card-image">
-                        <div class="pp-s4-image-placeholder pp-s4-doc-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/s4-card-1.jpeg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: bottom; border-radius: 0 0 14px 14px;"></div>
+                        <div class="pp-s4-image-placeholder pp-s4-doc-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/s4-card-1.jpeg' ); ?>" alt="نمونه مستندات گزارش عملکرد" loading="lazy"></div>
                     </div>
                 </div>
             </div>
             <div class="pp-s4-card-footer">
-                <button class="pp-s4-card-button"><span class="pp-s4-btn-icon">←</span><span>مشاهده نمونه گزارش‌ها</span></button>
+                <a href="<?php echo esc_url( home_url( '/services/#documentation' ) ); ?>" class="pp-s4-card-button"><span class="pp-s4-btn-icon">←</span><span>مشاهده خدمات مستندسازی</span></a>
             </div>
         </div>
         <div class="pp-s4-card">
@@ -303,12 +294,12 @@ get_header();
                 <div class="pp-s4-card-desc">کیفیت باید قابل اندازه‌گیری باشد. ما با نظارت مستمر و ارزیابی بر اساس معیارهای مشخص، کیفیت خدمات را تضمین می‌کنیم.</div>
                 <div class="pp-s4-card-image-wrap">
                     <div class="pp-s4-card-image">
-                        <div class="pp-s4-image-placeholder pp-s4-pen-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/s4-card-2.jpg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: bottom; border-radius: 0 0 14px 14px;"></div>
+                        <div class="pp-s4-image-placeholder pp-s4-pen-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/s4-card-2.jpg' ); ?>" alt="ارزیابی و کنترل کیفیت خدمات" loading="lazy"></div>
                     </div>
                 </div>
             </div>
             <div class="pp-s4-card-footer">
-                <button class="pp-s4-card-button"><span class="pp-s4-btn-icon">←</span><span>جزئیات کنترل کیفیت</span></button>
+                <a href="<?php echo esc_url( home_url( '/services/#quality-control' ) ); ?>" class="pp-s4-card-button"><span class="pp-s4-btn-icon">←</span><span>جزئیات کنترل کیفیت</span></a>
             </div>
         </div>
         <div class="pp-s4-card">
@@ -320,17 +311,17 @@ get_header();
                 <div class="pp-s4-card-desc">شناخت دقیق هر فضا؛ میزان ترافیک، برنامه استفاده، شناسنامه مهندسی فضا تمام اطلاعاتی مانند کاربری، مساحت، نوع سطوح و نیازهای ویژه را در بر می‌گیرد.</div>
                 <div class="pp-s4-card-image-wrap">
                     <div class="pp-s4-card-image">
-                        <div class="pp-s4-image-placeholder pp-s4-laptop-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/s4-card-3.jpg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: bottom; border-radius: 0 0 14px 14px;"></div>
+                        <div class="pp-s4-image-placeholder pp-s4-laptop-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/s4-card-3.jpg' ); ?>" alt="ثبت مشخصات و ویژگی‌های فضا" loading="lazy"></div>
                     </div>
                 </div>
             </div>
             <div class="pp-s4-card-footer">
-                <button class="pp-s4-card-button"><span class="pp-s4-btn-icon">←</span><span>آشنایی با شناسنامه فضا</span></button></a>
+                <a href="<?php echo esc_url( home_url( '/space-passport/' ) ); ?>" class="pp-s4-card-button"><span class="pp-s4-btn-icon">←</span><span>آشنایی با شناسنامه فضا</span></a>
             </div>
         </div>
     </div>
 </section>
-<section class="pp-s5" aria-label="روش کار ما" style="background: transparent; padding: 25px 24px; width: 100%; box-sizing: border-box;">
+<section class="pp-s5" aria-label="روش کار ما">
     <style>
         .pp-s5 .pp-s5-section { width: 100%; margin: 0 auto; background: linear-gradient(135deg, #f0faf7 0%, #e8f5f0 50%, #f5fbf9 100%); border-radius: 24px; padding: 35px 45px; display: flex; align-items: center; justify-content: space-between; gap: 40px; box-shadow: 0 8px 32px rgba(0,80,120,0.06), 0 2px 8px rgba(0,80,120,0.04), inset 0 1px 0 rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.6); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
         .pp-s5 .pp-s5-section:hover { box-shadow: 0 12px 40px rgba(0,80,120,0.1), 0 4px 12px rgba(0,80,120,0.06), inset 0 1px 0 rgba(255,255,255,0.8); }
@@ -377,13 +368,13 @@ get_header();
         <div class="pp-s5-content">
             <h2 class="pp-s5-title">روش کار ما، انعطاف‌پذیر و متناسب با نیاز شما</h2>
             <p class="pp-s5-desc">از کارخانه و انبار تا بیمارستان و هتل، برنامه پاکیزگی بر اساس شرایط هر محیط طراحی و اجرا می‌شود.</p>
-            <button class="pp-s5-btn"><span>مشاهده حوزه‌های فعالیت</span><span class="pp-s5-btn-icon">←</span></button>
+            <a href="<?php echo esc_url( home_url( '/activities/' ) ); ?>" class="pp-s5-btn"><span>مشاهده حوزه‌های فعالیت</span><span class="pp-s5-btn-icon">←</span></a>
         </div>
         <div class="pp-s5-circles">
             <div class="pp-s5-circle-item">
                 <div class="pp-s5-circle-wrapper">
                     <div class="pp-s5-circle-image">
-                        <div class="pp-s5-circle-placeholder pp-s5-circle-1"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-1.jpeg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                        <div class="pp-s5-circle-placeholder pp-s5-circle-1"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-1.jpeg' ); ?>" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     </div>
                 </div>
                 <span class="pp-s5-circle-label">هتل‌ها و مراکز اقامتی</span>
@@ -392,7 +383,7 @@ get_header();
             <div class="pp-s5-circle-item">
                 <div class="pp-s5-circle-wrapper">
                     <div class="pp-s5-circle-image">
-                        <div class="pp-s5-circle-placeholder pp-s5-circle-2"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-2.jpg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                        <div class="pp-s5-circle-placeholder pp-s5-circle-2"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-2.jpg' ); ?>" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     </div>
                 </div>
                 <span class="pp-s5-circle-label">بیمارستان‌ها و درمانگاه‌ها</span>
@@ -401,7 +392,7 @@ get_header();
             <div class="pp-s5-circle-item">
                 <div class="pp-s5-circle-wrapper">
                     <div class="pp-s5-circle-image">
-                        <div class="pp-s5-circle-placeholder pp-s5-circle-3"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-3.jpg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                        <div class="pp-s5-circle-placeholder pp-s5-circle-3"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-3.jpg' ); ?>" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     </div>
                 </div>
                 <span class="pp-s5-circle-label">مراکز لجستیکی و توزیع</span>
@@ -410,7 +401,7 @@ get_header();
             <div class="pp-s5-circle-item">
                 <div class="pp-s5-circle-wrapper">
                     <div class="pp-s5-circle-image">
-                        <div class="pp-s5-circle-placeholder pp-s5-circle-4"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-4.jpg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                        <div class="pp-s5-circle-placeholder pp-s5-circle-4"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-4.jpg' ); ?>" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     </div>
                 </div>
                 <span class="pp-s5-circle-label">انبارها و مراکز نگهداری</span>
@@ -419,15 +410,15 @@ get_header();
             <div class="pp-s5-circle-item">
                 <div class="pp-s5-circle-wrapper">
                     <div class="pp-s5-circle-image">
-                        <div class="pp-s5-circle-placeholder pp-s5-circle-5"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-5.jpg' ); ?>" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+                        <div class="pp-s5-circle-placeholder pp-s5-circle-5"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/circle-5.jpg' ); ?>" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
                     </div>
                 </div>
-                <span class="pp-s5-circle-label">محیط های صنعتی</span>
+                <span class="pp-s5-circle-label">محیط‌های صنعتی</span>
             </div>
         </div>
     </div>
 </section>
-<section class="pp-s6" aria-label="پرسشهای متداول" style="background: transparent; padding: 25px 24px; width: 100%; box-sizing: border-box;">
+<section class="pp-s6" aria-label="پرسش‌های متداول">
     <style>
         .pp-s6 .pp-s6-container { width: 100%; max-width: 900px; margin: 0 auto; }
         .pp-s6 .pp-s6-title { text-align: center; font-size: 22px; font-weight: 800; color: #003b73; margin-bottom: 30px; position: relative; display: inline-block; width: 100%; }
@@ -445,46 +436,61 @@ get_header();
         .pp-s6 .pp-s6-answer p { font-size: 13px; color: #555; line-height: 1.9; text-align: justify; text-align-last: right; }
         .pp-s6 .pp-s6-answer ul { list-style: none; padding: 0; margin: 8px 0 0; }
         .pp-s6 .pp-s6-answer ul li { font-size: 13px; color: #555; line-height: 1.9; padding: 4px 0 4px 16px; position: relative; }
-        .pp-s6 .pp-s6-answer ul li::before { content: '•'; position: absolute; right: 0; color: #4CAF50; font-weight: bold; }`n
+        .pp-s6 .pp-s6-answer ul li::before { content: '•'; position: absolute; right: 0; color: #4CAF50; font-weight: bold; }
     </style>
     <div class="pp-s6-container">
-        <h2 class="pp-s6-title">پرسشهای متداول</h2>
-        <div class="pp-s6-item" onclick="this.classList.toggle('active')">
-            <div class="pp-s6-question"><span>آیا پاک پژوه قبل از شروع کار، بازدید انجام میدهد؟</span><span class="pp-s6-icon">+</span></div>
-            <div class="pp-s6-answer"><p>بله. بازدید اولیه با هماهنگی قبلی و در محدوده جغرافیایی تحت پوشش، بدون دریافت هزینه انجام می‌شود. این بازدید برای شناخت مقدماتی محیط و نیازهای مجموعه است.</p></div>
+        <h2 class="pp-s6-title">پرسش‌های متداول</h2>
+        <div class="pp-s6-item">
+            <button class="pp-s6-question" type="button" aria-expanded="false" aria-controls="process-faq-answer-1" data-process-faq-toggle><span>آیا پاک‌پژوه قبل از شروع کار، بازدید انجام می‌دهد؟</span><span class="pp-s6-icon" aria-hidden="true">+</span></button>
+            <div class="pp-s6-answer" id="process-faq-answer-1" aria-hidden="true"><p>بله. بازدید اولیه با هماهنگی قبلی و در محدوده جغرافیایی تحت پوشش، بدون دریافت هزینه انجام می‌شود. این بازدید برای شناخت مقدماتی محیط و نیازهای مجموعه است.</p></div>
         </div>
-        <div class="pp-s6-item" onclick="this.classList.toggle('active')">
-            <div class="pp-s6-question"><span>آیا بازدید اولیه شامل طراحی کامل برنامه پاکیزگی است؟</span><span class="pp-s6-icon">+</span></div>
-            <div class="pp-s6-answer"><p>خیر. طراحی تفصیلی، ارزیابی تخصصی و تهیه مستندات مهندسی، در صورت نیاز، جداگانه تعریف و درباره محدوده و هزینه آن توافق می‌شود.</p></div>
+        <div class="pp-s6-item">
+            <button class="pp-s6-question" type="button" aria-expanded="false" aria-controls="process-faq-answer-2" data-process-faq-toggle><span>آیا بازدید اولیه شامل طراحی کامل برنامه پاکیزگی است؟</span><span class="pp-s6-icon" aria-hidden="true">+</span></button>
+            <div class="pp-s6-answer" id="process-faq-answer-2" aria-hidden="true"><p>خیر. طراحی تفصیلی، ارزیابی تخصصی و تهیه مستندات مهندسی، در صورت نیاز، جداگانه تعریف و درباره محدوده و هزینه آن توافق می‌شود.</p></div>
         </div>
-        <div class="pp-s6-item" onclick="this.classList.toggle('active')">
-            <div class="pp-s6-question"><span>آیا برنامه پاکیزگی برای همه مشتریان یکسان است؟</span><span class="pp-s6-icon">+</span></div>
-            <div class="pp-s6-answer"><p>خیر. برنامه بر اساس نوع فعالیت، ویژگی‌های محیط، میزان استفاده از فضاها و سطح خدمات مورد انتظار طراحی می‌شود.</p></div>
+        <div class="pp-s6-item">
+            <button class="pp-s6-question" type="button" aria-expanded="false" aria-controls="process-faq-answer-3" data-process-faq-toggle><span>آیا برنامه پاکیزگی برای همه مشتریان یکسان است؟</span><span class="pp-s6-icon" aria-hidden="true">+</span></button>
+            <div class="pp-s6-answer" id="process-faq-answer-3" aria-hidden="true"><p>خیر. برنامه بر اساس نوع فعالیت، ویژگی‌های محیط، میزان استفاده از فضاها و سطح خدمات مورد انتظار طراحی می‌شود.</p></div>
         </div>
-        <div class="pp-s6-item" onclick="this.classList.toggle('active')">
-            <div class="pp-s6-question"><span>آیا پاک پژوه فقط نیروی خدماتی تأمین می‌کند؟</span><span class="pp-s6-icon">+</span></div>
-            <div class="pp-s6-answer"><p>خیر. رویکرد پاک پژوه بر ترکیب شناخت محیط، طراحی برنامه، سازماندهی اجرا، کنترل کیفیت و مستندسازی استوار است. تأمین نیروی انسانی بخشی از ساختار اجرای خدمات است.</p></div>
+        <div class="pp-s6-item">
+            <button class="pp-s6-question" type="button" aria-expanded="false" aria-controls="process-faq-answer-4" data-process-faq-toggle><span>آیا پاک‌پژوه فقط نیروی خدماتی تأمین می‌کند؟</span><span class="pp-s6-icon" aria-hidden="true">+</span></button>
+            <div class="pp-s6-answer" id="process-faq-answer-4" aria-hidden="true"><p>خیر. رویکرد پاک‌پژوه بر ترکیب شناخت محیط، طراحی برنامه، سازماندهی اجرا، کنترل کیفیت و مستندسازی استوار است. تأمین نیروی انسانی بخشی از ساختار اجرای خدمات است.</p></div>
         </div>
-        <div class="pp-s6-item" onclick="this.classList.toggle('active')">
-            <div class="pp-s6-question"><span>آیا امکان اجرای آزمایشی خدمات وجود دارد؟</span><span class="pp-s6-icon">+</span></div>
-            <div class="pp-s6-answer"><p>در صورت تناسب با شرایط پروژه، امکان تعریف دوره آزمایشی وجود دارد. مدت، محدوده، هزینه، معیارهای ارزیابی و مسئولیتها باید پیش از شروع به توافق برسند.</p></div>
+        <div class="pp-s6-item">
+            <button class="pp-s6-question" type="button" aria-expanded="false" aria-controls="process-faq-answer-5" data-process-faq-toggle><span>آیا امکان اجرای آزمایشی خدمات وجود دارد؟</span><span class="pp-s6-icon" aria-hidden="true">+</span></button>
+            <div class="pp-s6-answer" id="process-faq-answer-5" aria-hidden="true"><p>در صورت تناسب با شرایط پروژه، امکان تعریف دوره آزمایشی وجود دارد. مدت، محدوده، هزینه، معیارهای ارزیابی و مسئولیت‌ها باید پیش از شروع به توافق برسند.</p></div>
         </div>
-        <div class="pp-s6-item" onclick="this.classList.toggle('active')">
-            <div class="pp-s6-question"><span>آیا گزارش عملکرد به کارفرما ارائه می‌شود؟</span><span class="pp-s6-icon">+</span></div>
-            <div class="pp-s6-answer"><p>نوع، محتوای گزارش و دوره ارائه آن متناسب با نیاز پروژه و توافق طرفین تعیین می‌شود.</p></div>
+        <div class="pp-s6-item">
+            <button class="pp-s6-question" type="button" aria-expanded="false" aria-controls="process-faq-answer-6" data-process-faq-toggle><span>آیا گزارش عملکرد به کارفرما ارائه می‌شود؟</span><span class="pp-s6-icon" aria-hidden="true">+</span></button>
+            <div class="pp-s6-answer" id="process-faq-answer-6" aria-hidden="true"><p>نوع، محتوای گزارش و دوره ارائه آن متناسب با نیاز پروژه و توافق طرفین تعیین می‌شود.</p></div>
         </div>
-        <div class="pp-s6-item" onclick="this.classList.toggle('active')">
-            <div class="pp-s6-question"><span>آیا امکان تغییر برنامه پس از شروع کار وجود دارد؟</span><span class="pp-s6-icon">+</span></div>
-            <div class="pp-s6-answer"><p>بله. در صورت تغییر شرایط محیط یا نیازهای مجموعه، برنامه می‌تواند با بررسی شرایط و توافق طرفین بازنگری شود.</p></div>
+        <div class="pp-s6-item">
+            <button class="pp-s6-question" type="button" aria-expanded="false" aria-controls="process-faq-answer-7" data-process-faq-toggle><span>آیا امکان تغییر برنامه پس از شروع کار وجود دارد؟</span><span class="pp-s6-icon" aria-hidden="true">+</span></button>
+            <div class="pp-s6-answer" id="process-faq-answer-7" aria-hidden="true"><p>بله. در صورت تغییر شرایط محیط یا نیازهای مجموعه، برنامه می‌تواند با بررسی شرایط و توافق طرفین بازنگری شود.</p></div>
         </div>
     </div>
 </section>
 
-</div>
+<script>
+document.addEventListener('click', function (event) {
+    if (!(event.target instanceof Element)) {
+        return;
+    }
 
+    var button = event.target.closest('[data-process-faq-toggle]');
+    if (!button) {
+        return;
+    }
+
+    var item = button.closest('.pp-s6-item');
+    var answer = document.getElementById(button.getAttribute('aria-controls'));
+    var isOpen = item.classList.toggle('active');
+
+    button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    answer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+});
+</script>
 </div>
-<main id="primary" class="site-main">
-</main>
 
 <?php
 get_footer();

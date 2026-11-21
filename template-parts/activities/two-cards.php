@@ -31,7 +31,7 @@
                         <li><span class="twocard-check">✓</span> کنترل کیفیت و پیگیری اصلاحات</li>
                         <li><span class="twocard-check">✓</span> مستندسازی و گزارش‌دهی</li>
                     </ul>
-                    <a href="/services/" class="twocard-btn">مشاهده جزئیات خدمات</a>
+                    <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="twocard-btn">مشاهده جزئیات خدمات</a>
                 </div>
             </div>
         </div>

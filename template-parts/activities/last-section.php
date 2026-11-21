@@ -12,7 +12,7 @@
                 </div>
                 <div class="last-card-title">سایر محیط‌های کاری</div>
                 <div class="last-card-text">علاوه بر پنج حوزه اصلی فعالیت، امکان بررسی شرایط و نیازهای سایر محیط‌های کاری نیز وجود دارد. ارائه خدمات در این محیط‌ها پس از شناخت نیازها، بررسی الزامات و ارزیابی امکان اجرای پروژه انجام می‌شود.</div>
-                <a href="#" class="last-card-link">
+                <a href="<?php echo esc_url( home_url( '/request/' ) ); ?>" class="last-card-link">
                     <span>مشاهده و بررسی شرایط</span>
                     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="last-card-title">فرآیند آغاز همکاری</div>
                 <div class="last-card-text">از درخواست تا اجرای خدمات، در چند گام ساده.</div>
-                <a href="#" class="last-card-link">
+                <a href="#cooperation-process" class="last-card-link">
                     <span>مشاهده مراحل</span>
                     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -36,81 +36,81 @@
                 <div class="last-card-title" style="margin-bottom: 18px; font-size: 18px;">پرسش‌های متداول</div>
 
                 <div class="last-faq-item">
-                    <div class="last-faq-question" onclick="toggleLastFaq(this)">
+                    <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-1">
                         <span>آیا پاک پژوه فقط در کارخانه‌ها فعالیت می‌کند؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </div>
-                    <div class="last-faq-answer">
+                    </button>
+                    <div class="last-faq-answer" id="last-faq-answer-1" aria-hidden="true">
                         خیر. پاک پژوه پنج حوزه اصلی فعالیت شامل محیط‌های تولیدی، انبارها، مراکز لجستیکی، مراکز درمانی و هتلها را در اولویت دارد. سایر محیط‌های کاری نیز بر اساس شرایط و نیاز پروژه قابل بررسی هستند.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
-                    <div class="last-faq-question" onclick="toggleLastFaq(this)">
+                    <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-2">
                         <span>آیا برنامه پاکیزگی برای همه مجموعه‌ها یکسان است؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </div>
-                    <div class="last-faq-answer">
+                    </button>
+                    <div class="last-faq-answer" id="last-faq-answer-2" aria-hidden="true">
                         خیر. برنامه بر اساس نوع فعالیت، شرایط فضا، سطوح، میزان تردد، محدودیت‌های عملیاتی و نیازهای کارفرما طراحی می‌شود.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
-                    <div class="last-faq-question" onclick="toggleLastFaq(this)">
+                    <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-3">
                         <span>آیا پاک پژوه صرفًا نیروی خدماتی تأمین می‌کند؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </div>
-                    <div class="last-faq-answer">
+                    </button>
+                    <div class="last-faq-answer" id="last-faq-answer-3" aria-hidden="true">
                         رویکرد پاک پژوه محدود به تأمین نیروی انسانی نیست. خدمات می تواند شامل طراحی برنامه، مدیریت اجرا، کنترل کیفیت و مستندسازی باشد. ترکیب منابع اجرایی نیز بر اساس نیاز هر پروژه تعیین می شود.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
-                    <div class="last-faq-question" onclick="toggleLastFaq(this)">
+                    <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-4">
                         <span>آیا پاک پژوه در بیمارستانها و درمانگاهها نیز فعالیت می کند؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </div>
-                    <div class="last-faq-answer">
+                    </button>
+                    <div class="last-faq-answer" id="last-faq-answer-4" aria-hidden="true">
                         مراکز درمانی از حوزه‌های اولویت دار پاک پژوه هستند. دامنه خدمات هر مرکز با توجه به نوع فضا، الزامات بهداشتی، دستورالعمل‌های مرکز و شرایط اجرایی پروژه تعیین می‌شود.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
-                    <div class="last-faq-question" onclick="toggleLastFaq(this)">
+                    <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-5">
                         <span>آیا خدمات پاک پژوه شامل ضدعفونی تخصصی مراکز درمانی است؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </div>
-                    <div class="last-faq-answer">
+                    </button>
+                    <div class="last-faq-answer" id="last-faq-answer-5" aria-hidden="true">
                         خدمات مرتبط با ضدعفونی و فضاهای حساس درمانی صرفًا پس از بررسی الزامات، مواد و روشهای مجاز، صلاحیت عوامل اجرایی و توافق با مرکز درمانی قابل تعریف است.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
-                    <div class="last-faq-question" onclick="toggleLastFaq(this)">
+                    <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-6">
                         <span>آیا پاک پژوه در هتلها خدمات ارائه می‌کند؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </div>
-                    <div class="last-faq-answer">
+                    </button>
+                    <div class="last-faq-answer" id="last-faq-answer-6" aria-hidden="true">
                         بله. هتلها و مراکز اقامتی از حوزه‌های اولویتدار فعالیت هستند. برنامه خدمات می تواند متناسب با اتاقها، لابی، راهروها، رستورانها، فضاهای عمومی و بخشهای پشتیبانی طراحی شود.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
-                    <div class="last-faq-question" onclick="toggleLastFaq(this)">
+                    <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-7">
                         <span>آیا بازدید اولیه رایگان است؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </div>
-                    <div class="last-faq-answer">
+                    </button>
+                    <div class="last-faq-answer" id="last-faq-answer-7" aria-hidden="true">
                         بازدید اولیه با هماهنگی قبلی و در محدوده جغرافیایی اعلام‌شده شرکت رایگان است. ارزیابی تخصصی و طراحی تفصیلی، در صورت نیاز، موضوعی جداگانه و تابع توافق خواهد بود.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
-                    <div class="last-faq-question" onclick="toggleLastFaq(this)">
+                    <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-8">
                         <span>آیا امکان اجرای آزمایشی خدمات وجود دارد؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </div>
-                    <div class="last-faq-answer">
+                    </button>
+                    <div class="last-faq-answer" id="last-faq-answer-8" aria-hidden="true">
                         در صورت تناسب با شرایط پروژه، امکان بررسی اجرای آزمایشی وجود دارد. دامنه، مدت، هزینه، معیارهای ارزیابی و مسئولیتها باید پیش از شروع به توافق برسند.
                     </div>
                 </div>
@@ -152,7 +152,15 @@
 function toggleLastFaq(element) {
     const item = element.parentElement;
     const isActive = item.classList.contains('active');
-    document.querySelectorAll('.last-faq-item').forEach(faq => { faq.classList.remove('active'); });
-    if (!isActive) { item.classList.add('active'); }
+    document.querySelectorAll('.last-faq-item').forEach(faq => {
+        faq.classList.remove('active');
+        faq.querySelector('.last-faq-question').setAttribute('aria-expanded', 'false');
+        faq.querySelector('.last-faq-answer').setAttribute('aria-hidden', 'true');
+    });
+    if (!isActive) {
+        item.classList.add('active');
+        element.setAttribute('aria-expanded', 'true');
+        item.querySelector('.last-faq-answer').setAttribute('aria-hidden', 'false');
+    }
 }
 </script>

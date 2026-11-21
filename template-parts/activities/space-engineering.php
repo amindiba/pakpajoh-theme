@@ -9,17 +9,17 @@
 
             <div class="space-card" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/space-engineering-bg.jpg' ); ?>'); background-size: cover; background-position: center;">
                 <div>
-                    <h2 class="space-card-title" style="font-size: 24px;">شناسنامه مهندسی فضا؛<br>نقطه شروع برنامه‌ریزی دقیق</h2>
+                    <h2 class="space-card-title">شناسنامه مهندسی فضا؛<br>نقطه شروع برنامه‌ریزی دقیق</h2>
                     <p class="space-card-desc">درک و تصویر هر فضا پیش از ارائه خدمات، از نظر ویژگی‌های فیزیکی، کاربری و نیازهای نگهداری بررسی می‌شود و شناسنامه‌های دقیق برای آن تهیه می‌گردند.</p>
                 </div>
                 <div>
-                    <a href="/#space-passport" class="space-btn">آشنایی با شناسنامه فضا <span class="space-arrow">←</span></a>
+                    <a href="<?php echo esc_url( home_url( '/#space-passport' ) ); ?>" class="space-btn">آشنایی با شناسنامه فضا <span class="space-arrow">←</span></a>
                 </div>
             </div>
 
             <div class="space-card" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/factors-card-bg.jpg' ); ?>'); background-size: cover; background-position: center;">
                 <div>
-                    <h2 class="space-card-title" style="font-size: 24px;">چه عواملی در طراحی برنامه پاکیزگی مؤثر است؟</h2>
+                    <h2 class="space-card-title">چه عواملی در طراحی برنامه پاکیزگی مؤثر است؟</h2>
                     <ul class="space-list">
                         <li><span class="space-check">✓</span><span>نوع فعالیت و کاربری محیط</span></li>
                         <li><span class="space-check">✓</span><span>میزان تردد و استفاده از فضاها</span></li>
