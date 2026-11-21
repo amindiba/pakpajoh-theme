@@ -221,7 +221,7 @@ get_header();
     <div class="container">
         <span class="badge">بازدید رایگان • پاسخگویی سریع</span>
         <h1>ثبت درخواست خدمات نظافت صنعتی</h1>
-        <p>کارشناسان پاک‌پژوه رایگان از محل شما بازدید می‌کنند و بهترین راهکار را پیشنهاد می‌دهند.</p>
+        <p>کارشناسان پاک‌پژوه به‌صورت رایگان از محل فعالیت شما بازدید می‌کنند و راهکاری متناسب پیشنهاد می‌دهند.</p>
     </div>
 </section>
 
@@ -250,7 +250,7 @@ get_header();
                             <label for="req-service">نوع خدمت <span class="req-star">*</span></label>
                             <select name="req_service" id="req-service" required>
                                 <option value="">انتخاب کنید...</option>
-                                <option value="design">طراحی و برنامه‌ریزی خدمات پاکسازی</option>
+                                <option value="design">طراحی و برنامه‌ریزی خدمات پاک‌سازی</option>
                                 <option value="execution">مدیریت و اجرای عملیات</option>
                                 <option value="quality-control">کنترل کیفیت و ارزیابی</option>
                                 <option value="documentation">مستندسازی و گزارش‌دهی</option>
@@ -337,9 +337,9 @@ get_header();
                 <div class="req-contact-card">
                     <h3>تماس فوری</h3>
                     <p>برای پاسخگویی فوری با ما تماس بگیرید:</p>
-                    <a href="tel:+982191092123" class="req-phone-link">
+                    <a href="tel:+982191555678" class="req-phone-link">
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                        <span dir="rtl">۰۲۱-۹۱۰۹۲۱۲۳</span>
+                        <span dir="rtl">۰۲۱-۹۱۵۵۵۶۷۸</span>
                     </a>
                     <a href="tel:+989121156868" class="req-phone-link">
                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>

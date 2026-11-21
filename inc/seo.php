@@ -23,7 +23,7 @@ function pakpajoh_schema_organization() {
             ),
             'contactPoint' => array(
                 '@type' => 'ContactPoint',
-                'telephone' => '+982191092123',
+                'telephone' => '+982191555678',
                 'contactType' => 'customer service',
                 'areaServed' => 'IR',
                 'availableLanguage' => 'Persian',

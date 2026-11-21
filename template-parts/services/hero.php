@@ -7,7 +7,7 @@
     <div class="hero-slider">
         <div class="hero-slide active">
             <div class="hero-bg">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/activities-hero.jpg' ); ?>" alt="نظافت صنعتی پاک پژوه" loading="eager" fetchpriority="high">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/activities-hero.jpg' ); ?>" alt="نظافت صنعتی پاک‌پژوه" loading="eager" fetchpriority="high">
                 <div class="hero-overlay"></div>
             </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="hero-container">
         <div class="hero-content">
             <h1 class="hero-title">خدمات پاکیزگی فراتر از نظافت روزمره</h1>
-            <p class="hero-desc">پاک پژوه با شناخت شرایط هر محیط ، طراحی برنامه متناسب ، مدیریت اجرا خدماتو ارزیابی ککیفیت خدمات، به سازمان کمک میکند که پاکیزگی محیط به یک فرایند برنامه ریزی شده تبیدل شود.</p>
+            <p class="hero-desc">پاک‌پژوه با شناخت شرایط هر محیط، برنامه‌ای متناسب طراحی می‌کند، اجرای خدمات را مدیریت می‌کند و کیفیت آن‌ها را می‌سنجد تا پاکیزگی محیط به فرایندی برنامه‌ریزی‌شده تبدیل شود.</p>
 
             <div class="hero-actions">
                 <a href="<?php echo esc_url( home_url( '/request/' ) ); ?>" class="btn btn-primary">

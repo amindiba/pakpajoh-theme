@@ -2,9 +2,9 @@
 /**
  * Hero Section — PakPajoh Theme (v6.0) - بازنویسی کامل با SVG و متن از پنل
  */
-$hero_title = get_option( 'pakpajoh_text_home_hero_title', 'پاک پژوه' );
-$hero_subtitle = get_option( 'pakpajoh_text_home_hero_subtitle', 'پاکسازی قابل‌اندازه‌گیری' );
-$hero_desc = get_option( 'pakpajoh_text_home_hero_desc', 'طراحی، مدیریت، اجرا و کنترل کیفیت خدمات پاکسازی در محیط‌های کاری' );
+$hero_title = get_option( 'pakpajoh_text_home_hero_title', 'پاک‌پژوه' );
+$hero_subtitle = get_option( 'pakpajoh_text_home_hero_subtitle', 'پاک‌سازی قابل‌اندازه‌گیری' );
+$hero_desc = get_option( 'pakpajoh_text_home_hero_desc', 'طراحی، مدیریت، اجرا و کنترل کیفیت خدمات پاک‌سازی در محیط‌های کاری' );
 $hero_btn1 = get_option( 'pakpajoh_text_home_hero_btn1', 'درخواست بازدید اولیه رایگان' );
 $hero_btn2 = get_option( 'pakpajoh_text_home_hero_btn2', 'آشنایی با خدمات' );
 ?>
@@ -36,7 +36,7 @@ $hero_btn2 = get_option( 'pakpajoh_text_home_hero_btn2', 'آشنایی با خد
     <div class="hero-slider">
         <div class="hero-slide active">
             <div class="hero-bg">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-home.jpeg' ); ?>" alt="نظافت صنعتی پاک پژوه" loading="eager" fetchpriority="high">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-home.jpeg' ); ?>" alt="نظافت صنعتی پاک‌پژوه" loading="eager" fetchpriority="high">
                 <div class="hero-overlay"></div>
             </div>
         </div>

@@ -10,7 +10,7 @@ get_header();
     <div class="hero-slider">
         <div class="hero-slide active">
             <div class="hero-bg">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/process-hero.jpeg' ); ?>" alt="روش کار ما پاک پژوه" loading="eager" fetchpriority="high">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/process-hero.jpeg' ); ?>" alt="روش کار پاک‌پژوه" loading="eager" fetchpriority="high">
                 <div class="hero-overlay"></div>
             </div>
         </div>
@@ -19,7 +19,7 @@ get_header();
     <div class="hero-container">
         <div class="hero-content">
             <h1 class="hero-title">پاکیزگی قابل اندازه‌گیری، با یک روش کار مشخص</h1>
-            <p class="hero-desc">در پاک پژوه، خدمات پاکیزگی با شناخت محیط، طراحی برنامه متناسب، مدیریت اجرا، ارزیابی کیفیت و مستندسازی انجام می‌شود.</p>
+            <p class="hero-desc">در پاک‌پژوه، خدمات پاکیزگی با شناخت محیط، طراحی برنامه‌ای متناسب، مدیریت اجرا، ارزیابی کیفیت و مستندسازی ارائه می‌شوند.</p>
 
             <div class="hero-actions">
                 <a href="<?php echo esc_url( home_url( '/request/' ) ); ?>" class="btn btn-primary">
@@ -96,9 +96,9 @@ get_header();
     .pp-step-card .pp-step-desc { font-size: 14px; font-weight: 700; color: #003b73; line-height: 1.6; }
 </style>
 
-<section class="pp-steps" id="process-steps" aria-label="مراحل همکاری با پاک پژوه">
+<section class="pp-steps" id="process-steps" aria-label="مراحل همکاری با پاک‌پژوه">
     <div class="pp-steps-container">
-        <h2 class="pp-steps-title">مراحل همکاری با پاک پژوه</h2>
+        <h2 class="pp-steps-title">مراحل همکاری با پاک‌پژوه</h2>
         <div class="pp-steps-cards">
 <div class="pp-step-card">
 <div class="pp-step-circle">۱</div>
@@ -122,7 +122,7 @@ get_header();
 <div class="pp-step-circle">۴</div>
                 <div class="pp-step-title">سازماندهی منابع و آماده‌سازی اجرا</div>
                 <div class="pp-step-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/step-4.jpg' ); ?>" alt="آماده‌سازی منابع و تجهیزات" loading="lazy"></div>
-                <div class="pp-step-desc">تأمین نیرو و تجهیزات مورد نیاز</div>
+                <div class="pp-step-desc">تأمین نیروی انسانی و تجهیزات مورد نیاز</div>
             </div>
 <div class="pp-step-card">
 <div class="pp-step-circle">۵</div>
@@ -153,9 +153,9 @@ get_header();
     </style>
     <div class="pp-s7-container">
         <h2 class="pp-s7-title">ساختار اجرا، متناسب با نیاز هر پروژه</h2>
-        <p class="pp-s7-desc">پروژه‌ها از نظر وسعت، نوع فعالیت، تعداد فضاها، ساعات بهره‌برداری و سطح خدمات موردنیاز یکسان نیستند. به همین دلیل، پاک پژوه ساختار اجرایی خود را متناسب با شرایط هر پروژه سازماندهی می‌کند.</p>
+        <p class="pp-s7-desc">پروژه‌ها از نظر وسعت، نوع فعالیت، تعداد فضاها، ساعات بهره‌برداری و سطح خدمات مورد نیاز یکسان نیستند. به همین دلیل، پاک‌پژوه ساختار اجرایی خود را متناسب با شرایط هر پروژه سازمان‌دهی می‌کند.</p>
         <div class="pp-s7-highlight">
-            <p>تأمین منابع می‌تواند با استفاده از ترکیبی از نیروهای داخلی و همکاران قراردادی انجام شود. ترکیب منابع، نحوه سازماندهی و مسئولیت‌ها در پیشنهاد اجرایی و توافق همکاری مشخص خواهد شد.</p>
+            <p>تأمین منابع می‌تواند با استفاده از ترکیبی از نیروهای داخلی و همکاران قراردادی انجام شود. ترکیب منابع، نحوهٔ سازمان‌دهی و مسئولیت‌ها در پیشنهاد اجرایی و توافق همکاری مشخص خواهد شد.</p>
         </div>
         <p class="pp-s7-desc">هدف این است که ساختار اجرا با نیاز واقعی پروژه متناسب باشد؛ نه اینکه یک الگوی ثابت برای همه مجموعه‌ها به کار گرفته شود.</p>
         <ul class="pp-s7-list">
@@ -184,7 +184,7 @@ get_header();
     </style>
     <div class="pp-s8-container">
         <h2 class="pp-s8-title">شناسنامه مهندسی فضا؛ مبنای شناخت و برنامه‌ریزی</h2>
-        <p class="pp-s8-desc">یکی از مبانی طراحی برنامه در پاک پژوه، شناخت ساختار و ویژگی‌های فضاهای تحت پوشش است. ما برای آنکه برنامه پاکیزگی صرفاً بر اساس مساحت یا تعداد نیرو تعیین نشود، از مفهوم «شناسنامه مهندسی فضا» استفاده می‌کنیم.</p>
+        <p class="pp-s8-desc">یکی از مبانی طراحی برنامه در پاک‌پژوه، شناخت ساختار و ویژگی‌های فضاهای تحت پوشش است. برای آنکه برنامهٔ پاکیزگی صرفاً بر اساس مساحت یا تعداد نیرو تعیین نشود، از مفهوم «شناسنامهٔ مهندسی فضا» استفاده می‌کنیم.</p>
         <ul class="pp-s8-list">
             <li>نام و کد فضا</li>
             <li>نوع کاربری</li>
@@ -202,7 +202,7 @@ get_header();
         </div>
     </div>
 </section>
-<section class="pp-s4" aria-label="خدمات پاک پژوه">
+<section class="pp-s4" aria-label="خدمات پاک‌پژوه">
     <style>
         .pp-s4 .pp-s4-container { display: flex; flex-direction: row-reverse; justify-content: center; gap: 24px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
         .pp-s4 .pp-s4-card { flex: 1; min-width: 280px; max-width: 400px; background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 50%, #dce8f5 100%); border-radius: 18px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.6); display: flex; flex-direction: column; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; }
@@ -308,7 +308,7 @@ get_header();
                 <div class="pp-s4-card-title">شناسنامه مهندسی فضا</div>
             </div>
             <div class="pp-s4-card-body">
-                <div class="pp-s4-card-desc">شناخت دقیق هر فضا؛ میزان ترافیک، برنامه استفاده، شناسنامه مهندسی فضا تمام اطلاعاتی مانند کاربری، مساحت، نوع سطوح و نیازهای ویژه را در بر می‌گیرد.</div>
+                <div class="pp-s4-card-desc">شناسنامهٔ مهندسی فضا، اطلاعاتی مانند کاربری، مساحت، نوع سطوح، میزان تردد و نیازهای ویژه را در بر می‌گیرد.</div>
                 <div class="pp-s4-card-image-wrap">
                     <div class="pp-s4-card-image">
                         <div class="pp-s4-image-placeholder pp-s4-laptop-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/s4-card-3.jpg' ); ?>" alt="ثبت مشخصات و ویژگی‌های فضا" loading="lazy"></div>

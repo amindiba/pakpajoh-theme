@@ -325,9 +325,9 @@ $newsletter_feedback = isset( $newsletter_messages[ $newsletter_status ] ) ? $ne
             
             <div class="footer-col footer-logo-col">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="پاک پژوه" width="120" height="60" loading="lazy" decoding="async">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="پاک‌پژوه" width="120" height="60" loading="lazy" decoding="async">
                 </a>
-                <p class="footer-desc"><?php echo wp_kses_post( get_option( "pakpajoh_text_footer_desc", "پاک پژوه، ارائه‌دهنده خدمات تخصصی نظافت صنعتی با فناوری‌های نوین، شوینده‌های بایو و نظارت مستمر. درخشش در عمل، تعهد ما به کیفیت است." ) ); ?></p>
+                <p class="footer-desc"><?php echo wp_kses_post( get_option( "pakpajoh_text_footer_desc", "پاک‌پژوه، ارائه‌دهندهٔ خدمات تخصصی نظافت صنعتی با فناوری‌های نوین، شوینده‌های بایو و نظارت مستمر است. درخشش در عمل، تعهد ما به کیفیت است." ) ); ?></p>
             </div>
 
             <div class="footer-col footer-services-col">
@@ -496,7 +496,7 @@ $newsletter_feedback = isset( $newsletter_messages[ $newsletter_status ] ) ? $ne
                 <label for="modal-req-service">نوع خدمت</label>
                 <select name="req_service" id="modal-req-service" required>
                     <option value="">انتخاب کنید...</option>
-                    <option value="design">طراحی و برنامه‌ریزی خدمات پاکسازی</option>
+                    <option value="design">طراحی و برنامه‌ریزی خدمات پاک‌سازی</option>
                     <option value="execution">مدیریت و اجرای عملیات</option>
                     <option value="quality-control">کنترل کیفیت و ارزیابی</option>
                     <option value="documentation">مستندسازی و گزارش‌دهی</option>

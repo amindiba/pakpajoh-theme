@@ -55,6 +55,15 @@ function pakpajoh_enqueue_assets() {
             true
         );
     }
+
+    if ( is_page( 'contact' ) || is_page_template( 'page-contact.php' ) ) {
+        wp_enqueue_style(
+            'pp-contact-page',
+            $uri . '/assets/css/pages/contact.css',
+            array( 'pp-home' ),
+            filemtime( get_template_directory() . '/assets/css/pages/contact.css' )
+        );
+    }
 }
 
 /**

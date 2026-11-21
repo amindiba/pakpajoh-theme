@@ -17,8 +17,8 @@
 <header id="masthead" class="site-header">
     <div class="header-container">
         <!-- لوگو (راست‌چین) -->
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo" aria-label="پاک پژوه - صفحه اصلی">
-            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="پاک پژوه" class="site-logo-img" width="140" height="50" loading="eager">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo" aria-label="پاک‌پژوه - صفحه اصلی">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="پاک‌پژوه" class="site-logo-img" width="140" height="50" loading="eager">
         </a>
 
         <!-- منوی اصلی (وسط) -->
@@ -72,7 +72,7 @@
                 <li class="menu-item has-mega">
                     <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" <?php echo is_page( 'about' ) ? 'aria-current="page"' : ''; ?>>
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                        <span>درباره پاک پژوه</span>
+                        <span>دربارهٔ پاک‌پژوه</span>
                     </a>
                 </li>
                 <li class="menu-item has-mega">
@@ -109,7 +109,7 @@
 <aside id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-labelledby="mobile-drawer-title" aria-hidden="true" tabindex="-1">
     <div class="mobile-drawer-header">
         <div class="mobile-drawer-brand">
-            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="پاک پژوه" class="mobile-logo-img" width="100" height="36" loading="lazy">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="پاک‌پژوه" class="mobile-logo-img" width="100" height="36" loading="lazy">
             <span id="mobile-drawer-title">منوی اصلی</span>
         </div>
         <button class="mobile-drawer-close" type="button" aria-label="بستن منو">
@@ -125,7 +125,7 @@
             <li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" <?php echo ( is_page( 'services' ) || is_singular( 'pp_service' ) || is_post_type_archive( 'pp_service' ) ) ? 'aria-current="page"' : ''; ?>>خدمات ما<span class="mobile-nav-arrow" aria-hidden="true">←</span></a></li>
             <li><a href="<?php echo esc_url( home_url( '/activities/' ) ); ?>" <?php echo is_page( 'activities' ) ? 'aria-current="page"' : ''; ?>>حوزه‌های فعالیت<span class="mobile-nav-arrow" aria-hidden="true">←</span></a></li>
             <li><a href="<?php echo esc_url( home_url( '/process/' ) ); ?>" <?php echo is_page( 'process' ) ? 'aria-current="page"' : ''; ?>>روش کار ما<span class="mobile-nav-arrow" aria-hidden="true">←</span></a></li>
-            <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" <?php echo is_page( 'about' ) ? 'aria-current="page"' : ''; ?>>درباره پاک پژوه<span class="mobile-nav-arrow" aria-hidden="true">←</span></a></li>
+            <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" <?php echo is_page( 'about' ) ? 'aria-current="page"' : ''; ?>>دربارهٔ پاک‌پژوه<span class="mobile-nav-arrow" aria-hidden="true">←</span></a></li>
             <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" <?php echo is_page( 'contact' ) ? 'aria-current="page"' : ''; ?>>تماس با ما<span class="mobile-nav-arrow" aria-hidden="true">←</span></a></li>
         </ul>
     </nav>

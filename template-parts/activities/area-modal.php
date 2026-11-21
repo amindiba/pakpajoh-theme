@@ -13,7 +13,7 @@
         <ul class="area-modal-list" id="areaModalSpaces"></ul>
         <h3 class="area-modal-sub">ملاحظات اختصاصی</h3>
         <ul class="area-modal-list" id="areaModalNotes"></ul>
-        <h3 class="area-modal-sub">خدمات مرتبط پاک پژوه</h3>
+        <h3 class="area-modal-sub">خدمات مرتبط با پاک‌پژوه</h3>
         <ul class="area-modal-list" id="areaModalServices"></ul>
         <div class="area-modal-actions">
             <a href="<?php echo esc_url( home_url( '/?area=manufacturing#request-form' ) ); ?>" class="area-modal-btn" id="areaModalBtn">درخواست بررسی</a>

@@ -5,7 +5,7 @@
 get_header();
 
 $services_hero_title = get_option( 'pakpajoh_text_services_hero_title', 'خدمات طراحی، مدیریت و اجرای پاکیزگی' );
-$services_hero_desc = get_option( 'pakpajoh_text_services_hero_desc', 'پاک پژوه با شناخت شرایط هر محیط...' );
+$services_hero_desc = get_option( 'pakpajoh_text_services_hero_desc', 'پاک‌پژوه با شناخت شرایط هر محیط...' );
 $services_hero_btn1 = get_option( 'pakpajoh_text_services_hero_btn1', 'درخواست بازدید اولیه رایگان' );
 $services_hero_btn2 = get_option( 'pakpajoh_text_services_hero_btn2', 'مشاهده خدمات' );
 $services_cards_title = get_option( 'pakpajoh_text_services_cards_title', 'چهار محور یک نظام یکپارچه پاکیزگی' );
@@ -14,9 +14,9 @@ $services_passport_desc = get_option( 'pakpajoh_text_services_passport_desc', '�
 $services_process_title = get_option( 'pakpajoh_text_services_process_title', 'خدمات پاکیزگی چگونه ارائه می‌شوند؟' );
 $services_process_subtitle = get_option( 'pakpajoh_text_services_process_subtitle', 'از شناخت محیط تا بهبود مستمر...' );
 $services_scope_title = get_option( 'pakpajoh_text_services_scope_title', 'خدمات متناسب با نیاز هر سازمان تعریف می‌شوند' );
-$services_scope_desc = get_option( 'pakpajoh_text_services_scope_desc', 'دامنه خدمات پاک پژوه...' );
-$services_docs_title = get_option( 'pakpajoh_text_services_docs_title', 'آنچه مدیریت می‌شود، باید ثبت و ارزیابی باشد' );
-$services_docs_subtitle = get_option( 'pakpajoh_text_services_docs_subtitle', 'نمونه مستنداتی که در فرایند خدمات تولید می‌شود.' );
+$services_scope_desc = get_option( 'pakpajoh_text_services_scope_desc', 'دامنهٔ خدمات پاک‌پژوه...' );
+$services_docs_title = get_option( 'pakpajoh_text_services_docs_title', 'آنچه مدیریت می‌شود، باید ثبت و ارزیابی شود' );
+$services_docs_subtitle = get_option( 'pakpajoh_text_services_docs_subtitle', 'نمونه مستنداتی که در فرایند خدمات پاک‌پژوه تولید می‌شوند.' );
 ?>
 <style>
 .sv-hero{padding:80px 0 60px;background:#F9F9F9;text-align:center}
@@ -120,7 +120,7 @@ $services_docs_subtitle = get_option( 'pakpajoh_text_services_docs_subtitle', '�
 
 <section class="sv-hero">
 <div class="sv-container">
-<span class="sv-badge">خدمات پاک پژوه</span>
+<span class="sv-badge">خدمات پاک‌پژوه</span>
 <h1 class="sv-title"><?php echo wp_kses_post( $services_hero_title ); ?></h1>
 <p class="sv-desc"><?php echo wp_kses_post( $services_hero_desc ); ?></p>
 <div class="sv-actions">

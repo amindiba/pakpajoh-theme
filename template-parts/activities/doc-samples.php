@@ -24,7 +24,7 @@
             <div class="doc-samples-cards-parent">
                 <div class="doc-samples-header">
                     <h2 class="doc-samples-title">نمونه مستندات و گزارش‌ها</h2>
-                    <p class="doc-samples-subtitle">آنچه مدیریت می‌شود، باید ثبت و ارزیابی باشد.</p>
+                    <p class="doc-samples-subtitle">آنچه مدیریت می‌شود، باید ثبت و ارزیابی شود.</p>
                 </div>
                 <div class="doc-samples-cards">
 

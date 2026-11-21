@@ -4,7 +4,7 @@
  */
 get_header();
 
-$about_hero_badge = get_option( 'pakpajoh_text_about_hero_badge', 'درباره پاک‌پژوه' );
+$about_hero_badge = get_option( 'pakpajoh_text_about_hero_badge', 'دربارهٔ پاک‌پژوه' );
 $about_hero_title = get_option( 'pakpajoh_text_about_hero_title', 'پاک‌پژوه؛ نگاهی متفاوت به پاکیزگی محیط‌های کاری' );
 $about_hero_slogan = get_option( 'pakpajoh_text_about_hero_slogan', 'پاکیزگی، بخشی از مدیریت حرفه‌ای محیط کار است.' );
 $about_hero_desc = get_option( 'pakpajoh_text_about_hero_desc', 'برای هر محیط کاری، راهکاری متناسب با نوع فعالیت و نیازهای واقعی مجموعه طراحی می‌کنیم.' );

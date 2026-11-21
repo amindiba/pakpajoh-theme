@@ -21,6 +21,58 @@ function pakpajoh_handle_request_form() {
 add_action( 'admin_post_pakpajoh_request_form', 'pakpajoh_handle_request_form' );
 add_action( 'admin_post_nopriv_pakpajoh_request_form', 'pakpajoh_handle_request_form' );
 
+function pakpajoh_contact_redirect( $status ) {
+    $redirect_to = add_query_arg( 'contact_status', $status, home_url( '/contact/' ) );
+    wp_safe_redirect( $redirect_to . '#pp-contact-form' );
+    exit;
+}
+
+function pakpajoh_handle_contact_form() {
+    $nonce = isset( $_POST['pakpajoh_nonce'] ) && is_string( $_POST['pakpajoh_nonce'] )
+        ? sanitize_text_field( wp_unslash( $_POST['pakpajoh_nonce'] ) )
+        : '';
+    if ( ! wp_verify_nonce( $nonce, 'pakpajoh_contact_nonce' ) ) {
+        wp_die( 'درخواست معتبر نیست. لطفاً صفحه را تازه‌سازی و دوباره تلاش کنید.' );
+    }
+
+    $name = isset( $_POST['name'] ) && is_string( $_POST['name'] )
+        ? sanitize_text_field( wp_unslash( $_POST['name'] ) )
+        : '';
+    $phone = isset( $_POST['phone'] ) && is_string( $_POST['phone'] )
+        ? sanitize_text_field( wp_unslash( $_POST['phone'] ) )
+        : '';
+    $email_input = isset( $_POST['email'] ) && is_string( $_POST['email'] )
+        ? sanitize_text_field( wp_unslash( $_POST['email'] ) )
+        : '';
+    $email = sanitize_email( $email_input );
+    $message = isset( $_POST['message'] ) && is_string( $_POST['message'] )
+        ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) )
+        : '';
+
+    if ( '' === $name || '' === $phone || '' === $message || ( '' !== $email_input && ! is_email( $email ) ) ) {
+        pakpajoh_contact_redirect( 'invalid' );
+    }
+
+    $recipient = get_option( 'admin_email' );
+    if ( ! is_email( $recipient ) ) {
+        error_log( 'PakPajoh: contact form could not send because the site admin email is invalid.' );
+        pakpajoh_contact_redirect( 'error' );
+    }
+
+    $subject = 'درخواست تماس جدید - پاک‌پژوه';
+    $body = "نام: $name\nشماره تماس: $phone\nایمیل: " . ( '' !== $email ? $email : 'ثبت نشده' ) . "\nمتن پیام:\n$message";
+    $sent = wp_mail( $recipient, $subject, $body, array( 'Content-Type: text/plain; charset=UTF-8' ) );
+
+    if ( ! $sent ) {
+        error_log( 'PakPajoh: contact form email could not be sent.' );
+        pakpajoh_contact_redirect( 'error' );
+    }
+
+    pakpajoh_contact_redirect( 'success' );
+}
+add_action( 'admin_post_pakpajoh_contact_form', 'pakpajoh_handle_contact_form' );
+add_action( 'admin_post_nopriv_pakpajoh_contact_form', 'pakpajoh_handle_contact_form' );
+
 function pakpajoh_newsletter_redirect( $status ) {
     $referer = wp_get_referer();
     $redirect_to = $referer ? remove_query_arg( 'newsletter_status', $referer ) : home_url( '/' );

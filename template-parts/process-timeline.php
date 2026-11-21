@@ -201,8 +201,8 @@
         <div class="pp-pt-header">
             <h2 class="pp-pt-title"><?php echo wp_kses_post( get_option( "pakpajoh_text_home_process_title", "از شناخت محیط تا بهبود مستمر" ) ); ?></h2>
             <p class="pp-pt-subtitle">
-                <span class="pp-pt-sub-desktop">فرآیندی شش‌مرحله‌ای برای تضمین کیفیت و بهبود مستمر خدمات پاکسازی</span>
-                <span class="pp-pt-sub-mobile">فرآیند شش‌مرحله‌ای تضمین کیفیت</span>
+                <span class="pp-pt-sub-desktop">فرایندی شش‌مرحله‌ای برای تضمین کیفیت و بهبود مستمر خدمات پاک‌سازی</span>
+                <span class="pp-pt-sub-mobile">فرایند شش‌مرحله‌ای تضمین کیفیت</span>
             </p>
         </div>
 

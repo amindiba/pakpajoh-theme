@@ -48,7 +48,7 @@ function pakpajoh_panel_page() {
                 <tr><th><label for="hero_title">عنوان هیرو</label></th>
                 <td><input type="text" id="hero_title" name="pakpajoh_hero_title" value="<?php echo esc_attr( get_option( 'pakpajoh_hero_title', 'خدمات طراحی، مدیریت و اجرای پاکیزگی' ) ); ?>" class="regular-text"></td></tr>
                 <tr><th><label for="hero_desc">توضیحات هیرو</label></th>
-                <td><textarea id="hero_desc" name="pakpajoh_hero_desc" rows="4" class="large-text"><?php echo esc_textarea( get_option( 'pakpajoh_hero_desc', 'پاک پژوه با شناخت شرایط هر محیط...' ) ); ?></textarea></td></tr>
+                <td><textarea id="hero_desc" name="pakpajoh_hero_desc" rows="4" class="large-text"><?php echo esc_textarea( get_option( 'pakpajoh_hero_desc', 'پاک‌پژوه با شناخت شرایط هر محیط...' ) ); ?></textarea></td></tr>
                 <tr><th><label for="hero_btn1">متن دکمه اول</label></th>
                 <td><input type="text" id="hero_btn1" name="pakpajoh_hero_btn1" value="<?php echo esc_attr( get_option( 'pakpajoh_hero_btn1', 'درخواست بازدید اولیه رایگان' ) ); ?>" class="regular-text"></td></tr>
                 <tr><th><label for="hero_btn2">متن دکمه دوم</label></th>
@@ -71,14 +71,14 @@ function pakpajoh_panel_page() {
                 <tr><th><label for="scope_title">عنوان</label></th>
                 <td><input type="text" id="scope_title" name="pakpajoh_scope_title" value="<?php echo esc_attr( get_option( 'pakpajoh_scope_title', 'خدمات متناسب با نیاز هر سازمان تعریف می‌شوند' ) ); ?>" class="regular-text"></td></tr>
                 <tr><th><label for="scope_desc">توضیحات</label></th>
-                <td><textarea id="scope_desc" name="pakpajoh_scope_desc" rows="3" class="large-text"><?php echo esc_textarea( get_option( 'pakpajoh_scope_desc', 'دامنه خدمات پاک پژوه بر اساس نوع فعالیت سازمان...' ) ); ?></textarea></td></tr>
+                <td><textarea id="scope_desc" name="pakpajoh_scope_desc" rows="3" class="large-text"><?php echo esc_textarea( get_option( 'pakpajoh_scope_desc', 'دامنهٔ خدمات پاک‌پژوه بر اساس نوع فعالیت سازمان...' ) ); ?></textarea></td></tr>
             </table>
             <h2>بخش نمونه مستندات</h2>
             <table class="form-table">
                 <tr><th><label for="docs_title">عنوان</label></th>
-                <td><input type="text" id="docs_title" name="pakpajoh_docs_title" value="<?php echo esc_attr( get_option( 'pakpajoh_docs_title', 'آنچه مدیریت می‌شود، باید ثبت و ارزیابی باشد' ) ); ?>" class="regular-text"></td></tr>
+                <td><input type="text" id="docs_title" name="pakpajoh_docs_title" value="<?php echo esc_attr( get_option( 'pakpajoh_docs_title', 'آنچه مدیریت می‌شود، باید ثبت و ارزیابی شود' ) ); ?>" class="regular-text"></td></tr>
                 <tr><th><label for="docs_subtitle">زیرعنوان</label></th>
-                <td><input type="text" id="docs_subtitle" name="pakpajoh_docs_subtitle" value="<?php echo esc_attr( get_option( 'pakpajoh_docs_subtitle', 'نمونه مستنداتی که در فرایند خدمات پاک پژوه تولید می‌شود.' ) ); ?>" class="regular-text"></td></tr>
+                <td><input type="text" id="docs_subtitle" name="pakpajoh_docs_subtitle" value="<?php echo esc_attr( get_option( 'pakpajoh_docs_subtitle', 'نمونه مستنداتی که در فرایند خدمات پاک‌پژوه تولید می‌شوند.' ) ); ?>" class="regular-text"></td></tr>
             </table>
             <?php submit_button( 'ذخیره تغییرات' ); ?>
         </form>

@@ -22,7 +22,7 @@
                 <div class="last-card-image-wrapper">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/partnership-in-motion-stockcake.jpg?v=2' ); ?>" alt="دست دادن" class="last-card-image">
                 </div>
-                <div class="last-card-title">فرآیند آغاز همکاری</div>
+                <div class="last-card-title">فرایند آغاز همکاری</div>
                 <div class="last-card-text">از درخواست تا اجرای خدمات، در چند گام ساده.</div>
                 <a href="#cooperation-process" class="last-card-link">
                     <span>مشاهده مراحل</span>
@@ -37,11 +37,11 @@
 
                 <div class="last-faq-item">
                     <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-1">
-                        <span>آیا پاک پژوه فقط در کارخانه‌ها فعالیت می‌کند؟</span>
+                        <span>آیا پاک‌پژوه فقط در کارخانه‌ها فعالیت می‌کند؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="last-faq-answer" id="last-faq-answer-1" aria-hidden="true">
-                        خیر. پاک پژوه پنج حوزه اصلی فعالیت شامل محیط‌های تولیدی، انبارها، مراکز لجستیکی، مراکز درمانی و هتلها را در اولویت دارد. سایر محیط‌های کاری نیز بر اساس شرایط و نیاز پروژه قابل بررسی هستند.
+                        خیر. پاک‌پژوه پنج حوزهٔ اصلی فعالیت، شامل محیط‌های تولیدی، انبارها، مراکز لجستیکی، مراکز درمانی و هتل‌ها را در اولویت قرار داده است. سایر محیط‌های کاری نیز بر اساس شرایط و نیاز پروژه قابل بررسی هستند.
                     </div>
                 </div>
 
@@ -57,41 +57,41 @@
 
                 <div class="last-faq-item">
                     <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-3">
-                        <span>آیا پاک پژوه صرفًا نیروی خدماتی تأمین می‌کند؟</span>
+                        <span>آیا پاک‌پژوه صرفاً نیروی خدماتی تأمین می‌کند؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="last-faq-answer" id="last-faq-answer-3" aria-hidden="true">
-                        رویکرد پاک پژوه محدود به تأمین نیروی انسانی نیست. خدمات می تواند شامل طراحی برنامه، مدیریت اجرا، کنترل کیفیت و مستندسازی باشد. ترکیب منابع اجرایی نیز بر اساس نیاز هر پروژه تعیین می شود.
+                        رویکرد پاک‌پژوه به تأمین نیروی انسانی محدود نیست. خدمات می‌تواند شامل طراحی برنامه، مدیریت اجرا، کنترل کیفیت و مستندسازی باشد. ترکیب منابع اجرایی نیز بر اساس نیاز هر پروژه تعیین می‌شود.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
                     <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-4">
-                        <span>آیا پاک پژوه در بیمارستانها و درمانگاهها نیز فعالیت می کند؟</span>
+                        <span>آیا پاک‌پژوه در بیمارستان‌ها و درمانگاه‌ها نیز فعالیت می‌کند؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="last-faq-answer" id="last-faq-answer-4" aria-hidden="true">
-                        مراکز درمانی از حوزه‌های اولویت دار پاک پژوه هستند. دامنه خدمات هر مرکز با توجه به نوع فضا، الزامات بهداشتی، دستورالعمل‌های مرکز و شرایط اجرایی پروژه تعیین می‌شود.
+                        مراکز درمانی از حوزه‌های اولویت‌دار پاک‌پژوه هستند. دامنهٔ خدمات هر مرکز با توجه به نوع فضا، الزامات بهداشتی، دستورالعمل‌های مرکز و شرایط اجرایی پروژه تعیین می‌شود.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
                     <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-5">
-                        <span>آیا خدمات پاک پژوه شامل ضدعفونی تخصصی مراکز درمانی است؟</span>
+                        <span>آیا خدمات پاک‌پژوه شامل ضدعفونی تخصصی مراکز درمانی است؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="last-faq-answer" id="last-faq-answer-5" aria-hidden="true">
-                        خدمات مرتبط با ضدعفونی و فضاهای حساس درمانی صرفًا پس از بررسی الزامات، مواد و روشهای مجاز، صلاحیت عوامل اجرایی و توافق با مرکز درمانی قابل تعریف است.
+                        خدمات مرتبط با ضدعفونی و فضاهای حساس درمانی صرفاً پس از بررسی الزامات، مواد و روش‌های مجاز، صلاحیت عوامل اجرایی و توافق با مرکز درمانی قابل تعریف‌اند.
                     </div>
                 </div>
 
                 <div class="last-faq-item">
                     <button type="button" class="last-faq-question" onclick="toggleLastFaq(this)" aria-expanded="false" aria-controls="last-faq-answer-6">
-                        <span>آیا پاک پژوه در هتلها خدمات ارائه می‌کند؟</span>
+                        <span>آیا پاک‌پژوه در هتل‌ها خدمات ارائه می‌کند؟</span>
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="last-faq-answer" id="last-faq-answer-6" aria-hidden="true">
-                        بله. هتلها و مراکز اقامتی از حوزه‌های اولویتدار فعالیت هستند. برنامه خدمات می تواند متناسب با اتاقها، لابی، راهروها، رستورانها، فضاهای عمومی و بخشهای پشتیبانی طراحی شود.
+                        بله. هتل‌ها و مراکز اقامتی از حوزه‌های اولویت‌دار فعالیت پاک‌پژوه هستند. برنامهٔ خدمات می‌تواند متناسب با اتاق‌ها، لابی، راهروها، رستوران‌ها، فضاهای عمومی و بخش‌های پشتیبانی طراحی شود.
                     </div>
                 </div>
 
@@ -111,7 +111,7 @@
                         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="last-faq-answer" id="last-faq-answer-8" aria-hidden="true">
-                        در صورت تناسب با شرایط پروژه، امکان بررسی اجرای آزمایشی وجود دارد. دامنه، مدت، هزینه، معیارهای ارزیابی و مسئولیتها باید پیش از شروع به توافق برسند.
+                        در صورت تناسب با شرایط پروژه، امکان بررسی اجرای آزمایشی وجود دارد. دامنه، مدت، هزینه، معیارهای ارزیابی و مسئولیت‌ها باید پیش از شروع مورد توافق قرار گیرند.
                     </div>
                 </div>
             </div>

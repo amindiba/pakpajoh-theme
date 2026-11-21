@@ -64,7 +64,7 @@ $img_uri = get_template_directory_uri() . '/assets/images';
     <span class="line-decor"></span>
         </div>
             <p class="services-subtitle">
-    <span class="svc-sub-desktop"><?php echo wp_kses_post( get_option( "pakpajoh_text_home_services_subtitle", "طراحی، اجرا، کنترل و مستندسازی خدمات پاکسازی" ) ); ?></span>
+    <span class="svc-sub-desktop"><?php echo wp_kses_post( get_option( "pakpajoh_text_home_services_subtitle", "طراحی، اجرا، کنترل و مستندسازی خدمات پاک‌سازی" ) ); ?></span>
     <span class="svc-sub-mobile">طراحی، اجرا، کنترل، مستندسازی</span>
 </p>
 
@@ -75,7 +75,7 @@ $img_uri = get_template_directory_uri() . '/assets/images';
                     <img src="<?php echo esc_url( $img_uri . '/a3.jpg' ); ?>" alt="طراحی و برنامه‌ریزی" loading="lazy">
                 </div>
                 <div class="service-card-body">
-                    <h3 class="service-card-title"><span class="service-num">۱.</span> طراحی و برنامه‌ریزی خدمات پاکسازی</h3>
+                    <h3 class="service-card-title"><span class="service-num">۱.</span> طراحی و برنامه‌ریزی خدمات پاک‌سازی</h3>
                     <p class="service-card-desc">شناخت نیازهای محیط، تدوین برنامه، تعیین روش‌ها، زمان‌بندی و مسئولیت‌ها</p>
                 </div>
             </div>

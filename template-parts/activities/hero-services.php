@@ -7,7 +7,7 @@
     <div class="hero-slider">
         <div class="hero-slide active">
             <div class="hero-bg">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/services-hero.jpg' ); ?>" alt="نظافت صنعتی پاک پژوه" loading="eager" fetchpriority="high">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/services-hero.jpg' ); ?>" alt="نظافت صنعتی پاک‌پژوه" loading="eager" fetchpriority="high">
                 <div class="hero-overlay"></div>
             </div>
         </div>
