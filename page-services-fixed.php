@@ -124,7 +124,15 @@ $services_docs_subtitle = get_option( 'pakpajoh_text_services_docs_subtitle', '�
 <h1 class="sv-title"><?php echo wp_kses_post( $services_hero_title ); ?></h1>
 <p class="sv-desc"><?php echo wp_kses_post( $services_hero_desc ); ?></p>
 <div class="sv-actions">
-<a href="/#request-form" class="btn btn-primary">درخواست بازدید اولیه رایگان</a>
+<a href="<?php echo esc_url( home_url( '/#request-form' ) ); ?>" class="btn btn-primary request-visit-cta">
+    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+    </svg>
+    <span><?php echo esc_html( get_option( 'pakpajoh_text_home_hero_btn1', 'درخواست بازدید اولیه رایگان' ) ); ?></span>
+</a>
 <a href="#sv-cards" class="btn btn-outline">مشاهده خدمات</a>
 </div>
 </div>

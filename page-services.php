@@ -60,7 +60,7 @@ get_header();
     .services-page-hero .hero-title { font-size: clamp(1.25rem, 5vw, 1.55rem); line-height: 1.5; letter-spacing: 0; margin-bottom: 7px; }
     .services-page-hero .hero-desc { max-width: 460px; font-size: 0.78rem; font-weight: 500; line-height: 1.75; margin: 0 0 12px; }
     .services-page-hero .hero-actions { flex-direction: row; align-items: stretch; gap: 8px; margin: 0; }
-    .services-page-hero .btn { width: calc(50% - 4px); min-height: 40px; padding: 7px 8px; border-radius: 11px; font-size: 0.72rem; line-height: 1.45; }
+    .services-page-hero .btn { width: auto; min-height: 40px; padding: 7px 8px; border-radius: 11px; font-size: 0.72rem; line-height: 1.45; }
     .services-page-hero .hero-pagination { display: none; }
     .sv-cards-section { padding: 25px 0 22px; }
     .sv-cards-container { padding: 0 14px; }

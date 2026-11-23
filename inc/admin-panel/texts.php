@@ -38,7 +38,6 @@ function pakpajoh_texts_page() {
     $about_cta_fields = array(
         'about_cta_title' => $about_text_field( 'تیتر دعوت به همکاری', 'آغاز یک همکاری حرفه‌ای، با شناخت نیازهای شما' ),
         'about_cta_desc' => $about_text_field( 'توضیحات دعوت به همکاری', 'بازدید اولیه رایگان، با هماهنگی قبلی و در محدوده جغرافیایی تحت پوشش انجام می‌شود.' ),
-        'about_cta_btn1' => $about_text_field( 'متن دکمه بازدید', 'درخواست بازدید اولیه رایگان' ),
         'about_cta_btn2' => $about_text_field( 'متن دکمه تماس', 'تماس با پاک‌پژوه' ),
     );
     $pages = array(

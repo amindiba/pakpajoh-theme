@@ -24,7 +24,6 @@ $about_model_detail = get_option( 'pakpajoh_text_about_model_detail', '<p>پاک
 $about_vision_detail = get_option( 'pakpajoh_text_about_vision_detail', '<p>چشم‌انداز پاک‌پژوه، مشارکت در توسعه رویکردی حرفه‌ای‌تر به خدمات پاکیزگی محیط‌های کاری است؛ رویکردی که در آن برنامه‌ریزی، مدیریت، کیفیت و مستندسازی جایگاه مشخصی داشته باشند.</p><p>در مسیر توسعه فعالیت، به دنبال تقویت دانش و توان اجرایی، توسعه ابزارهای مناسب برای مدیریت و گزارش‌دهی و بهبود مستمر راهکارها هستیم.</p><p>فناوری را ابزاری برای ارتقای شفافیت، نظم اطلاعاتی و ارزیابی بهتر می‌دانیم؛ نه جایگزینی برای شناخت محیط و مدیریت صحیح عملیات. هدف بلندمدت، ایجاد مجموعه‌ای قابل اتکا برای سازمان‌هایی است که پاکیزگی را بخشی از مدیریت حرفه‌ای خود می‌دانند.</p>' );
 $about_cta_title = get_option( 'pakpajoh_text_about_cta_title', 'آغاز یک همکاری حرفه‌ای، با شناخت نیازهای شما' );
 $about_cta_desc = get_option( 'pakpajoh_text_about_cta_desc', 'بازدید اولیه رایگان، با هماهنگی قبلی و در محدوده جغرافیایی تحت پوشش انجام می‌شود.' );
-$about_cta_btn1 = get_option( 'pakpajoh_text_about_cta_btn1', 'درخواست بازدید اولیه رایگان' );
 $about_cta_btn2 = get_option( 'pakpajoh_text_about_cta_btn2', 'تماس با پاک‌پژوه' );
 ?>
 
@@ -263,7 +262,15 @@ $about_cta_btn2 = get_option( 'pakpajoh_text_about_cta_btn2', 'تماس با پ�
         <div class="about-cta-decoration" aria-hidden="true"></div>
         <div class="about-cta-inner">
             <div class="about-cta-actions">
-                <a class="about-cta-primary" href="<?php echo esc_url( home_url( '/request/' ) ); ?>"><?php echo esc_html( $about_cta_btn1 ); ?></a>
+                <a class="about-cta-primary request-visit-cta" href="<?php echo esc_url( home_url( '/request/' ) ); ?>">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <span><?php echo esc_html( get_option( 'pakpajoh_text_home_hero_btn1', 'درخواست بازدید اولیه رایگان' ) ); ?></span>
+                </a>
                 <a class="about-cta-secondary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php echo esc_html( $about_cta_btn2 ); ?></a>
             </div>
             <div class="about-cta-copy">

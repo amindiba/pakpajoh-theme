@@ -51,9 +51,9 @@
 .content { flex: 1; min-width: 280px; position: relative; z-index: 1; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-right: 10%; padding-left: 0; border-right: 1px solid rgba(0,0,0,0.12); }
 .title { font-size: 22px; font-weight: 700; color: #1a3a5c; line-height: 1.5; margin-bottom: 16px; }
 .description { font-size: 18px; color: #1a3a5c; font-weight: 700; line-height: 1.9; margin-bottom: 28px; max-width: 420px; }
-.btn { display: inline-flex; align-items: center; gap: 8px; background: #1e88e5; color: #fff; border: none; border-radius: 50px; padding: 12px 24px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.25s ease; box-shadow: 0 4px 12px rgba(30,136,229,0.3); text-decoration: none; }
-.btn:hover { background: #1565c0; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(30,136,229,0.4); }
-.btn svg { width: 16px; height: 16px; }
+.integrated-section .btn { display: inline-flex; align-items: center; gap: 8px; background: #1e88e5; color: #fff; border: none; border-radius: 50px; padding: 12px 24px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.25s ease; box-shadow: 0 4px 12px rgba(30,136,229,0.3); text-decoration: none; }
+.integrated-section .btn:hover { background: #1565c0; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(30,136,229,0.4); }
+.integrated-section .btn svg { width: 16px; height: 16px; }
 .steps { display: flex; align-items: center; gap: 8px; flex-shrink: 0; position: relative; z-index: 1; }
 .step { display: flex; flex-direction: column; align-items: center; text-align: center; width: 120px; transition: transform 0.3s ease; }
 .step:hover { transform: translateY(-8px); }

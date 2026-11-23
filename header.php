@@ -3,6 +3,10 @@
  * Header — PakPajoh Theme (v3.0)
  * طراحی: موکاپ کارفرما | پالت: سبز (DESIGN-SYSTEM.md)
  */
+$request_visit_label = is_front_page()
+    ? 'درخواست بازدید اولیه'
+    : get_option( 'pakpajoh_text_home_hero_btn1', 'درخواست بازدید اولیه رایگان' );
+$request_visit_cta_class = is_front_page() ? '' : ' request-visit-cta';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -86,14 +90,14 @@
 
         <!-- دکمه CTA (چپ) -->
         <div class="header-actions">
-            <a href="<?php echo esc_url( home_url( '/request/' ) ); ?>" class="btn-header-cta" aria-label="درخواست بازدید اولیه">
+            <a href="<?php echo esc_url( home_url( '/request/' ) ); ?>" class="btn-header-cta<?php echo esc_attr( $request_visit_cta_class ); ?>" aria-label="<?php echo esc_attr( $request_visit_label ); ?>">
                 <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                     <line x1="16" y1="2" x2="16" y2="6"/>
                     <line x1="8" y1="2" x2="8" y2="6"/>
                     <line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
-                <span>درخواست بازدید اولیه</span>
+                <span><?php echo esc_html( $request_visit_label ); ?></span>
             </a>
         </div>
 
@@ -130,14 +134,14 @@
         </ul>
     </nav>
     <div class="mobile-drawer-footer">
-        <a href="<?php echo esc_url( home_url( '/request/' ) ); ?>" class="btn-header-cta mobile-cta" aria-label="درخواست بازدید اولیه">
+        <a href="<?php echo esc_url( home_url( '/request/' ) ); ?>" class="btn-header-cta mobile-cta<?php echo esc_attr( $request_visit_cta_class ); ?>" aria-label="<?php echo esc_attr( $request_visit_label ); ?>">
             <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                 <line x1="16" y1="2" x2="16" y2="6"/>
                 <line x1="8" y1="2" x2="8" y2="6"/>
                 <line x1="3" y1="10" x2="21" y2="10"/>
             </svg>
-            <span>درخواست بازدید اولیه</span>
+            <span><?php echo esc_html( $request_visit_label ); ?></span>
         </a>
     </div>
 </aside>
